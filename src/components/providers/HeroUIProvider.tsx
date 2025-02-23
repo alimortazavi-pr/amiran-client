@@ -1,18 +1,21 @@
 "use client";
 
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useState } from "react";
 import { HeroUIProvider as HUIProvider } from "@heroui/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
-//Redux
-
 const HeroUIProvider: FC<PropsWithChildren> = ({ children }) => {
+  //States
+  const [mounted, setMounted] = useState(false);
+
   return (
-    <HUIProvider>
-      <NextThemesProvider attribute="class" defaultTheme="light">
-        {children}
-      </NextThemesProvider>
-    </HUIProvider>
+    mounted && (
+      <HUIProvider>
+        <NextThemesProvider attribute="class" defaultTheme="light">
+          {children}
+        </NextThemesProvider>
+      </HUIProvider>
+    )
   );
 };
 
