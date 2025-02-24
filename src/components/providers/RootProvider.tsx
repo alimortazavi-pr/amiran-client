@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { FC, PropsWithChildren } from "react";
 
@@ -26,7 +26,7 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      <div className="overflow-x-hidden">{children}</div>
+      <div className="overflow-x-hidden container mx-auto p-2">{children}</div>
       <ToastContainer
         hideProgressBar
         newestOnTop
