@@ -5,22 +5,22 @@ import { HambergerMenu, SearchNormal } from "iconsax-react";
 
 export const EndSide = () => {
   return (
-    <div className="flex-1 h-10 lg:h-12 bg-primary/20 rounded-s-full flex items-center justify-end gap-1 px-2">
+    <div className="flex-1 h-7 lg:h-12 bg-primary/20 rounded-s-full flex items-center justify-end gap-1 px-2">
       <Button
         isIconOnly
         variant="light"
         size="sm"
-        className="rounded-full text-primary"
+        className="rounded-full text-primary max-h-full"
       >
-        <SearchNormal className="w-4 h-4" color="#1D363D" />
+        <SearchNormal className="w-3 h-3" color="#1D363D" />
       </Button>
       <Button
         isIconOnly
         variant="light"
         size="sm"
-        className="rounded-full text-primary"
+        className="rounded-full text-primary max-h-full"
       >
-        <HambergerMenu className="w-5 h-5" color="#1D363D" />
+        <HambergerMenu className="w-4 h-4" color="#1D363D" />
       </Button>
     </div>
   );

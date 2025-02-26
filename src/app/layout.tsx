@@ -44,7 +44,7 @@ export default async function RootLayout({
   await useServerTranslation(language);
 
   return (
-    <html lang={language} dir={language !== "en" ? "rtl" : "ltr"}>
+    <html lang={'en'} dir={'ltr'}>
       <body>
         <ClientProvider>{children}</ClientProvider>
       </body>
