@@ -5,7 +5,7 @@ import { HambergerMenu, SearchNormal } from "iconsax-react";
 
 export const EndSide = () => {
   return (
-    <div className="flex-1 h-10 bg-primary/30 rounded-s-full flex items-center justify-end gap-1 px-2">
+    <div className="flex-1 h-10 lg:h-12 bg-primary/20 rounded-s-full flex items-center justify-end gap-1 px-2">
       <Button
         isIconOnly
         variant="light"

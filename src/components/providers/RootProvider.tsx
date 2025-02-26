@@ -26,7 +26,7 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      <div className="overflow-x-hidden container mx-auto p-2">{children}</div>
+      <div className="overflow-x-hidden container lg:p-12 mx-auto p-2">{children}</div>
       <ToastContainer
         hideProgressBar
         newestOnTop
