@@ -6,92 +6,62 @@
   font-family: "Poppins", sans-serif;
 }
 
-.custom-shape {
-  clip-path: ellipse(50% 50% at 50% 0%);
-  border-radius: 0 0 50% 50% / 0 0 100% 100%;
-  overflow: hidden;
-}
-
-.shape-container {
-  width: 80%;
-  max-width: 700px;
-  background: #2d2d2d;
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 2rem auto;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 75% 100%, 25% 100%, 0% 85%);
-}
-
-.circle {
-  width: 10rem;
-  height: fit-content;
-  border-radius: 5rem;
-  background: #accede;
-  text-align: center;
+.container-custom {
   position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.circle::before {
-  content: "";
-  height: 100%;
-  width: 50%;
-  float: left;
-  shape-outside: polygon(
-    0 0,
-    100% 0,
-    60% 4%,
-    40% 10%,
-    20% 20%,
-    10% 28.2%,
-    5% 34.4%,
-    0 50%,
-    5% 65.6%,
-    10% 71.8%,
-    20% 80%,
-    40% 90%,
-    60% 96%,
-    100% 100%,
-    0 100%
-  );
+.rounded-box {
+  width: 120px;
+  height: 180px;
+  background: lightgray;
+  border-radius: 60px;
+  position: absolute;
 }
 
-.circle > span::before {
-  content: "";
-  height: 100%;
-  width: 50%;
-  float: right;
-  shape-outside: polygon(
-    100% 0,
-    0 0,
-    40% 4%,
-    60% 10%,
-    80% 20%,
-    90% 28.2%,
-    95% 34.4%,
-    100% 50%,
-    95% 65.6%,
-    90% 71.8%,
-    80% 80%,
-    60% 90%,
-    40% 96%,
-    0 100%,
-    100% 100%
-  );
+/* استایل متن دایره‌ای */
+.circle-text {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-.clip-half-circle-top {
-  clip-path: ellipse(50% 50% at 50% 0%);
-  border-radius: 0 0 50% 50% / 0 0 100% 100%;
-  overflow: hidden;
+.circle-text span {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform-origin: center;
 }
 
-/* اگر بخواهید متن اطراف شکل جریان داشته باشد (مثل کد شما)، می‌توانید از shape-outside استفاده کنید: */
-.shape-outside-half-circle {
-  shape-outside: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
-  float: left;
-  width: 50%;
-  height: 100%;
-}
+/* چرخش حروف به دور دایره */
+.circle-text span:nth-child(1) { transform: rotate(0deg) translate(100px) rotate(0deg); }
+.circle-text span:nth-child(2) { transform: rotate(18deg) translate(100px) rotate(-18deg); }
+.circle-text span:nth-child(3) { transform: rotate(36deg) translate(100px) rotate(-36deg); }
+.circle-text span:nth-child(4) { transform: rotate(54deg) translate(100px) rotate(-54deg); }
+.circle-text span:nth-child(5) { transform: rotate(72deg) translate(100px) rotate(-72deg); }
+.circle-text span:nth-child(6) { transform: rotate(90deg) translate(100px) rotate(-90deg); }
+.circle-text span:nth-child(7) { transform: rotate(108deg) translate(100px) rotate(-108deg); }
+.circle-text span:nth-child(8) { transform: rotate(126deg) translate(100px) rotate(-126deg); }
+.circle-text span:nth-child(9) { transform: rotate(144deg) translate(100px) rotate(-144deg); }
+.circle-text span:nth-child(10) { transform: rotate(162deg) translate(100px) rotate(-162deg); }
+.circle-text span:nth-child(11) { transform: rotate(180deg) translate(100px) rotate(-180deg); }
+.circle-text span:nth-child(12) { transform: rotate(198deg) translate(100px) rotate(-198deg); }
+.circle-text span:nth-child(13) { transform: rotate(216deg) translate(100px) rotate(-216deg); }
+.circle-text span:nth-child(14) { transform: rotate(234deg) translate(100px) rotate(-234deg); }
+.circle-text span:nth-child(15) { transform: rotate(252deg) translate(100px) rotate(-252deg); }
+.circle-text span:nth-child(16) { transform: rotate(270deg) translate(100px) rotate(-270deg); }
+.circle-text span:nth-child(17) { transform: rotate(288deg) translate(100px) rotate(-288deg); }
+.circle-text span:nth-child(18) { transform: rotate(306deg) translate(100px) rotate(-306deg); }
+.circle-text span:nth-child(19) { transform: rotate(324deg) translate(100px) rotate(-324deg); }
+.circle-text span:nth-child(20) { transform: rotate(342deg) translate(100px) rotate(-342deg); }
