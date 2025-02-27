@@ -1,29 +1,32 @@
+import ReactCurvedText from "react-curved-text";
+
 export const ProjectItem = () => {
   return (
-    <div className="container-custom">
-      <div className="circle-text">
-        <span>P</span>
-        <span>A</span>
-        <span>L</span>
-        <span>A</span>
-        <span>P</span>
-        <span>R</span>
-        <span>O</span>
-        <span>J</span>
-        <span>E</span>
-        <span>C</span>
-        <span>T</span>
-        <span>S</span>
-        <span>I</span>
-        <span>N</span>
-        <span>C</span>
-        <span>E</span>
-        <span>2</span>
-        <span>0</span>
-        <span>2</span>
-        <span>3</span>
-      </div>
-      <div className="rounded-box" />
+    <div className="w-full">
+      <ReactCurvedText
+        width={0}
+        height={0}
+        cx={150}
+        cy={150}
+        rx={100}
+        ry={100}
+        startOffset={0}
+        reversed={false}
+        text="react-curved-text"
+        textProps={{
+          style: {
+            fontSize: 24,
+          
+          },
+        }}
+        // textPathProps={null}
+        // tspanProps={{ dy: 10 }}
+        // ellipseProps={null}
+        // svgProps={null}
+        svgProps={{
+          className: "bg-red-400 w-1/2 h-80",
+        }}
+      />
     </div>
   );
 };
