@@ -1,9 +1,20 @@
-import ReactCurvedText from "react-curved-text";
+import { FC } from "react";
 
-export const ProjectItem = () => {
+interface IProps {
+  index: number;
+}
+export const TeamItem: FC<IProps> = ({ index }) => {
   return (
-    <div className="w-1/2 flex justify-center">
-      <div className="w-10/12 h-56 bg-primary/20 rounded-full"></div>
+    <div className="col-span-4 aspect-square">
+      <div
+        className={`w-full h-full bg-primary/20 ${
+          index < 3
+            ? "rounded-t-full"
+            : index > 8
+            ? "rounded-b-full"
+            : "rounded-none"
+        }`}
+      ></div>
       {/* <ReactCurvedText
         width={0}
         height={0}
