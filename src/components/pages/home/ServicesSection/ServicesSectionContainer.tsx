@@ -1,0 +1,16 @@
+"use client";
+
+//Components
+import { Description } from ".";
+import { ItemsContainer } from "./items";
+
+export const ServicesSectionContainer = () => {
+  return (
+    <section aria-label="services section">
+      <div className="grid grid-cols-12 gap-2 px-4">
+        <ItemsContainer />
+        <Description />
+      </div>
+    </section>
+  );
+};
