@@ -34,17 +34,20 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   //i18n
-  const language = (await cookies()).get("language")?.value || "en";
-  await useServerTranslation(language);
+  let language = "en";
+  cookies().then((cookie) => {
+    language = cookie.get("language")?.value || "en";
+  });
+  useServerTranslation(language);
 
   return (
-    <html lang={'en'} dir={'ltr'}>
+    <html lang={"en"} dir={"ltr"}>
       <body>
         <ClientProvider>{children}</ClientProvider>
       </body>

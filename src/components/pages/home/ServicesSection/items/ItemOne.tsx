@@ -1,5 +1,4 @@
 import serviceOneSVG from "@/assets/svgs/services/service_1.svg";
-import { Chip } from "@heroui/react";
 import Image from "next/image";
 
 export const ItemOne = () => {

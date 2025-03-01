@@ -1,4 +1,4 @@
-import ReactCurvedText from "react-curved-text";
+// import ReactCurvedText from "react-curved-text";
 
 export const ProjectItem = () => {
   return (
