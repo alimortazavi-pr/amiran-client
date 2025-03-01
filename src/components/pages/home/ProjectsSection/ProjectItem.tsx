@@ -2,8 +2,8 @@
 
 export const ProjectItem = () => {
   return (
-    <div className="w-1/2 flex justify-center">
-      <div className="w-10/12 h-56 bg-primary/20 rounded-full"></div>
+    <div className="col-span-2 lg:col-span-1">
+      <div className="w-full h-56 lg:h-72 xl:h-96 bg-primary/20 rounded-full"></div>
       {/* <ReactCurvedText
         width={0}
         height={0}

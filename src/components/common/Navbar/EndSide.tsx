@@ -12,7 +12,7 @@ export const EndSide = () => {
         size="sm"
         className="rounded-full text-primary max-h-full"
       >
-        <SearchNormal className="w-3 h-3" color="#1D363D" />
+        <SearchNormal className="w-3 h-3 lg:w-4 lg:h-4" color="#1D363D" />
       </Button>
       <Button
         isIconOnly
@@ -20,7 +20,7 @@ export const EndSide = () => {
         size="sm"
         className="rounded-full text-primary max-h-full"
       >
-        <HambergerMenu className="w-4 h-4" color="#1D363D" />
+        <HambergerMenu className="w-4 h-4 lg:w-5 lg:h-5" color="#1D363D" />
       </Button>
     </div>
   );

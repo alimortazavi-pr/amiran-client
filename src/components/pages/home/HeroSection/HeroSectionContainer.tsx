@@ -5,7 +5,7 @@ import { ImagesSection, DescriptionSection } from ".";
 export const HeroSectionContainer = () => {
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-12 items-center lg:gap-5 lg:mt-16">
-      <h6 className="text-lg lg:text-7xl font-light lg:font-light text-center my-10 lg:my-0 flex-1 lg:col-span-3 lg:text-start lg:leading-[90px] break-keep">
+      <h6 className="text-lg lg:text-3xl xl:text-7xl font-light lg:font-light text-center my-10 lg:my-0 flex-1 lg:col-span-3 lg:text-start lg:leading-[90px] xl:leading-[100px] break-keep">
         WE ARE WAITING FOR YOU AT THE TOP
       </h6>
       <ImagesSection />

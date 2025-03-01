@@ -1,7 +1,7 @@
 export const Description = () => {
   return (
-    <div className="col-span-5">
-      <div className="text-justify text-sm text-primary/30 leading-[23px]">
+    <div className="col-span-5 lg:col-span-4">
+      <div className="text-justify text-sm lg:text-xl xl:text-2xl 2xl:text-3xl text-primary/30 leading-[23px] lg:leading-[30px] xl:leading-[40px] 2xl:leading-[50px]">
         Lor em ipsum dolor sit amet, c o n s e c t e t u e r adipiscing elit,
         sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
         erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation

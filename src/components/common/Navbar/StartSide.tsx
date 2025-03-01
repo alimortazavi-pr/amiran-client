@@ -12,7 +12,7 @@ export const StartSide = () => {
         size="sm"
         className="rounded-full text-primary max-h-full"
       >
-        <Call className="w-3 h-3" color="#1D363D" />
+        <Call className="w-3 h-3 lg:w-4 lg:h-4" color="#1D363D" />
       </Button>
     </div>
   );
