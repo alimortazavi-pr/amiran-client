@@ -1,5 +1,5 @@
 //Components
-import { NavbarContainer } from "@/components/common/Navbar";
+import { NavbarContainer } from "@/components/pages/home/Navbar";
 import { HeroSectionContainer } from "./HeroSection";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { ProjectsSectionContainer } from "./ProjectsSection";
