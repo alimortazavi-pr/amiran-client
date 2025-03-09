@@ -22,7 +22,7 @@ export const ProjectsContainer = () => {
 
   return (
     isClient && (
-      <div className="grid grid-cols-4 gap-12 lg:gap-20 xl:gap-28 2xl:gap-40 px-5">
+      <div className="grid grid-cols-4 gap-5 lg:gap-20 xl:gap-28 2xl:gap-40 px-10">
         <ProjectItem />
         <ProjectItem />
         {isLg && (

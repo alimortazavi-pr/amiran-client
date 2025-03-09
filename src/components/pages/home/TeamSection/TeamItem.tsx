@@ -23,35 +23,11 @@ export const TeamItem: FC<IProps> = ({ index }) => {
     } else if (!isLg && index > 9) {
       return "rounded-b-full";
     }
-  }, [isLg]);
+  }, [isLg, index]);
 
   return (
     <div className="col-span-1 aspect-square">
       <div className={`w-full h-full bg-primary/20 ${isLgCheck}`}></div>
-      {/* <ReactCurvedText
-        width={0}
-        height={0}
-        cx={150}
-        cy={150}
-        rx={100}
-        ry={100}
-        startOffset={0}
-        reversed={false}
-        text="react-curved-text"
-        textProps={{
-          style: {
-            fontSize: 24,
-          
-          },
-        }}
-        // textPathProps={null}
-        // tspanProps={{ dy: 10 }}
-        // ellipseProps={null}
-        // svgProps={null}
-        svgProps={{
-          className: "bg-red-400 w-1/2 h-80",
-        }}
-      /> */}
     </div>
   );
 };

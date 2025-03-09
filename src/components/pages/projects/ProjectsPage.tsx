@@ -1,19 +1,18 @@
 //Components
 import { NavbarContainer } from "./Navbar";
-import { DescriptionSection, TitleSection, VideoSection } from ".";
-import { ItemsContainer } from "./items";
+import { TitleSection, VideoSection } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToHomeBtn } from "@/components/common/BackToHome";
+import { ItemsContainer } from "./items";
 
-export const ServicesPage = () => {
+export const ProjectsPage = () => {
   return (
     <div>
       <NavbarContainer />
       <div className="px-4 overflow-hidden">
         <TitleSection />
-        <DescriptionSection />
-        <VideoSection />
         <ItemsContainer />
+        <VideoSection />
         <RailSpacerContainer count={3} />
         <BackToHomeBtn />
       </div>

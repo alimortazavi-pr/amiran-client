@@ -1,13 +1,17 @@
+import { FC } from "react";
+
 //Components
 import { RailSpacer } from ".";
 
-export const RailSpacerContainer = () => {
+interface IProps {
+  count?: number;
+}
+export const RailSpacerContainer: FC<IProps> = ({ count = 4 }) => {
   return (
     <div className="flex flex-col items-center justify-center my-20 lg:my-44">
-      <RailSpacer />
-      <RailSpacer />
-      <RailSpacer />
-      <RailSpacer />
+      {Array.from({ length: count }).map((_, index) => (
+        <RailSpacer key={index} />
+      ))}
     </div>
   );
 };
