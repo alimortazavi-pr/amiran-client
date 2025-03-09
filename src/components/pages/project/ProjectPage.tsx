@@ -1,21 +1,21 @@
 //Components
 import { NavbarContainer } from "./Navbar";
-import { DescriptionSection, TitleSection, VideoSection } from ".";
-import { ItemsContainer } from "./items";
+import { DescriptionSection, ImagesSection, VideoSection } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
+import { PlanImagesContainer } from "./PlanImages";
 
-export const ServicesPage = () => {
+export const ProjectPage = () => {
   return (
-    <div>
+    <div className="px-3">
       <NavbarContainer />
-      <div className="px-4 overflow-hidden">
-        <TitleSection />
+      <div className="overflow-hidden">
+        <ImagesSection />
         <DescriptionSection />
         <VideoSection />
-        <ItemsContainer />
+        <PlanImagesContainer />
         <RailSpacerContainer count={3} />
-        <BackToPreviousPageBtn />
+        <BackToPreviousPageBtn content="BACK TO PROJECTS" />
       </div>
     </div>
   );

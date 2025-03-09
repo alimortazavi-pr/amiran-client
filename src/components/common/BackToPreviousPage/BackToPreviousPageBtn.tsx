@@ -2,8 +2,14 @@
 
 import { Button } from "@heroui/react";
 import { useRouter } from "next-nprogress-bar";
+import { FC } from "react";
 
-export const BackToHomeBtn = () => {
+interface IProps {
+  content?: string;
+}
+export const BackToPreviousPageBtn: FC<IProps> = ({
+  content = "BACK TO HOME",
+}) => {
   //Next
   const router = useRouter();
 
@@ -14,8 +20,12 @@ export const BackToHomeBtn = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <Button variant="light" onPress={backToHomeHandler} className="tracking-[5px]">
-        BACK TO HOME
+      <Button
+        variant="light"
+        onPress={backToHomeHandler}
+        className="tracking-[5px]"
+      >
+        {content}
       </Button>
     </div>
   );

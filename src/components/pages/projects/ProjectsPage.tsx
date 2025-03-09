@@ -2,7 +2,7 @@
 import { NavbarContainer } from "./Navbar";
 import { TitleSection, VideoSection } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
-import { BackToHomeBtn } from "@/components/common/BackToHome";
+import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 import { ItemsContainer } from "./items";
 
 export const ProjectsPage = () => {
@@ -14,7 +14,7 @@ export const ProjectsPage = () => {
         <ItemsContainer />
         <VideoSection />
         <RailSpacerContainer count={3} />
-        <BackToHomeBtn />
+        <BackToPreviousPageBtn />
       </div>
     </div>
   );
