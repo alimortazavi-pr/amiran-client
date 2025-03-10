@@ -1,9 +1,18 @@
 //Components
 import { NavbarContainer } from "./Navbar";
-import { DescriptionSection, ImagesSection, VideoSection } from ".";
+import {
+  DescriptionSection,
+  DirectionsBtn,
+  ImagesSection,
+  VideoSection,
+} from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 import { PlanImagesContainer } from "./PlanImages";
+import { FeaturesContainer } from "./Features";
+
+//Constants
+import { PATHS } from "@/common/constants";
 
 export const ProjectPage = () => {
   return (
@@ -14,8 +23,13 @@ export const ProjectPage = () => {
         <DescriptionSection />
         <VideoSection />
         <PlanImagesContainer />
+        <FeaturesContainer />
+        <DirectionsBtn />
         <RailSpacerContainer count={3} />
-        <BackToPreviousPageBtn content="BACK TO PROJECTS" />
+        <BackToPreviousPageBtn
+          content="BACK TO PROJECTS"
+          previousPath={PATHS.PROJECTS}
+        />
       </div>
     </div>
   );

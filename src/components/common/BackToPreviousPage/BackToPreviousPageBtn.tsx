@@ -4,18 +4,23 @@ import { Button } from "@heroui/react";
 import { useRouter } from "next-nprogress-bar";
 import { FC } from "react";
 
+//Constants
+import { PATHS } from "@/common/constants";
+
 interface IProps {
   content?: string;
+  previousPath?: string;
 }
 export const BackToPreviousPageBtn: FC<IProps> = ({
   content = "BACK TO HOME",
+  previousPath = PATHS.HOME,
 }) => {
   //Next
   const router = useRouter();
 
   //Functions
   function backToHomeHandler() {
-    router.push("/");
+    router.push(previousPath);
   }
 
   return (
