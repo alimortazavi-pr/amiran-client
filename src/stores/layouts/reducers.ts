@@ -15,6 +15,15 @@ const reducers = {
       language: action.payload,
     };
   },
+  setIsOpenMenu(
+    state: ILayoutsState,
+    action: PayloadAction<boolean>
+  ): ILayoutsState {
+    return {
+      ...state,
+      isOpenMenu: action.payload,
+    };
+  },
 };
 
 export default reducers;

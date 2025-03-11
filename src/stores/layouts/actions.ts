@@ -6,7 +6,7 @@
 import { layoutsReducer } from ".";
 
 //Actions from reducer
-export const { setLanguage } = layoutsReducer.actions;
+export const { setLanguage, setIsOpenMenu } = layoutsReducer.actions;
 
 //Interfaces
 

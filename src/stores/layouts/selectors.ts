@@ -5,3 +5,7 @@ import { RootState } from "@/stores/index";
 export function languageSelector(state: RootState): languagesType {
   return state.layouts.language;
 }
+
+export function isOpenMenuSelector(state: RootState): boolean {
+  return state.layouts.isOpenMenu;
+}

@@ -8,6 +8,7 @@ import reducers from "@/stores/layouts/reducers";
 
 const initialState: ILayoutsState = {
   language: "en",
+  isOpenMenu: false,
 };
 
 export const layoutsReducer = createSlice({
