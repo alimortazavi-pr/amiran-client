@@ -1,11 +1,18 @@
+import { FC } from "react";
 import Image from "next/image";
 
 //Assets
 import railSpacer from "@/assets/svgs/rail.svg";
 
-export const RailSpacer = () => {
+interface IProps {
+  size?: number;
+}
+export const RailSpacer: FC<IProps> = ({ size }) => {
   return (
-    <div className="w-12 h-12 lg:w-24 lg:h-24 relative">
+    <div
+      className={`${!size && "w-12 h-12 lg:w-24 lg:h-24"} relative`}
+      style={{ width: size, height: size }}
+    >
       <Image src={railSpacer} alt="rail-spacer" fill />
     </div>
   );

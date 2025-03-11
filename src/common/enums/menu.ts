@@ -1,0 +1,17 @@
+export enum menuPagesEnum {
+  PROJECTS = "PROJECTS",
+  SERVICES = "SERVICES",
+  TASKS = "TASKS",
+  WORK_PROCESS = "WORK_PROCESS",
+  WHY_AMIRAN = "WHY_AMIRAN",
+  CONTACT_US = "CONTACT_US",
+}
+
+export enum menuSocialMediasEnum {
+  TWITTER = "TWITTER",
+  INSTAGRAM = "INSTAGRAM",
+  LINKEDIN = "LINKEDIN",
+  WHATSAPP = "WHATSAPP",
+  DRIBBBLE = "DRIBBBLE",
+  YOUTUBE = "YOUTUBE",
+}
