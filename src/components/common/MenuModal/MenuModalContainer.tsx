@@ -19,12 +19,14 @@ export const MenuModalContainer = () => {
   const isOpenMenu = useAppSelector(isOpenMenuSelector);
 
   //NextUI
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
   //Lifecycle
   useEffect(() => {
     if (isOpenMenu && !isOpen) {
       onOpen();
+    } else if (!isOpenMenu && isOpen) {
+      onClose();
     }
   }, [isOpenMenu]);
 
