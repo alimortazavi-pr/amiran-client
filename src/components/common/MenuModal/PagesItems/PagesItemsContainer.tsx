@@ -10,7 +10,7 @@ export const PagesItems = () => {
       <div className="flex items-center justify-between gap-3">
         <PageItem type={menuPagesEnum.PROJECTS} />
         <PageItem type={menuPagesEnum.SERVICES} />
-        <PageItem type={menuPagesEnum.TASKS} />
+        <PageItem type={menuPagesEnum.DUTY} />
       </div>
       <div className="flex items-center justify-between gap-3">
         <PageItem type={menuPagesEnum.WORK_PROCESS} />
