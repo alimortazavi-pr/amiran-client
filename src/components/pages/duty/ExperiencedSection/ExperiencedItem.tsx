@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 interface IProps {
   index: number;
 }
-export const TeamItem: FC<IProps> = ({ index }) => {
+export const ExperiencedItem: FC<IProps> = ({ index }) => {
   //Responsive
   const isLg = useMediaQuery({
     query: "(min-width: 1024px)",
@@ -23,7 +23,7 @@ export const TeamItem: FC<IProps> = ({ index }) => {
     } else if (!isLg && index > 9) {
       return "rounded-b-full";
     }
-  }, [isLg, index]);
+  }, [isLg, index]); 
 
   return (
     <div className="col-span-1 aspect-square">

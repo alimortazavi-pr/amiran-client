@@ -4,11 +4,11 @@ import { Button } from "@heroui/react";
 import { ArrowRight } from "iconsax-react";
 
 //Components
-import { TeamContainer } from ".";
+import { ExperiencedContainer } from ".";
 
-export const TeamSectionContainer = () => {
+export const ExperiencedSectionContainer = () => {
   return (
-    <section aria-label="team section">
+    <section aria-label="experienced section">
       <div className="flex flex-col gap-1 items-center mb-10">
         <h6 className="text-primary tracking-widest text-center text-xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light uppercase lg:mb-4 xl:mb-8 2xl:mb-12">
           Experienced employees of the company
@@ -22,7 +22,7 @@ export const TeamSectionContainer = () => {
           MORE
         </Button>
       </div>
-      <TeamContainer />
+      <ExperiencedContainer />
     </section>
   );
 };

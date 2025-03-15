@@ -3,7 +3,7 @@ import { NavbarContainer } from "@/components/pages/home/Navbar";
 import { HeroSectionContainer } from "./HeroSection";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { ProjectsSectionContainer } from "./ProjectsSection";
-import { TeamSectionContainer } from "./TeamSection";
+import { ExperiencedSectionContainer } from "./ExperiencedSection";
 import { ServicesSectionContainer } from "./ServicesSection";
 import { VideoSectionContainer } from "./VideoSection";
 import { FooterLogoContainer } from "@/components/common/FooterLogo";
@@ -16,7 +16,7 @@ export const HomePage = () => {
       <RailSpacerContainer />
       <ProjectsSectionContainer />
       <RailSpacerContainer />
-      <TeamSectionContainer />
+      <ExperiencedSectionContainer />
       <RailSpacerContainer />
       <ServicesSectionContainer />
       <VideoSectionContainer />

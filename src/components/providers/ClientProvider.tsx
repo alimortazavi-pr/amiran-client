@@ -21,7 +21,7 @@ export const ClientProvider: FC<PropsWithChildren> = ({ children }) => {
         </Suspense>
         <ProgressBar
           height="3px"
-          color="#00898F"
+          color="#1D363D"
           options={{ showSpinner: false }}
           shallowRouting
         />

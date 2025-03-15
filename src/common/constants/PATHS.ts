@@ -3,7 +3,7 @@ export const PATHS = {
   PROJECTS: "/projects",
   PROJECT: (projectId: string) => `/projects/${projectId}`,
   SERVICES: "/services",
-  DUTY: "#",
+  DUTY: "/duty",
   WORK_PROCESS: "#",
   WHY_AMIRAN: "#",
   CONTACT_US: "#",

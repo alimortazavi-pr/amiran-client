@@ -1,7 +1,7 @@
 import { Button } from "@heroui/react";
 import { FC, useMemo } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next-nprogress-bar";
 
 //Enums
 import { menuPagesEnum } from "@/common/enums";
@@ -27,6 +27,9 @@ interface IProps {
 export const PageItem: FC<IProps> = ({ type }) => {
   //Redux
   const dispatch = useAppDispatch();
+
+  //Next
+  const router = useRouter();
 
   //Life cycle
   const { title, icon, path } = useMemo(() => {
@@ -78,15 +81,14 @@ export const PageItem: FC<IProps> = ({ type }) => {
 
   //Functions
   function onClickHandler() {
+    router.push(path);
     dispatch(setIsOpenMenu(false));
   }
 
   return (
     <Button
-      className="flex flex-col items-center p-0 min-w-0 min-h-0 w-auto h-auto"
+      className="flex flex-col items-center p-0 min-w-0 min-h-0 w-auto h-auto rounded-sm"
       variant="light"
-      as={Link}
-      href={path}
       onPress={onClickHandler}
     >
       <div className="w-20 h-20 relative">
