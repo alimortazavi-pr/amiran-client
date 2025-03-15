@@ -6,5 +6,5 @@ export const PATHS = {
   DUTY: "/duty",
   WORK_PROCESS: "#",
   WHY_AMIRAN: "#",
-  CONTACT_US: "#",
+  CONTACT_US: "/contact-us",
 };
