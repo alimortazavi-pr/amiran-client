@@ -1,8 +1,5 @@
 "use client";
 
-import { Button } from "@heroui/react";
-import { ArrowRight } from "iconsax-react";
-
 //Components
 import { ExperiencedContainer } from ".";
 

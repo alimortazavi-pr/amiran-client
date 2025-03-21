@@ -1,6 +1,3 @@
-import serviceFourSVG from "@/assets/svgs/services/service_4.svg";
-import Image from "next/image";
-
 export const ItemFour = () => {
   return (
     <div className="col-span-12 lg:col-span-6">

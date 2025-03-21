@@ -28,6 +28,7 @@ export const MenuModalContainer = () => {
     } else if (!isOpenMenu && isOpen) {
       onClose();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpenMenu]);
 
   //Functions
