@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { Modal, ModalBody, ModalContent, useDisclosure } from "@heroui/react";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerBody,
+  useDisclosure,
+} from "@heroui/react";
 import { useMediaQuery } from "react-responsive";
 
 //Redux
@@ -12,7 +17,7 @@ import { setIsOpenMenu } from "@/stores/layouts/actions";
 //Components
 import { MenuContainer } from ".";
 
-export const MenuModalContainer = () => {
+export const MenuDrawerContainer = () => {
   //Redux
   const dispatch = useAppDispatch();
   const isOpenMenu = useAppSelector(isOpenMenuSelector);
@@ -27,9 +32,9 @@ export const MenuModalContainer = () => {
 
   //Lifecycle
   useEffect(() => {
-    if (!isMd && isOpenMenu && !isOpen) {
+    if (isMd && isOpenMenu && !isOpen) {
       onOpen();
-    } else if (!isMd && !isOpenMenu && isOpen) {
+    } else if (isMd && !isOpenMenu && isOpen) {
       onClose();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -41,17 +46,16 @@ export const MenuModalContainer = () => {
   }
 
   return (
-    <Modal
+    <Drawer
       isOpen={isOpen}
       onOpenChange={onOpenChange}
       onClose={onCloseHandler}
-      size="full"
     >
-      <ModalContent>
-        <ModalBody className="p-0">
+      <DrawerContent>
+        <DrawerBody className="p-0">
           <MenuContainer />
-        </ModalBody>
-      </ModalContent>
-    </Modal>
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
   );
 };

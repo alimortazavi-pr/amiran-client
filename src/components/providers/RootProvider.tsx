@@ -17,7 +17,7 @@ import { useAppSelector } from "@/stores/hooks";
 import { languageSelector } from "@/stores/layouts/selectors";
 
 //Components
-import { MenuModalContainer } from "../common/MenuModal";
+import { MenuDrawerContainer, MenuModalContainer } from "../common/MenuModal";
 
 //Utils
 
@@ -27,8 +27,9 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      <div className="overflow-x-hidden container p-8 lg:p-12 mx-auto">{children}</div>
+      <div className="overflow-x-hidden container max-w-screen-xl p-8 lg:p-12 mx-auto">{children}</div>
       <MenuModalContainer />
+      <MenuDrawerContainer />
       <ToastContainer
         hideProgressBar
         newestOnTop

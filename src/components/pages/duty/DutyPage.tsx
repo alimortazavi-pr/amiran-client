@@ -20,9 +20,14 @@ export const DutyPage = () => {
       <NavbarContainer />
       <div className="px-4 overflow-hidden">
         <TitleSection />
+        <div className="hidden md:block">
+          <AmiranLogoSection />
+        </div>
         <DescriptionSection />
         <RailSpacerContainer count={3} />
-        <AmiranLogoSection />
+        <div className="md:hidden">
+          <AmiranLogoSection />
+        </div>
         <ChartSection />
         <Description2Section />
         <RailSpacerContainer count={3} />

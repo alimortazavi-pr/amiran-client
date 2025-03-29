@@ -13,7 +13,9 @@ export const ProjectsPage = () => {
         <TitleSection />
         <ItemsContainer />
         <VideoSection />
-        <RailSpacerContainer count={3} />
+        <div className="lg:hidden">
+          <RailSpacerContainer count={3} />
+        </div>
         <BackToPreviousPageBtn />
       </div>
     </div>

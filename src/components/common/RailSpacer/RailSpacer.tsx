@@ -10,7 +10,7 @@ interface IProps {
 export const RailSpacer: FC<IProps> = ({ size }) => {
   return (
     <div
-      className={`${!size && "w-12 h-12 lg:w-24 lg:h-24"} relative`}
+      className={`${!size && "w-12 h-12 lg:w-16 lg:h-16"} relative`}
       style={{ width: size, height: size }}
     >
       <Image src={railSpacer} alt="rail-spacer" fill />

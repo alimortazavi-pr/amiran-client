@@ -19,9 +19,9 @@ export const SingleItem = () => {
   };
 
   return (
-    <div className="col-span-6">
+    <div className="col-span-6 md:col-span-4">
       <div
-        className="w-full h-48 relative cursor-pointer"
+        className="w-full h-48 md:h-72 lg:h-96 xl:h-[460px] relative cursor-pointer"
         onClick={handleProjectClick}
       >
         <Image src={projectItemTestImage} alt="single project" fill />
