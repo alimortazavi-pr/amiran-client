@@ -14,7 +14,7 @@ export const ServicesPage = () => {
         <DescriptionSection />
         <VideoSection />
         <ItemsContainer />
-        <RailSpacerContainer count={3} />
+        <RailSpacerContainer />
         <BackToPreviousPageBtn />
       </div>
     </div>

@@ -10,7 +10,7 @@ import { FooterLogoContainer } from "@/components/common/FooterLogo";
 
 export const HomePage = () => {
   return (
-    <div className="max-w-[330px] lg:max-w-max mx-auto">
+    <div className="">
       <NavbarContainer />
       <HeroSectionContainer />
       <RailSpacerContainer />

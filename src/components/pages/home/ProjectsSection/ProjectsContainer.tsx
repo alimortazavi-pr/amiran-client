@@ -8,8 +8,8 @@ import { ProjectItem } from ".";
 
 export const ProjectsContainer = () => {
   //Responsive
-  const isLg = useMediaQuery({
-    query: "(min-width: 1024px)",
+  const isMd = useMediaQuery({
+    query: "(min-width: 768px)",
   });
 
   //States
@@ -25,7 +25,7 @@ export const ProjectsContainer = () => {
       <div className="grid grid-cols-4 gap-5 lg:gap-20 xl:gap-28 2xl:gap-40 px-10">
         <ProjectItem />
         <ProjectItem />
-        {isLg && (
+        {isMd && (
           <>
             <ProjectItem />
             <ProjectItem />

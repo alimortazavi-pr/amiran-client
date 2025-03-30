@@ -28,7 +28,7 @@ export const ProjectPage = () => {
         <FeaturesContainer />
         <DirectionsBtn />
         <div className="md:hidden">
-          <RailSpacerContainer count={3} />
+          <RailSpacerContainer />
         </div>
         <div className="md:mt-32">
           <BackToPreviousPageBtn

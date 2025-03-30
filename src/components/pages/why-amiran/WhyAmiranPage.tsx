@@ -20,14 +20,14 @@ export const WhyAmiranPage = () => {
       <div className="px-4 overflow-hidden">
         <TitleSection />
         <DescriptionSection />
-        <RailSpacerContainer count={3} />
+        <RailSpacerContainer />
         <VideoSection />
         <FeatureContainer />
         <SafetySectionContainer />
         <UpToDateFeatureSectionContainer />
         <ReportsFeatureSectionContainer />
         <FeatureDescription />
-        <RailSpacerContainer count={3} />
+        <RailSpacerContainer />
         <BackToPreviousPageBtn />
       </div>
     </div>

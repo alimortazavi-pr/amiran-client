@@ -24,18 +24,18 @@ export const DutyPage = () => {
           <AmiranLogoSection />
         </div>
         <DescriptionSection />
-        <RailSpacerContainer count={3} />
+        <RailSpacerContainer />
         <div className="md:hidden">
           <AmiranLogoSection />
         </div>
         <ChartSection />
         <Description2Section />
-        <RailSpacerContainer count={3} />
+        <RailSpacerContainer />
         <ExperiencedSectionContainer />
         <Description3Section />
         <TeamContainer />
         <VideoSection />
-        <RailSpacerContainer count={3} />
+        <RailSpacerContainer />
         <BackToPreviousPageBtn />
       </div>
     </div>
