@@ -9,7 +9,7 @@ export const DirectionsBtn = () => {
       <Button
         aria-label="go to directions"
         startContent={<Map className="w-5 h-5" color="white" />}
-        className="rounded-full bg-primary/30 text-default-50 w-full max-w-60"
+        className="rounded-full bg-primary/30 text-default-50 w-full max-w-60 lg:max-w-80 lg:h-12 lg:text-lg"
       >
         Get directions
       </Button>

@@ -2,7 +2,7 @@ import { FeatureItem } from ".";
 
 export const FeaturesContainer = () => {
   return (
-    <div className="grid grid-cols-12 gap-y-10 mb-24">
+    <div className="grid grid-cols-12 gap-y-10 md:gap-x-10 md:px-5 lg:gap-x-14 xl:gap-x-16 mb-24">
       <FeatureItem title="USAGE" content="COMMERCIAL,RESIDENTIAL" />
       <FeatureItem title="LOCATION" content="BOLVAR AMIN" />
       <FeatureItem title="LAND ARE" content="300 M2" />

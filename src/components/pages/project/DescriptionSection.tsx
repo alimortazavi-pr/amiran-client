@@ -1,15 +1,30 @@
-import Image from "next/image";
-
-//Assets
-import curveText from "@/assets/svgs/projects/project/curve-text-project-test.svg";
-
 export const DescriptionSection = () => {
   return (
-    <div className="flex flex-col gap-5 mb-12 px-5">
-      <h4 className="font-semibold text-lg text-center">PROJECT INFORMATION</h4>
-      <div className="relative w-full h-64">
-        <Image src={curveText} alt="curve text" fill />
-      </div>
+    <div className="flex flex-col gap-5 px-5 md:max-w-[50%]">
+      <h4 className="font-medium text-xl text-center md:text-2xl lg:text-3xl xl:text-4xl">
+        Lorem ipsum dolor
+      </h4>
+      <p className="text-justify font-normal text-primary/30 md:text-lg xl:text-xl line-clamp-[12] xl:line-clamp-[15]">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit
+        consectetur reprehenderit id necessitatibus totam ex repudiandae
+        expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit
+        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
+        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis        expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit
+        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
+        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis        expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit
+        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
+        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis        expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit
+        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
+        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
+      </p>
     </div>
   );
 };

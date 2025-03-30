@@ -19,17 +19,23 @@ export const ProjectPage = () => {
     <div className="px-3">
       <NavbarContainer />
       <div className="overflow-hidden">
-        <ImagesSection />
-        <DescriptionSection />
+        <div className="md:flex items-start">
+          <ImagesSection />
+          <DescriptionSection />
+        </div>
         <VideoSection />
         <PlanImagesContainer />
         <FeaturesContainer />
         <DirectionsBtn />
-        <RailSpacerContainer count={3} />
-        <BackToPreviousPageBtn
-          content="BACK TO PROJECTS"
-          previousPath={PATHS.PROJECTS}
-        />
+        <div className="md:hidden">
+          <RailSpacerContainer count={3} />
+        </div>
+        <div className="md:mt-32">
+          <BackToPreviousPageBtn
+            content="BACK TO PROJECTS"
+            previousPath={PATHS.PROJECTS}
+          />
+        </div>
       </div>
     </div>
   );
