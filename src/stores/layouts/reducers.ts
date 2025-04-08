@@ -24,6 +24,15 @@ const reducers = {
       isOpenMenu: action.payload,
     };
   },
+  setIsOpenSearch(
+    state: ILayoutsState,
+    action: PayloadAction<boolean>
+  ): ILayoutsState {
+    return {
+      ...state,
+      isOpenSearch: action.payload,
+    };
+  },
 };
 
 export default reducers;

@@ -1,5 +1,5 @@
 //Components
-import { NavbarContainer } from "./Navbar";
+import { NavbarContainer } from "@/components/common/Navbar";
 import {
   AmiranLogoSection,
   ChartSection,

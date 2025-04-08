@@ -1,12 +1,26 @@
 "use client";
 
+import { useMediaQuery } from "react-responsive";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "iconsax-react";
+import Link from "next/link";
 
 //Components
 import { ExperiencedContainer } from ".";
 
+//Constants
+import { PATHS } from "@/common/constants";
+
 export const ExperiencedSectionContainer = () => {
+  //Responsive
+  const isLg = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+
+  const isXl = useMediaQuery({
+    query: "(min-width: 1440px)",
+  });
+
   return (
     <section aria-label="experienced section">
       <div className="flex flex-col gap-1 items-center mb-10">
@@ -16,8 +30,10 @@ export const ExperiencedSectionContainer = () => {
         <Button
           color="primary"
           variant="light"
-          size="sm"
+          size={isLg ? "md" : isXl ? "lg" : "sm"}
           endContent={<ArrowRight className="w-3 h-3" color="#1D363D" />}
+          as={Link}
+          href={PATHS.DUTY}
         >
           MORE
         </Button>

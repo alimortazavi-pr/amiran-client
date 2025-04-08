@@ -1,12 +1,26 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "iconsax-react";
+import { useMediaQuery } from "react-responsive";
 
 //Components
 import { ProjectsContainer } from ".";
 
+//Constants
+import { PATHS } from "@/common/constants";
+
 export const ProjectsSectionContainer = () => {
+  //Responsive
+  const isLg = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+
+  const isXl = useMediaQuery({
+    query: "(min-width: 1440px)",
+  });
+
   return (
     <section aria-label="projects section">
       <div className="flex flex-col gap-1 items-center mb-20">
@@ -16,8 +30,10 @@ export const ProjectsSectionContainer = () => {
         <Button
           color="primary"
           variant="light"
-          size="sm"
+          size={isLg ? "md" : isXl ? "lg" : "sm"}
           endContent={<ArrowRight className="w-3 h-3" color="#1D363D" />}
+          as={Link}
+          href={PATHS.PROJECTS}
         >
           MORE
         </Button>

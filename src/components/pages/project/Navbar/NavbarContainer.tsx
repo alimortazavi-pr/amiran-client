@@ -1,9 +1,38 @@
+"use client";
+
+import { useMediaQuery } from "react-responsive";
+
+//Components
+import { RailSpacer } from "@/components/common/RailSpacer";
 import { LogoSection } from ".";
 
 export const NavbarContainer = () => {
+  //Responsive
+  const isMd = useMediaQuery({
+    query: "(min-width: 768px)",
+  });
+
+  const isLg = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+
+  const isXl = useMediaQuery({
+    query: "(min-width: 1440px)",
+  });
+
   return (
-    <div className="flex justify-between gap-1 lg:gap-2 items-center pt-10 pb-16 md:mb-10">
+    <div className="flex items-center justify-center pt-10 pb-16 md:mb-10">
+      {Array.from({ length: isLg ? 4 : 2 }).map((_, index) => (
+        <div className="rotate-90">
+          <RailSpacer size={isXl ? 80 : isMd ? 65 : 29} />
+        </div>
+      ))}
       <LogoSection />
+      {Array.from({ length: isLg ? 4 : 2 }).map((_, index) => (
+        <div className="rotate-90">
+          <RailSpacer size={isXl ? 80 : isMd ? 65 : 29} />
+        </div>
+      ))}
     </div>
   );
 };

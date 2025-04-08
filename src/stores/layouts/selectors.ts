@@ -9,3 +9,7 @@ export function languageSelector(state: RootState): languagesType {
 export function isOpenMenuSelector(state: RootState): boolean {
   return state.layouts.isOpenMenu;
 }
+
+export function isOpenSearchSelector(state: RootState): boolean {
+  return state.layouts.isOpenSearch;
+}

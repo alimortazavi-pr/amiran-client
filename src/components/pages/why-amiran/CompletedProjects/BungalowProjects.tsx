@@ -3,10 +3,11 @@ import Image from "next/image";
 //Assets
 import fakeImg from "@/assets/svgs/fake-img.svg";
 
-export const ImagesSection = () => {
+export const BungalowProjects = () => {
   return (
-    <div className="w-full md:w-auto flex-1 mb-16 md:mb-0">
-      <div className="flex-1 grid grid-cols-3 grid-rows-10 gap-2 w-full h-64 px-5 md:h-96 xl:h-[500px]">
+    <div className="col-span-12 md:col-span-6">
+      <h6 className="font-bold uppercase mb-4 text-lg md:text-xl lg:text-2xl">BUNGALOW</h6>
+      <div className="flex-1 grid grid-cols-3 grid-rows-10 gap-2 w-full h-64 md:h-96 xl:h-[500px]">
         <div className="col-span-1 row-span-4 rounded-full overflow-hidden relative">
           <Image
             fill

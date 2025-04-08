@@ -1,5 +1,5 @@
 //Components
-import { NavbarContainer } from "./Navbar";
+import { NavbarContainer } from "@/components/common/Navbar";
 import { TitleSection, VideoSection } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";

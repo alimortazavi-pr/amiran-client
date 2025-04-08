@@ -1,5 +1,5 @@
 //Components
-import { NavbarContainer } from "./Navbar";
+import { NavbarContainer } from "@/components/common/Navbar";
 import { DescriptionSection, ImageSection, TitleSection } from ".";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 

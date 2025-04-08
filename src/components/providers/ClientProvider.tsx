@@ -10,21 +10,20 @@ import RootProvider from "./RootProvider";
 //Theme
 
 //ProgressBar
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import { ProgressProvider } from "@bprogress/next/app";
 
 export const ClientProvider: FC<PropsWithChildren> = ({ children }) => {
   return (
     <ReduxProvider>
       <NextUIProvider>
-        <Suspense fallback={<div></div>}>
-          <RootProvider>{children}</RootProvider>
-        </Suspense>
-        <ProgressBar
+        <ProgressProvider
           height="3px"
           color="#1D363D"
           options={{ showSpinner: false }}
           shallowRouting
-        />
+        >
+          <RootProvider>{children}</RootProvider>
+        </ProgressProvider>
       </NextUIProvider>
     </ReduxProvider>
   );

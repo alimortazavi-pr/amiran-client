@@ -1,7 +1,7 @@
 import { Button } from "@heroui/react";
 import { FC, useMemo } from "react";
 import Image from "next/image";
-import { useRouter } from "next-nprogress-bar";
+import { useRouter } from "@bprogress/next/app";
 
 //Enums
 import { menuPagesEnum } from "@/common/enums";
@@ -87,9 +87,10 @@ export const PageItem: FC<IProps> = ({ type }) => {
 
   return (
     <Button
-      className="flex flex-col items-center p-0 min-w-0 min-h-0 w-auto h-auto rounded-sm"
+      className="flex flex-col items-center p-0 min-w-0 min-h-0 w-auto h-auto rounded-sm hover:opacity-80"
       variant="light"
       onPress={onClickHandler}
+      data-hover={false}
     >
       <div className="w-20 h-20 relative">
         <Image src={icon} alt={title} fill />

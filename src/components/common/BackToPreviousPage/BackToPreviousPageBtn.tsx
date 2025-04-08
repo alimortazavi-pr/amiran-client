@@ -1,11 +1,12 @@
 "use client";
 
 import { Button } from "@heroui/react";
-import { useRouter } from "next-nprogress-bar";
+
 import { FC } from "react";
 
 //Constants
 import { PATHS } from "@/common/constants";
+import { useRouter } from "@bprogress/next/app";
 
 interface IProps {
   content?: string;

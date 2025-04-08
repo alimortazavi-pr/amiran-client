@@ -12,7 +12,7 @@ export const ItemThree = () => {
               SEDIGHIA<span className="!tracking-normal">N</span>
             </h6>
           </div>
-          <p className="text-primary/30 text-sm text-justify md:text-lg">
+          <p className="text-primary/30 text-sm text-justify md:text-lg font-light">
             sit amet, consecte tetuer adipiscing elit, sed diam nonummy nibh
             euismod tincidunt ut adipiscing elit, sed diam sed diam
           </p>
