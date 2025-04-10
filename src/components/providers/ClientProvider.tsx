@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, PropsWithChildren, Suspense } from "react";
+import { FC, PropsWithChildren } from "react";
 
 //Components
 import NextUIProvider from "./HeroUIProvider";

@@ -23,13 +23,13 @@ export const NavbarContainer = () => {
   return (
     <div className="flex items-center justify-center pt-10 pb-16 md:mb-10">
       {Array.from({ length: isLg ? 4 : 2 }).map((_, index) => (
-        <div className="rotate-90">
+        <div className="rotate-90" key={index}>
           <RailSpacer size={isXl ? 80 : isMd ? 65 : 29} />
         </div>
       ))}
       <LogoSection />
       {Array.from({ length: isLg ? 4 : 2 }).map((_, index) => (
-        <div className="rotate-90">
+        <div className="rotate-90" key={index}>
           <RailSpacer size={isXl ? 80 : isMd ? 65 : 29} />
         </div>
       ))}

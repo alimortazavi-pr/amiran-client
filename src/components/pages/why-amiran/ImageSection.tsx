@@ -1,5 +1,3 @@
-import { Play } from "iconsax-react";
-
 //Components
 import { RailSpacerHorizontal } from "@/components/common/RailSpacer";
 
@@ -11,8 +9,7 @@ export const ImageSection = () => {
         <RailSpacerHorizontal />
         <RailSpacerHorizontal />
       </div>
-      <div className="md:h-52 w-full max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] h-36 lg:h-52 xl:h-72 2xl:h-80 bg-primary/30 flex items-center justify-center rounded-full">
-      </div>
+      <div className="md:h-52 w-full max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] h-36 lg:h-52 xl:h-72 2xl:h-80 bg-primary/30 flex items-center justify-center rounded-full"></div>
       <div className="flex-auto h-10 items-center hidden lg:flex">
         <RailSpacerHorizontal />
         <RailSpacerHorizontal />
