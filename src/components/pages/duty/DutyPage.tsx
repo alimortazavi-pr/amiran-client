@@ -7,12 +7,12 @@ import {
   Description2Section,
   DescriptionSection,
   TitleSection,
-  VideoSection,
 } from ".";
 import { TeamContainer } from "./TeamSection";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 import { ExperiencedSectionContainer } from "./ExperiencedSection";
+import { VideoSectionContainer } from "../home/VideoSection";
 
 export const DutyPage = () => {
   return (
@@ -34,7 +34,7 @@ export const DutyPage = () => {
         <ExperiencedSectionContainer />
         <Description3Section />
         <TeamContainer />
-        <VideoSection />
+        <VideoSectionContainer />
         <RailSpacerContainer />
         <BackToPreviousPageBtn />
       </div>

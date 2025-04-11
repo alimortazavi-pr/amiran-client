@@ -1,9 +1,10 @@
 //Components
 import { NavbarContainer } from "@/components/common/Navbar";
-import { TitleSection, VideoSection } from ".";
+import { TitleSection } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 import { ItemsContainer } from "./items";
+import { VideoSectionContainer } from "../home/VideoSection";
 
 export const ProjectsPage = () => {
   return (
@@ -12,7 +13,7 @@ export const ProjectsPage = () => {
       <div className="px-4 overflow-hidden">
         <TitleSection />
         <ItemsContainer />
-        <VideoSection />
+        <VideoSectionContainer />
         <div className="lg:hidden">
           <RailSpacerContainer />
         </div>

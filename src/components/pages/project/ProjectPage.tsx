@@ -4,7 +4,6 @@ import {
   DescriptionSection,
   DirectionsBtn,
   ImagesSection,
-  VideoSection,
 } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
@@ -13,6 +12,7 @@ import { FeaturesContainer } from "./Features";
 
 //Constants
 import { PATHS } from "@/common/constants";
+import { VideoSectionContainer } from "../home/VideoSection";
 
 export const ProjectPage = () => {
   return (
@@ -23,7 +23,7 @@ export const ProjectPage = () => {
           <ImagesSection />
           <DescriptionSection />
         </div>
-        <VideoSection />
+        <VideoSectionContainer />
         <PlanImagesContainer />
         <FeaturesContainer />
         <DirectionsBtn />
