@@ -4,10 +4,10 @@ import { Pause, Play, VideoSquare } from "iconsax-react";
 import { useEffect, useRef, useState } from "react";
 
 //Components
-import { RailSpacerHorizontal } from "@/components/common/RailSpacer";
+import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { Button } from "@heroui/react";
 
-export const VideoSectionContainer = () => {
+export const VideoSection = () => {
   //States
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -50,13 +50,11 @@ export const VideoSectionContainer = () => {
   }
 
   return (
-    <div className="w-full h-full flex items-center justify-center px-4 my-14 lg:my-36 xl:my-48 2xl:my-60 gap-8">
-      <div className="flex-auto h-10 items-center hidden lg:flex">
-        <RailSpacerHorizontal />
-        <RailSpacerHorizontal />
-        <RailSpacerHorizontal />
+    <div className="w-full h-full lg:w-auto flex flex-col items-center justify-center px-4 my-14 lg:my-0 gap-8 lg:mt-16">
+      <div className="hidden lg:block">
+        <RailSpacerContainer hasMy={false} />
       </div>
-      <div className="w-full max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] h-36 md:h-52 lg:h-60 xl:h-72 2xl:h-80 bg-primary/30 flex items-center justify-center rounded-full relative group">
+      <div className="w-full max-w-[500px] h-36 md:h-52 lg:w-52 lg:h-[500px] xl:w-60 xl:h-[550px] bg-primary/30 flex items-center justify-center rounded-full relative group">
         <video
           ref={videoRef}
           src="https://berimcafe-icons.s3.ir-thr-at1.arvanstorage.ir/Final%20-%20es2.mp4"
@@ -96,10 +94,8 @@ export const VideoSectionContainer = () => {
           />
         </Button>
       </div>
-      <div className="flex-auto h-10 items-center hidden lg:flex">
-        <RailSpacerHorizontal />
-        <RailSpacerHorizontal />
-        <RailSpacerHorizontal />
+      <div className="hidden lg:block">
+        <RailSpacerContainer hasMy={false} />
       </div>
     </div>
   );
