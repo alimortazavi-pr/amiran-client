@@ -19,7 +19,7 @@ export const ProjectItem = () => {
 
   return (
     <div className="col-span-2 md:col-span-1">
-      <div className="w-full h-48 lg:h-56 xl:h-80 relative" onClick={handleProjectClick}>
+      <div className="w-full h-48 lg:h-56 xl:h-80 2xl:h-96 relative" onClick={handleProjectClick}>
         <Image src={projectItemTestImage} alt="single project" fill />
       </div>
     </div>
