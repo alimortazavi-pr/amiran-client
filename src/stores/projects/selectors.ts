@@ -1,7 +1,13 @@
 //Types
-// import { IHomeState } from "@/common/interfaces";
-// import { RootState } from "@/stores/index";
+import { IProjectsState } from "@/common/interfaces";
+import { RootState } from "@/stores/index";
 
-// export function heroImagesSelector(state: RootState): IHomeState["heroImages"] {
-//   return state.home.heroImages;
-// }
+export function formSelector(state: RootState): IProjectsState["form"] {
+  return state.projects.form;
+}
+
+export function editSectionSelector(
+  state: RootState
+): IProjectsState["editSection"] {
+  return state.projects.editSection;
+}

@@ -1,5 +1,9 @@
 export interface IProjectsState {
-  totalItems?: number;
+  form: IProjectForm;
+  editSection: {
+    label: string;
+    value: keyof IProjectForm | undefined;
+  };
 }
 
 export interface IProject {
@@ -34,4 +38,20 @@ export interface IPlanImage {
   _id: string;
   project: string;
   url: string;
+}
+
+export interface IProjectForm {
+  slug: string;
+  description: string;
+  isPublished: boolean;
+  usage: string;
+  location: string;
+  landArea: string;
+  totalBuiltArea: string;
+  numberOfFloors: string;
+  numberOfUnits: string;
+  unitArea: string;
+  numberOfUnitsPerFloor: string;
+  directions: string;
+  deleted: boolean;
 }

@@ -2,8 +2,15 @@
 
 import { Button } from "@heroui/react";
 import { Map } from "iconsax-react";
+import { FC } from "react";
 
-export const DirectionsBtn = () => {
+//Interfaces
+import { IProject } from "@/common/interfaces";
+
+interface IProps {
+  project: IProject;
+}
+export const DirectionsBtn: FC<IProps> = () => {
   return (
     <div className="flex justify-center">
       <Button

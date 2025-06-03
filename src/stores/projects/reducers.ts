@@ -1,19 +1,31 @@
 //Types
-// import { IHomeState } from "@/common/interfaces";
-// import { PayloadAction } from "@reduxjs/toolkit";
+import { IProjectsState } from "@/common/interfaces";
+import { PayloadAction } from "@reduxjs/toolkit";
 
 //Tools
 
 const reducers = {
-  // setHeroImages(
-  //   state: IHomeState,
-  //   action: PayloadAction<IHomeState["heroImages"]>
-  // ): IHomeState {
-  //   return {
-  //     ...state,
-  //     heroImages: action.payload,
-  //   };
-  // },
+  setForm(
+    state: IProjectsState,
+    action: PayloadAction<IProjectsState["form"]>
+  ): IProjectsState {
+    return {
+      ...state,
+      form: {
+        ...state.form,
+        ...action.payload,
+      },
+    };
+  },
+  setEditSection(
+    state: IProjectsState,
+    action: PayloadAction<IProjectsState["editSection"]>
+  ): IProjectsState {
+    return {
+      ...state,
+      editSection: action.payload,
+    };
+  },
 };
 
 export default reducers;

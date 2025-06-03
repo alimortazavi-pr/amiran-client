@@ -16,7 +16,7 @@ export const PlanImage: FC<IProps> = ({ plan }) => {
       <div className="w-full aspect-square relative">
         <Image
           src={`${BASE_API_URL}${plan.url}`}
-          alt="text plan"
+          alt={plan.url}
           fill
           className="object-cover object-center"
         />

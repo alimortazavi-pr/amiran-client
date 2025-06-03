@@ -6,7 +6,7 @@ import { AppThunk } from "@/stores";
 import { projectsReducer } from ".";
 
 //Actions from reducer
-export const {} = projectsReducer.actions;
+export const { setForm, setEditSection } = projectsReducer.actions;
 
 //Interfaces
 import { IProject } from "@/common/interfaces";
@@ -95,6 +95,24 @@ export function uploadProjectPlansAction(
           Authorization: `Bearer ${getState().auth.token}`,
         },
       });
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function updateProjectAction(projectSlug: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(
+        `/admin/projects/${projectSlug}`,
+        getState().projects.form,
+        {
+          headers: {
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      );
     } catch (error: any) {
       throw new Error(error.response.data.message);
     }
