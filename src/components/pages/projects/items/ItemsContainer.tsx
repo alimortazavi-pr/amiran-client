@@ -1,20 +1,21 @@
-'use client'
+"use client";
 
-import { useMediaQuery } from "react-responsive";
+import { FC } from "react";
+
+//Interfaces
+import { IProject } from "@/common/interfaces";
 
 //Components
 import { SingleItem } from ".";
 
-export const ItemsContainer = () => {
-  //Responsive
-  const isMd = useMediaQuery({
-    query: "(min-width: 768px)",
-  });
-
+interface IProps {
+  projects: IProject[];
+}
+export const ItemsContainer: FC<IProps> = ({ projects }) => {
   return (
     <div className="grid grid-cols-12 gap-y-10 md:gap-y-16 lg:gap-y-20 xl:gap-y-24 gap-x-5">
-      {Array.from({ length: isMd ? 15 : 10 }).map((_, index) => (
-        <SingleItem key={index} />
+      {projects?.map((project) => (
+        <SingleItem key={project._id} project={project} />
       ))}
     </div>
   );

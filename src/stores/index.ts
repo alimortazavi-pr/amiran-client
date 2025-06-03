@@ -5,6 +5,7 @@ import layouts from "./layouts";
 import auth from "./auth";
 import profile from "./profile";
 import home from "./home";
+import projects from "./projects";
 
 export function makeStore() {
   return configureStore({
@@ -13,6 +14,7 @@ export function makeStore() {
       auth: auth,
       profile: profile,
       home: home,
+      projects: projects,
     },
   });
 }
