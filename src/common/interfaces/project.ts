@@ -18,21 +18,20 @@ export interface IProject {
   unitArea: string;
   numberOfUnitsPerFloor: string;
   directions: string;
-  images: ProjectImage[];
-  plans: PlanImage[];
+  images: IProjectImage[];
+  plans: IPlanImage[];
   deleted: boolean;
 }
 
-export interface ProjectImage {
+export interface IProjectImage {
   _id: string;
   project: string;
   url: string;
   weight: string;
 }
 
-export interface PlanImage {
+export interface IPlanImage {
   _id: string;
   project: string;
   url: string;
-  weight: string;
 }

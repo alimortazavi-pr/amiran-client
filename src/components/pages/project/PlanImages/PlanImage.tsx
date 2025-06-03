@@ -1,14 +1,21 @@
 import Image from "next/image";
+import { FC } from "react";
 
-//Assets
-import fakeImg from "@/assets/svgs/fake-img.svg";
+//Interfaces
+import { IPlanImage } from "@/common/interfaces";
 
-export const PlanImage = () => {
+//Constants
+import { BASE_API_URL } from "@/common/constants";
+
+interface IProps {
+  plan: IPlanImage;
+}
+export const PlanImage: FC<IProps> = ({ plan }) => {
   return (
     <div className="col-span-12 md:col-span-4">
       <div className="w-full aspect-square relative">
         <Image
-          src={fakeImg}
+          src={`${BASE_API_URL}${plan.url}`}
           alt="text plan"
           fill
           className="object-cover object-center"

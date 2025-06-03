@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@heroui/react";
 import { Edit } from "iconsax-react";
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
+import { toast } from "react-toastify";
 
 //Redux
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
@@ -16,7 +17,8 @@ import {
 
 //Assets
 import fakeImg from "@/assets/svgs/fake-img.svg";
-import { toast } from "react-toastify";
+
+//Constants
 import { BASE_API_URL } from "@/common/constants";
 
 export const ImagesSection = () => {

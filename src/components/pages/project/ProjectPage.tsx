@@ -24,11 +24,11 @@ export const ProjectPage: FC<IProps> = ({ project }) => {
       <NavbarContainer project={project} />
       <div className="overflow-hidden">
         <div className="md:flex items-start">
-          <ImagesSection />
+          <ImagesSection project={project} />
           <DescriptionSection />
         </div>
         <VideoSectionContainer />
-        <PlanImagesContainer />
+        <PlanImagesContainer project={project} />
         <FeaturesContainer />
         <DirectionsBtn />
         <div className="md:hidden">

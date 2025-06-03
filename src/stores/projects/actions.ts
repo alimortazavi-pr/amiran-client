@@ -9,6 +9,7 @@ import { projectsReducer } from ".";
 export const {} = projectsReducer.actions;
 
 //Interfaces
+import { IProject } from "@/common/interfaces";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -61,29 +62,15 @@ export function upsertLogoProject(form: FormData, slug: string): AppThunk {
   };
 }
 
-export function fetchHeroImagesAction(): AppThunk {
-  return async () => {
-    try {
-      const res = await axiosInstance.get(`/hero-images`);
-      if (res.data.images?.length) {
-        // await dispatch(setHeroImages(res.data.images));
-      }
-    } catch (err: any) {
-      console.log(err);
-      throw new Error(err.response.data.message);
-    }
-  };
-}
-
-export function upsertHeroImageAction(
+export function upsertProjectImagesAction(
+  project: IProject,
   form: FormData,
-  weight: string,
-  isExist: boolean = false
+  weight: string
 ): AppThunk {
   return async (dispatch, getState) => {
     try {
-       await axiosInstance.post(
-        `/admin/projects/hero-images/${weight}`,
+      await axiosInstance.post(
+        `/admin/projects/images/${project.slug}/${weight}`,
         form,
         {
           headers: {
@@ -91,19 +78,23 @@ export function upsertHeroImageAction(
           },
         }
       );
-      if (isExist) {
-        // await dispatch(
-        //   setHeroImages([
-        //     ...getState().projects.heroImages.map((hi) =>
-        //       hi.weight === weight ? res.data.image : hi
-        //     ),
-        //   ])
-        // );
-      } else {
-        // await dispatch(
-        //   setHeroImages([...getState().projects.heroImages, res.data.image])
-        // );
-      }
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function uploadProjectPlansAction(
+  projectSlug: string,
+  form: FormData
+): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.post(`/admin/projects/plans/${projectSlug}`, form, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
     } catch (error: any) {
       throw new Error(error.response.data.message);
     }
