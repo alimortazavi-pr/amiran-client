@@ -115,6 +115,9 @@ export const EditProjectModal = () => {
               size="lg"
               className="w-full"
               isLoading={isLoading}
+              isDisabled={
+                !(form[editSection.value as keyof typeof form] as string)
+              }
             >
               Submit
             </Button>
