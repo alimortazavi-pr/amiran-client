@@ -12,7 +12,7 @@ import { axiosInstance } from "@/common/axiosInstance";
 async function getProjects() {
   let projects: IProject[] = [];
   try {
-    const res = await axiosInstance.get(`/admin/projects`, {
+    const res = await axiosInstance.get(`/admin/projects?limit=9999`, {
       headers: {
         Authorization: `Bearer ${(await cookies()).get("token")?.value}`,
       },

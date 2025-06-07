@@ -4,6 +4,10 @@ import Link from "next/link";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "iconsax-react";
 import { useMediaQuery } from "react-responsive";
+import { FC } from "react";
+
+//Interfaces
+import { IProject } from "@/common/interfaces";
 
 //Components
 import { ProjectsContainer } from ".";
@@ -11,7 +15,10 @@ import { ProjectsContainer } from ".";
 //Constants
 import { PATHS } from "@/common/constants";
 
-export const ProjectsSectionContainer = () => {
+interface IProps {
+  projects: IProject[];
+}
+export const ProjectsSectionContainer: FC<IProps> = ({ projects }) => {
   //Responsive
   const isLg = useMediaQuery({
     query: "(min-width: 1024px)",
@@ -38,7 +45,7 @@ export const ProjectsSectionContainer = () => {
           MORE
         </Button>
       </div>
-      <ProjectsContainer />
+      <ProjectsContainer projects={projects} />
     </section>
   );
 };

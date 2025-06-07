@@ -1,37 +1,28 @@
 "use client";
 
+import { FC } from "react";
 import { useMediaQuery } from "react-responsive";
-import { useEffect, useState } from "react";
+
+//Interfaces
+import { IProject } from "@/common/interfaces";
 
 //Components
 import { ProjectItem } from ".";
 
-export const ProjectsContainer = () => {
+interface IProps {
+  projects: IProject[];
+}
+export const ProjectsContainer: FC<IProps> = ({ projects }) => {
   //Responsive
   const isMd = useMediaQuery({
     query: "(min-width: 768px)",
   });
 
-  //States
-  const [isClient, setIsClient] = useState(false);
-
-  //LifeCycle
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
-    isClient && (
-      <div className="grid grid-cols-4 gap-5 lg:gap-20 xl:gap-28 2xl:gap-24 px-10 2xl:px-0">
-        <ProjectItem />
-        <ProjectItem />
-        {isMd && (
-          <>
-            <ProjectItem />
-            <ProjectItem />
-          </>
-        )}
-      </div>
-    )
+    <div className="grid grid-cols-4 gap-5 lg:gap-20 xl:gap-28 2xl:gap-24 px-10 2xl:px-0">
+      {projects?.slice(0, isMd ? 4 : 2).map((project) => (
+        <ProjectItem key={project._id} project={project} />
+      ))}
+    </div>
   );
 };
