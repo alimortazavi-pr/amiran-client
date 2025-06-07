@@ -18,6 +18,7 @@ import { PlanImagesContainer } from "./PlanImages";
 import { FeaturesContainer } from "./Features";
 import { VideoSectionContainer } from "../home/VideoSection";
 import { EditProjectModal } from "./EditProject";
+import { SettingBtn } from "./Setting";
 
 //Constants
 import { PATHS } from "@/common/constants";
@@ -75,6 +76,7 @@ export const ProjectPage: FC<IProps> = ({ project }) => {
         </div>
       </div>
       <EditProjectModal />
+      <SettingBtn />
     </div>
   );
 };
