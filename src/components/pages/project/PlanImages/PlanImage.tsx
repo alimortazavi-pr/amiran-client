@@ -5,7 +5,7 @@ import { FC } from "react";
 import { IPlanImage } from "@/common/interfaces";
 
 //Constants
-import { BASE_API_URL } from "@/common/constants";
+import { SERVER_BASE_API_URL } from "@/common/constants";
 
 interface IProps {
   plan: IPlanImage;
@@ -15,7 +15,7 @@ export const PlanImage: FC<IProps> = ({ plan }) => {
     <div className="col-span-12 md:col-span-4">
       <div className="w-full aspect-square relative">
         <Image
-          src={`${BASE_API_URL}${plan.url}`}
+          src={`${SERVER_BASE_API_URL}${plan.url}`}
           alt={plan.url}
           fill
           className="object-cover object-center"

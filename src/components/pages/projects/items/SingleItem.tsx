@@ -18,7 +18,7 @@ import { isAuthSelector } from "@/stores/auth/selectors";
 import projectItemTestImage from "@/assets/svgs/projects/project-item-test.svg";
 
 //Constants
-import { BASE_API_URL, PATHS } from "@/common/constants";
+import { SERVER_BASE_API_URL, PATHS } from "@/common/constants";
 import { upsertThumbnailProject } from "@/stores/projects/actions";
 
 interface IProps {
@@ -85,7 +85,7 @@ export const SingleItem: FC<IProps> = ({ project }) => {
       >
         {project.thumbnail ? (
           <Image
-            src={`${BASE_API_URL}${project.thumbnail}`}
+            src={`${SERVER_BASE_API_URL}${project.thumbnail}`}
             alt={project.slug}
             fill
           />

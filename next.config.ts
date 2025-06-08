@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
         hostname: "localhost",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "amiran-api.paradisecode.ir",
+        pathname: "**",
+      },
+      {
+        protocol: "http",
+        hostname: "amiran-back",
+        pathname: "**",
+      },
     ],
   },
   output: "standalone",
