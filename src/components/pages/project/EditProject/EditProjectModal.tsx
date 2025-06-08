@@ -20,6 +20,7 @@ import {
   setForm,
   updateProjectAction,
 } from "@/stores/projects/actions";
+import { PATHS } from "@/common/constants";
 
 export const EditProjectModal = () => {
   //Redux
@@ -75,7 +76,11 @@ export const EditProjectModal = () => {
       toast.success(`${editSection.label} has been uploaded`, {
         position: "top-center",
       });
-      router.refresh();
+      if (editSection.value === "slug") {
+        router.replace(PATHS.PROJECT(form.slug));
+      } else {
+        router.refresh();
+      }
       onCloseHandler();
     } catch (error: any) {
       toast.error(error.message, {

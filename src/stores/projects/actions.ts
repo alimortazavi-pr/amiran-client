@@ -118,3 +118,18 @@ export function updateProjectAction(projectSlug: string): AppThunk {
     }
   };
 }
+
+export function softDeleteProjectAction(slug: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.delete(`/admin/projects/${slug}/soft`, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
+    }
+  };
+}

@@ -1,4 +1,5 @@
 import {
+  Divider,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -6,6 +7,9 @@ import {
   UseDisclosureProps,
 } from "@heroui/react";
 import { FC } from "react";
+
+//Components
+import { ChangeSlugBtn, DeleteProjectBtn } from ".";
 
 interface IProps {
   onOpenChange: () => void;
@@ -15,12 +19,21 @@ export const SettingDrawer: FC<UseDisclosureProps & IProps> = ({
   onOpenChange,
 }) => {
   return (
-    <Drawer isOpen={isOpen} onOpenChange={onOpenChange} closeButton placement="left">
+    <Drawer
+      isOpen={isOpen}
+      onOpenChange={onOpenChange}
+      closeButton
+      placement="left"
+    >
       <DrawerContent>
-        {(onClose) => (
+        {() => (
           <>
             <DrawerHeader className="flex flex-col gap-1">Setting</DrawerHeader>
-            <DrawerBody></DrawerBody>
+            <DrawerBody className="">
+              <ChangeSlugBtn />
+              <Divider />
+              <DeleteProjectBtn />
+            </DrawerBody>
           </>
         )}
       </DrawerContent>
