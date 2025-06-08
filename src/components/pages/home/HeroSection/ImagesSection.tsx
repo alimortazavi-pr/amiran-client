@@ -19,7 +19,7 @@ import {
 import fakeImg from "@/assets/svgs/fake-img.svg";
 
 //Constants
-import { SERVER_BASE_API_URL } from "@/common/constants";
+import { BASE_API_URL } from "@/common/constants";
 
 export const ImagesSection = () => {
   //Redux
@@ -120,7 +120,7 @@ export const ImagesSection = () => {
           {image1 ? (
             <Image
               fill
-              src={`${SERVER_BASE_API_URL}${image1.url}`}
+              src={`${BASE_API_URL}${image1.url}`}
               alt="Image 1"
               className="w-full h-full object-cover rounded-full"
             />
@@ -149,7 +149,7 @@ export const ImagesSection = () => {
           {image2 ? (
             <Image
               fill
-              src={`${SERVER_BASE_API_URL}${image2.url}`}
+              src={`${BASE_API_URL}${image2.url}`}
               alt="Image 2"
               className="w-full h-full object-cover rounded-full"
             />
@@ -179,7 +179,7 @@ export const ImagesSection = () => {
           {image3 ? (
             <Image
               fill
-              src={`${SERVER_BASE_API_URL}${image3.url}`}
+              src={`${BASE_API_URL}${image3.url}`}
               alt="Image 3"
               className="w-full h-full object-cover rounded-full"
             />
@@ -209,7 +209,7 @@ export const ImagesSection = () => {
           {image4 ? (
             <Image
               fill
-              src={`${SERVER_BASE_API_URL}${image4.url}`}
+              src={`${BASE_API_URL}${image4.url}`}
               alt="Image 4"
               className="w-full h-full object-cover rounded-full"
             />
@@ -239,7 +239,7 @@ export const ImagesSection = () => {
           {image5 ? (
             <Image
               fill
-              src={`${SERVER_BASE_API_URL}${image5.url}`}
+              src={`${BASE_API_URL}${image5.url}`}
               alt="Image 5"
               className="w-full h-full object-cover rounded-full"
             />
@@ -269,7 +269,7 @@ export const ImagesSection = () => {
           {image6 ? (
             <Image
               fill
-              src={`${SERVER_BASE_API_URL}${image6.url}`}
+              src={`${BASE_API_URL}${image6.url}`}
               alt="Image 6"
               className="w-full h-full object-cover rounded-full"
             />
