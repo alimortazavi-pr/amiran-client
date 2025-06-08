@@ -19,7 +19,7 @@ import { upsertProjectImagesAction } from "@/stores/projects/actions";
 import fakeImg from "@/assets/svgs/fake-img.svg";
 
 //Constants
-import { BASE_API_URL } from "@/common/constants";
+import { SERVER_BASE_API_URL } from "@/common/constants";
 
 interface IProps {
   project: IProject;
@@ -110,7 +110,7 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           {image1 ? (
             <Image
               fill
-              src={`${BASE_API_URL}${image1.url}`}
+              src={`${SERVER_BASE_API_URL}${image1.url}`}
               alt="Image 1"
               className="w-full h-full object-cover rounded-full"
             />
@@ -139,7 +139,7 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           {image2 ? (
             <Image
               fill
-              src={`${BASE_API_URL}${image2.url}`}
+              src={`${SERVER_BASE_API_URL}${image2.url}`}
               alt="Image 2"
               className="w-full h-full object-cover rounded-full"
             />
@@ -169,7 +169,7 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           {image3 ? (
             <Image
               fill
-              src={`${BASE_API_URL}${image3.url}`}
+              src={`${SERVER_BASE_API_URL}${image3.url}`}
               alt="Image 3"
               className="w-full h-full object-cover rounded-full"
             />
@@ -199,7 +199,7 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           {image4 ? (
             <Image
               fill
-              src={`${BASE_API_URL}${image4.url}`}
+              src={`${SERVER_BASE_API_URL}${image4.url}`}
               alt="Image 4"
               className="w-full h-full object-cover rounded-full"
             />
@@ -229,7 +229,7 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           {image5 ? (
             <Image
               fill
-              src={`${BASE_API_URL}${image5.url}`}
+              src={`${SERVER_BASE_API_URL}${image5.url}`}
               alt="Image 5"
               className="w-full h-full object-cover rounded-full"
             />
@@ -259,7 +259,7 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           {image6 ? (
             <Image
               fill
-              src={`${BASE_API_URL}${image6.url}`}
+              src={`${SERVER_BASE_API_URL}${image6.url}`}
               alt="Image 6"
               className="w-full h-full object-cover rounded-full"
             />
