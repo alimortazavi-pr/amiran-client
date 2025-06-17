@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "amiran-api.paradisecode.ir",
+        hostname: "api.amirangroup.co",
         pathname: "**",
       },
       {
