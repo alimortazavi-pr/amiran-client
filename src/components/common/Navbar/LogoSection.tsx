@@ -12,6 +12,7 @@ import contactUsLogo from "@/assets/svgs/contact-us-logo.svg";
 import projectsLogo from "@/assets/svgs/projects-logo.svg";
 import servicesLogo from "@/assets/svgs/services-logo.svg";
 import whyAmiranLogo from "@/assets/svgs/why-amiran-logo.svg";
+import blogLogo from "@/assets/svgs/blog-logo.svg";
 
 //Constants
 import { PATHS } from "@/common/constants";
@@ -51,6 +52,10 @@ export const LogoSection = () => {
       case PATHS.CONTACT_US:
         return {
           logo: contactUsLogo,
+        };
+      case PATHS.ARTICLES:
+        return {
+          logo: blogLogo,
         };
       default:
         return {

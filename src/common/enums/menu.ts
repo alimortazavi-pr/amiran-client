@@ -3,6 +3,7 @@ export enum menuPagesEnum {
   SERVICES = "SERVICES",
   DUTY = "DUTY",
   WORK_PROCESS = "WORK_PROCESS",
+  BLOG = "BLOG",
   WHY_AMIRAN = "WHY_AMIRAN",
   CONTACT_US = "CONTACT_US",
 }

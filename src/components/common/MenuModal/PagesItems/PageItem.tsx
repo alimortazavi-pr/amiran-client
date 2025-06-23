@@ -14,7 +14,7 @@ import { setIsOpenMenu } from "@/stores/layouts/actions";
 import projectsIcon from "@/assets/svgs/menu/projects-icon.svg";
 import servicesIcon from "@/assets/svgs/menu/services-icon.svg";
 import dutyIcon from "@/assets/svgs/menu/duty-icon.svg";
-import workProcessIcon from "@/assets/svgs/menu/works-in-process-icon.svg";
+import blogIcon from "@/assets/svgs/menu/blog-icon.svg";
 import whyAmiranIcon from "@/assets/svgs/menu/why-amiran-icon.svg";
 import contactUsIcon from "@/assets/svgs/menu/contact-us-icon.svg";
 
@@ -52,11 +52,11 @@ export const PageItem: FC<IProps> = ({ type }) => {
           icon: dutyIcon,
           path: PATHS.DUTY,
         };
-      case menuPagesEnum.WORK_PROCESS:
+      case menuPagesEnum.BLOG:
         return {
-          title: "Work Process",
-          icon: workProcessIcon,
-          path: PATHS.WORK_PROCESS,
+          title: "Blog",
+          icon: blogIcon,
+          path: PATHS.ARTICLES,
         };
       case menuPagesEnum.WHY_AMIRAN:
         return {

@@ -13,7 +13,7 @@ export const PagesItems = () => {
         <PageItem type={menuPagesEnum.DUTY} />
       </div>
       <div className="flex items-center justify-between gap-3">
-        <PageItem type={menuPagesEnum.WORK_PROCESS} />
+        <PageItem type={menuPagesEnum.BLOG} />
         <PageItem type={menuPagesEnum.WHY_AMIRAN} />
         <PageItem type={menuPagesEnum.CONTACT_US} />
       </div>
