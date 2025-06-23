@@ -1,4 +1,4 @@
-import { ItemOne, ItemTwo, ItemThree, ItemFour } from ".";
+import { ItemOne, ItemTwo } from ".";
 
 export const TeamContainer = () => {
   return (
@@ -6,8 +6,6 @@ export const TeamContainer = () => {
       <div className="grid grid-cols-12 md:gap-x-6 gap-y-16">
         <ItemOne />
         <ItemTwo />
-        <ItemThree />
-        <ItemFour />
       </div>
     </div>
   );

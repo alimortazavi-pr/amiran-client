@@ -13,8 +13,11 @@ export const ItemOne = () => {
             </h6>
           </div>
           <p className="text-primary/30 text-sm text-justify md:text-lg font-light">
-            sit amet, consecte tetuer adipiscing elit, sed diam nonummy nibh
-            euismod tincidunt ut adipiscing elit, sed diam sed diam
+            <span className="font-bold text-primary">CEO,</span> With a degree
+            in Civil Engineering and Executive Management, and holding a Grade 1
+            license from the Engineering Organization, he is a certified
+            qualified contractor with expertise in managing large-scale
+            construction projects.
           </p>
         </div>
         <div className="flex-1 md:max-w-44 h-60 md:h-72 bg-primary/30 rounded-full"></div>
