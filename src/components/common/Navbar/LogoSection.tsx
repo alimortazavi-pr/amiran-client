@@ -59,7 +59,7 @@ export const LogoSection = () => {
         };
       default:
         return {
-          icon: "",
+          logo: blogLogo,
         };
     }
   }, [pathname]);

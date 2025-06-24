@@ -1,39 +1,39 @@
 import { cookies } from "next/headers";
 
 //Interfaces
-import { IProject } from "@/common/interfaces";
+import { IArticle } from "@/common/interfaces";
 
 //Components
-import { ProjectPage } from "@/components/pages/project";
+import { ArticlePage } from "@/components/pages/article";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
 
-async function getProject({ params }: IProps) {
-  let project: IProject | undefined;
+async function getArticle({ params }: IProps) {
+  let article: IArticle | undefined;
   try {
     const { slug } = await params;
-    const res = await axiosInstance.get(`/projects/${slug}`, {
+    const res = await axiosInstance.get(`/articles/${slug}`, {
       headers: {
         Authorization: `Bearer ${(await cookies()).get("token")?.value}`,
       },
     });
 
-    project = await res.data.project;
+    article = await res.data.article;
   } catch (error: any) {
     console.log(error.response, "error");
   }
 
-  return { project };
+  return { article };
 }
 
 interface IProps {
   params: Promise<{ slug: string }>;
 }
 const page = async ({ params }: IProps) => {
-  const { project } = await getProject({ params });
+  const { article } = await getArticle({ params });
 
-  return <ProjectPage project={project as IProject} />;
+  return <ArticlePage article={article as IArticle} />;
 };
 
 export default page;
