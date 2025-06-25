@@ -18,7 +18,7 @@ import { employersImagesSelector } from "@/stores/duty/selectors";
 import fakeImg from "@/assets/svgs/fake-img.svg";
 
 //Constants
-import { SERVER_BASE_API_URL } from "@/common/constants";
+import { BASE_API_URL } from "@/common/constants";
 
 interface IProps {
   index: number;
@@ -80,7 +80,7 @@ export const ExperiencedItem: FC<IProps> = ({ index }) => {
         const formData = new FormData();
         formData.append("image", e?.target?.files[0]);
         await dispatch(
-          upsertEmployerImageAction(formData, (index + 1).toString())
+          upsertEmployerImageAction(formData, (index + 1).toString(), !!image)
         );
         setIsLoading(false);
         toast.success("Image has been updated", {
@@ -109,7 +109,7 @@ export const ExperiencedItem: FC<IProps> = ({ index }) => {
         {image ? (
           <Image
             fill
-            src={`${SERVER_BASE_API_URL}${image.url}`}
+            src={`${BASE_API_URL}${image.url}`}
             alt="Image 1"
             className={`w-full ${isMdCheck} object-cover`}
           />

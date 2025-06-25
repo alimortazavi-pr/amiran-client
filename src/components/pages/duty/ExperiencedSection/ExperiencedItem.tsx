@@ -18,7 +18,7 @@ import { employersImagesSelector } from "@/stores/duty/selectors";
 import fakeImg from "@/assets/svgs/fake-img.svg";
 
 //Constants
-import { SERVER_BASE_API_URL } from "@/common/constants";
+import { BASE_API_URL } from "@/common/constants";
 
 interface IProps {
   index: number;
@@ -109,7 +109,7 @@ export const ExperiencedItem: FC<IProps> = ({ index }) => {
         {image ? (
           <Image
             fill
-            src={`${SERVER_BASE_API_URL}${image.url}`}
+            src={`${BASE_API_URL}${image.url}`}
             alt="Image 1"
             className={`w-full ${isMdCheck} object-cover`}
           />
