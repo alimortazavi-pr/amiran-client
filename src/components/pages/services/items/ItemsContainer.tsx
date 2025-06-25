@@ -12,36 +12,36 @@ import { Item } from ".";
 export const ItemsContainer = () => {
   //Function
   function getContentAndImage(index: number): { image: string; content: string } {
-    switch (index) {
+  switch (index) {
       case 0:
         return {
           image: serviceOneSVG,
-          content: "Participation in construction",
+          content: "Construction Management",
         };
       case 1:
         return {
           image: serviceTwoSVG,
-          content: "Participation in construction",
+          content: "Joint Venture Development (Construction Partnership)",
         };
       case 2:
         return {
           image: serviceThreeSVG,
-          content: "Participation in construction",
+          content: "Renovation and Urban Regeneration",
         };
       case 3:
         return {
           image: serviceFourSVG,
-          content: "Participation in construction",
+          content: "Comprehensive Building Design (BIM, Interior Architecture)",
         };
       case 4:
         return {
           image: serviceFiveSVG,
-          content: "Participation in construction",
+          content: "Modern Services (Smart Building Systems, Industrialized Construction)",
         };
       case 5:
         return {
           image: serviceSixSVG,
-          content: "Participation in construction",
+          content: "Pre-Sales (Off-Plan Sales)",
         };
       default:
         return {

@@ -4,3 +4,4 @@ export * from "./profile";
 export * from "./home";
 export * from "./project";
 export * from "./article";
+export * from "./duty";

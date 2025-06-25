@@ -37,33 +37,33 @@ export const ImagesSection = () => {
 
   //Life cycle
   useEffect(() => {
-    if (!heroImages?.length) {
+    if (!heroImages) {
       fetchHeroImages();
     }
   }, [heroImages]);
 
   const image1 = useMemo(
-    () => heroImages.find((hi) => hi.weight.toString() === "1"),
+    () => heroImages?.find((hi) => hi.weight.toString() === "1"),
     [heroImages]
   );
   const image2 = useMemo(
-    () => heroImages.find((hi) => hi.weight.toString() === "2"),
+    () => heroImages?.find((hi) => hi.weight.toString() === "2"),
     [heroImages]
   );
   const image3 = useMemo(
-    () => heroImages.find((hi) => hi.weight.toString() === "3"),
+    () => heroImages?.find((hi) => hi.weight.toString() === "3"),
     [heroImages]
   );
   const image4 = useMemo(
-    () => heroImages.find((hi) => hi.weight.toString() === "4"),
+    () => heroImages?.find((hi) => hi.weight.toString() === "4"),
     [heroImages]
   );
   const image5 = useMemo(
-    () => heroImages.find((hi) => hi.weight.toString() === "5"),
+    () => heroImages?.find((hi) => hi.weight.toString() === "5"),
     [heroImages]
   );
   const image6 = useMemo(
-    () => heroImages.find((hi) => hi.weight.toString() === "6"),
+    () => heroImages?.find((hi) => hi.weight.toString() === "6"),
     [heroImages]
   );
 

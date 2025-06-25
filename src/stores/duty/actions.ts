@@ -3,10 +3,10 @@ import { AppThunk } from "@/stores";
 //Actions of other reducers
 
 //Reducer
-import { homeReducer } from ".";
+import { dutyReducer } from ".";
 
 //Actions from reducer
-export const { setHeroImages } = homeReducer.actions;
+export const { setEmployersImages } = dutyReducer.actions;
 
 //Interfaces
 
@@ -14,12 +14,12 @@ export const { setHeroImages } = homeReducer.actions;
 import { axiosInstance } from "@/common/axiosInstance";
 
 //Actions
-export function fetchHeroImagesAction(): AppThunk {
+export function fetchEmployersImagesAction(): AppThunk {
   return async (dispatch) => {
     try {
-      const res = await axiosInstance.get(`/hero-images`);
+      const res = await axiosInstance.get(`/duty/employers-images`);
       if (res.data.images?.length) {
-        await dispatch(setHeroImages(res.data.images));
+        await dispatch(setEmployersImages(res.data.images));
       }
     } catch (err: any) {
       console.log(err);
@@ -28,7 +28,7 @@ export function fetchHeroImagesAction(): AppThunk {
   };
 }
 
-export function upsertHeroImageAction(
+export function upsertEmployerImageAction(
   form: FormData,
   weight: string,
   isExist: boolean = false
@@ -36,7 +36,7 @@ export function upsertHeroImageAction(
   return async (dispatch, getState) => {
     try {
       const res = await axiosInstance.post(
-        `/admin/home/hero-images/${weight}`,
+        `/admin/duty/employers-images/${weight}`,
         form,
         {
           headers: {
@@ -46,15 +46,18 @@ export function upsertHeroImageAction(
       );
       if (isExist) {
         await dispatch(
-          setHeroImages([
-            ...(getState().home.heroImages || []).map((hi) =>
-              hi.weight === weight ? res.data.image : hi
+          setEmployersImages([
+            ...(getState().duty.employersImages || []).map((di) =>
+              di.weight === weight ? res.data.image : di
             ),
           ])
         );
       } else {
         await dispatch(
-          setHeroImages([...(getState().home.heroImages || []), res.data.image])
+          setEmployersImages([
+            ...(getState().duty.employersImages || []),
+            res.data.image,
+          ])
         );
       }
     } catch (error: any) {

@@ -5,6 +5,7 @@ import layouts from "./layouts";
 import auth from "./auth";
 import profile from "./profile";
 import home from "./home";
+import duty from "./duty";
 import projects from "./projects";
 import articles from "./articles";
 
@@ -17,6 +18,7 @@ export function makeStore() {
       home: home,
       projects: projects,
       articles: articles,
+      duty: duty,
     },
   });
 }

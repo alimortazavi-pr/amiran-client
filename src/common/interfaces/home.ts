@@ -1,5 +1,5 @@
 export interface IHomeState {
-  heroImages: IHeroImage[];
+  heroImages: undefined | IHeroImage[];
 }
 
 export interface IHeroImage {

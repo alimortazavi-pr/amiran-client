@@ -7,7 +7,7 @@ import { IHomeState } from "@/common/interfaces";
 import reducers from "@/stores/home/reducers";
 
 const initialState: IHomeState = {
-  heroImages: [],
+  heroImages: undefined,
 };
 
 export const homeReducer = createSlice({
