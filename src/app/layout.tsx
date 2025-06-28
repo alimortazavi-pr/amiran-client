@@ -11,15 +11,8 @@ import "@/assets/css/globals.css";
 import { ClientProvider } from "@/components/providers/ClientProvider";
 
 //Fonts
-import "@fontsource/poppins/100.css";
-import "@fontsource/poppins/200.css";
-import "@fontsource/poppins/300.css";
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/600.css";
-import "@fontsource/poppins/700.css";
-import "@fontsource/poppins/800.css";
-import "@fontsource/poppins/900.css";
+// Supports weights 100-900
+import "@fontsource-variable/noto-sans-arabic";
 
 //Next
 export const metadata: Metadata = {
@@ -34,20 +27,18 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   //i18n
-  let language = "en";
-  cookies().then((cookie) => {
-    language = cookie.get("language")?.value || "en";
-  });
-  useServerTranslation(language);
+  const language = (await cookies()).get("language")?.value || "fa";
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  await useServerTranslation(language);
 
   return (
-    <html lang={"en"} dir={"ltr"}>
+    <html lang={language} dir={language !== "en" ? "rtl" : "ltr"}>
       <body>
         <ClientProvider>{children}</ClientProvider>
       </body>

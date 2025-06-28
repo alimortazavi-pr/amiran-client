@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 
 //interfaces
@@ -13,10 +15,19 @@ import { ServicesSectionContainer } from "./ServicesSection";
 import { VideoSectionContainer } from "./VideoSection";
 import { FooterLogoContainer } from "@/components/common/FooterLogo";
 
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
+
 interface IProps {
   projects: IProject[];
 }
 export const HomePage: FC<IProps> = ({ projects }) => {
+  //Translation
+  const { t } = useClientTranslation(storage.getLanguage());
+
   return (
     <div className="">
       <NavbarContainer />
@@ -29,8 +40,8 @@ export const HomePage: FC<IProps> = ({ projects }) => {
       <ServicesSectionContainer />
       <VideoSectionContainer />
       <FooterLogoContainer />
-      <h6 className="my-10 lg:my-20 xl:my-32 text-primary text-center font-extralight tracking-[0.1rem] md:text-xl md:tracking-[0.5rem] lg:text-2xl lg:tracking-[0.5rem] xl:text-3xl">
-        Thanks for your beautiful look
+      <h6 className="my-10 lg:my-20 xl:my-32 text-primary text-center font-extralight md:text-xl lg:text-2xl xl:text-3xl">
+        {t("HOME.ThankYou_Label")}
       </h6>
     </div>
   );

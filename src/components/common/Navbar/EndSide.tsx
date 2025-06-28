@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { Button } from "@heroui/react";
-import { SearchNormal } from "iconsax-react";
+// import { SearchNormal } from "iconsax-react";
 import { motion } from "motion/react";
 
 //Redux
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
-import { setIsOpenMenu, setIsOpenSearch } from "@/stores/layouts/actions";
+import { setIsOpenMenu } from "@/stores/layouts/actions";
 import { isOpenSearchSelector } from "@/stores/layouts/selectors";
 
 //Assets
@@ -23,16 +23,16 @@ export const EndSide = () => {
     dispatch(setIsOpenMenu(true));
   }
 
-  function openSearchHandler() {
-    dispatch(setIsOpenSearch(true));
-  }
+  // function openSearchHandler() {
+  //   dispatch(setIsOpenSearch(true));
+  // }
 
   return (
     <motion.div
       animate={{ opacity: isOpenSearch ? 0 : 1 }}
       className={`flex-1 h-7 lg:h-12 bg-primary/20 flex items-center justify-end gap-1 px-2 rounded-s-full`}
     >
-      <Button
+      {/* <Button
         isIconOnly
         variant="light"
         size="sm"
@@ -40,7 +40,7 @@ export const EndSide = () => {
         onPress={openSearchHandler}
       >
         <SearchNormal className="w-3 h-3 lg:w-4 lg:h-4" color="#1E353C" />
-      </Button>
+      </Button> */}
       <Button
         isIconOnly
         variant="light"

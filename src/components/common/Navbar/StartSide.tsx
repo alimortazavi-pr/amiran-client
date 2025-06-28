@@ -10,6 +10,9 @@ import { motion } from "motion/react";
 import { useAppSelector } from "@/stores/hooks";
 import { isOpenSearchSelector } from "@/stores/layouts/selectors";
 
+//Components
+import { LanguagesMenu } from ".";
+
 //Assets
 import { ArrowLeft2, Call } from "iconsax-react";
 
@@ -46,6 +49,7 @@ export const StartSide = () => {
           <Call className="w-3 h-3 lg:w-4 lg:h-4" color="#1E353C" />
         </div>
       </Button>
+      <LanguagesMenu />
       {pathname !== "/" && (
         <Button
           isIconOnly

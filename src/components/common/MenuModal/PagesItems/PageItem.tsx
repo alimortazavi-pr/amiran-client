@@ -21,6 +21,12 @@ import contactUsIcon from "@/assets/svgs/menu/contact-us-icon.svg";
 //Constants
 import { PATHS } from "@/common/constants";
 
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
+
 interface IProps {
   type: menuPagesEnum;
 }
@@ -31,42 +37,45 @@ export const PageItem: FC<IProps> = ({ type }) => {
   //Next
   const router = useRouter();
 
+  //Translation
+  const { t } = useClientTranslation(storage.getLanguage());
+
   //Life cycle
   const { title, icon, path } = useMemo(() => {
     switch (type) {
       case menuPagesEnum.PROJECTS:
         return {
-          title: "Projects",
+          title: "MENU.ProjectsItem_Label",
           icon: projectsIcon,
           path: PATHS.PROJECTS,
         };
       case menuPagesEnum.SERVICES:
         return {
-          title: "Services",
+          title: "MENU.ServicesItem_Label",
           icon: servicesIcon,
           path: PATHS.SERVICES,
         };
       case menuPagesEnum.DUTY:
         return {
-          title: "Duty",
+          title: "MENU.DutyItem_Label",
           icon: dutyIcon,
           path: PATHS.DUTY,
         };
       case menuPagesEnum.BLOG:
         return {
-          title: "Blog",
+          title: "MENU.BlogItem_Label",
           icon: blogIcon,
           path: PATHS.ARTICLES,
         };
       case menuPagesEnum.WHY_AMIRAN:
         return {
-          title: "Why Amiran",
+          title: "MENU.WhyAmiranItem_Label",
           icon: whyAmiranIcon,
           path: PATHS.WHY_AMIRAN,
         };
       case menuPagesEnum.CONTACT_US:
         return {
-          title: "Contact Us",
+          title: "MENU.ContactUsItem_Label",
           icon: contactUsIcon,
           path: PATHS.CONTACT_US,
         };
@@ -93,9 +102,9 @@ export const PageItem: FC<IProps> = ({ type }) => {
       data-hover={false}
     >
       <div className="w-20 h-20 relative">
-        <Image src={icon} alt={title} fill />
+        <Image src={icon} alt={t(title)} fill />
       </div>
-      <span className="text-primary/40 text-xs">{title}</span>
+      <span className="text-primary/40 text-xs">{t(title)}</span>
     </Button>
   );
 };

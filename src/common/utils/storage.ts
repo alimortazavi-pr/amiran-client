@@ -1,4 +1,8 @@
 import jsCookies from "js-cookie";
+import { cookieName } from "@/common/i18n";
+
+//Types
+import { languagesType } from "../types";
 
 export const storage = {
   getDarkMode: (): boolean => {
@@ -6,6 +10,13 @@ export const storage = {
   },
   setDarkMode: (darkMode: string) => {
     jsCookies.set("dark-mode", darkMode, { expires: 90 });
+  },
+  getLanguage: (): languagesType => {
+    const language = (jsCookies.get(cookieName) as languagesType) || "en";
+    return language;
+  },
+  setLanguage: (language: languagesType) => {
+    jsCookies.set("language", language, { expires: 90 });
   },
   getToken: (): string | undefined => {
     return jsCookies.get("token");

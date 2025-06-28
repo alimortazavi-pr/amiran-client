@@ -1,1 +1,41 @@
-{}
+{
+  "HOME": {
+    "HeroSlogan_Label": "WE ARE WAITING FOR YOU AT THE TOP",
+    "HeroSloganLine1_Label": "WE ARE",
+    "HeroSloganLine2_Label": "WAITING",
+    "HeroSloganLine3_Label": "FOR YOU",
+    "HeroSloganLine4_Label": "AT THE",
+    "HeroSloganLine5_Label": "TOP",
+    "HeroDescriptionTitle_Label": "Company History and Growth Path",
+    "HeroDescription_Label": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "PROJECTS": {
+      "ProjectTitle1_Label": "PROJECT",
+      "ProjectTitle2_Label": "S"
+    },
+    "EXPERIENCED": {
+      "ExperiencedTitle_Label": "Experienced employees of the company",
+      "ExperiencedDescription_Label": "At Amiran, we are proud to rely on a team of engineers and professionals who not only possess strong technical expertise but also carry with them a wealth of invaluable experience gained through years of dedication in the field. These individuals have faced and overcome countless challenges—each one a unique opportunity to grow, innovate, and think beyond limitations. In the face of complexity and constant change, our experts do not simply follow a path—they create one. A path shaped by innovation, creativity, and a deep understanding of both structural science and human needs. They bring buildings to life with intention, care, and excellence. This ability to transform obstacles into opportunities through forward-thinking design and smart execution is not just a skill—it is a mindset. A difference in perspective that is, and always has been, our greatest advantage. We firmly believe that we are not merely constructing buildings made of concrete and steel—we are building the backdrop of human life. Every wall, every window, every open space is designed to hold more than just furniture or function—it is designed to hold people’s hopes, their daily routines, their laughter, their moments of silence, and everything in between. Every project we take on is a new opportunity to design environments that inspire, comfort, protect, and endure. We see architecture as a living art—one that must harmonize utility with beauty, strength with sensitivity, and vision with responsibility. Our work is a tribute to life itself. To the belief that behind every structure lies a deeper story—a story of families growing, businesses thriving, communities evolving, and cities transforming. That’s why, at Amiran, we approach every project with a sense of purpose, integrity, and emotional investment. Because we know that we are not just shaping skylines—we are shaping the future of how people live, work, and connect. We do not just build structures. We create lasting experiences. We build frames for life to be lived and remembered."
+    },
+    "SERVICES": {
+      "ServiceItem1_Label": "Construction Management",
+      "ServiceItem2_Label": "Joint Venture Development (Construction Partnership)",
+      "ServiceItem3_Label": "Renovation and Urban Regeneration",
+      "ServiceItem4_Label": "Comprehensive Building Design (BIM, Interior Architecture)",
+      "ServiceItem5_Label": "Modern Services (Smart Building Systems, Industrialized Construction)",
+      "ServiceItem6_Label": "Pre-Sales (Off-Plan Sales)",
+      "ServicesDescription_Label": "Amiran Construction Company is proud to offer a comprehensive suite of construction services to the esteemed citizens and investors of the holy city of Qom, built on a foundation of expertise, commitment, and innovation. With a deep understanding of today&#39;s needs and a clear vision for the future, we strive to be more than just a builder; we aim to be your trusted partner in every project. Our services are designed to cover every phase of a construction project, from the initial spark of an idea to the final handover and beyond, ensuring a transparent, optimized, and valuable experience for you. Our approach at Amiran combines engineering principles, modern management, and cutting-edge technologies. We view each project as a unique opportunity to create sustainable, beautiful, and functional spaces that enhance the quality of life for residents and contribute to the urban fabric. Our integrated services include: Through professional Project Management (مدیریت پیمان), we act as your faithful representative, taking full responsibility for planning, cost control, quality assurance, and timely execution to protect your investment and time with complete transparency. In our Joint Venture in Construction (مشارکت در ساخت) model, we merge our expertise and capital with your property, creating a win-win partnership to generate added value and turn the dream of a modern building into reality. In the field of Renovation and Regeneration (نوسازی و باز آفرینی), we breathe new life into aged and worn-out spaces. While preserving the building&#39;s original identity and character, we upgrade its functionality and aesthetics to meet contemporary standards. The core of our services is Comprehensive Building Design (طراحی جامع ساختمان), where we leverage creative architecture, inviting interior design, and the advanced technology of BIM (Building Information Modeling). This allows us to create an integrated, precise, and error-free plan that prevents resource waste and gives you a clear vision of the project&#39;s future. With an eye on the future, Amiran offers Modern Services (خدمات نوین), including Smart Building systems (هوشمندسازی) to enhance comfort, security, and energy efficiency, and Industrialized Construction (صنعتی‌سازی) to increase the speed, quality, and durability of structures. Finally, through our Pre-selling (Off-plan) opportunities (پیش فروش), we provide a secure and profitable path for your investment and homeownership goals, committing to uphold our promises and earn your trust. We invite you to entrust your projects to Amiran Construction Company and experience a new standard of construction in Qom."
+    },
+    "ThankYou_Label": "Thanks for your beautiful look"
+  },
+  "MENU": {
+    "ProjectsItem_Label": "Projects",
+    "ServicesItem_Label": "Services",
+    "DutyItem_Label": "Duty",
+    "BlogItem_Label": "Blog",
+    "WhyAmiranItem_Label": "Why Amiran",
+    "ContactUsItem_Label": "Contact Us"
+  },
+  "COMMON": {
+    "More_Label": "More"
+  }
+}
