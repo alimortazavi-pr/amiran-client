@@ -70,7 +70,7 @@ export const ProjectPage: FC<IProps> = ({ project }) => {
         </div>
         <div className="md:mt-32">
           <BackToPreviousPageBtn
-            content="BACK TO PROJECTS"
+            content="COMMON.BackToProjects_Label"
             previousPath={PATHS.PROJECTS}
           />
         </div>

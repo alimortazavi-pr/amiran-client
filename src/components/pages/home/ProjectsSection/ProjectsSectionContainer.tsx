@@ -35,14 +35,14 @@ export const ProjectsSectionContainer: FC<IProps> = ({ projects }) => {
   });
 
   //Translation
-  const { t } = useClientTranslation(storage.getLanguage());
+  const { t, i18n } = useClientTranslation(storage.getLanguage());
 
   return (
     <section aria-label="projects section">
       <div className="flex flex-col gap-1 items-center mb-20">
         <h6
           className={`text-primary text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light lg:mb-4 xl:mb-8 2xl:mb-12 ${
-            storage.getLanguage() === "fa"
+            i18n.language === "fa"
               ? ""
               : "tracking-[24px] md:tracking-[64px] lg:tracking-[96px] xl:tracking-[8rem] 2xl:tracking-[8rem]"
           }`}
@@ -56,7 +56,14 @@ export const ProjectsSectionContainer: FC<IProps> = ({ projects }) => {
           color="primary"
           variant="light"
           size={isLg ? "md" : isXl ? "lg" : "sm"}
-          endContent={<ArrowRight className={`w-3 h-3 ${storage.getLanguage() === "fa" ? "rotate-180" : ""}`} color="#1D363D" />}
+          endContent={
+            <ArrowRight
+              className={`w-3 h-3 ${
+                i18n.language === "fa" ? "rotate-180" : ""
+              }`}
+              color="#1D363D"
+            />
+          }
           as={Link}
           href={PATHS.PROJECTS}
         >

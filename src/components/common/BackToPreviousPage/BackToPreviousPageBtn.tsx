@@ -1,23 +1,32 @@
 "use client";
 
 import { Button } from "@heroui/react";
+import { useRouter } from "@bprogress/next/app";
 
 import { FC } from "react";
 
 //Constants
 import { PATHS } from "@/common/constants";
-import { useRouter } from "@bprogress/next/app";
+
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
 
 interface IProps {
   content?: string;
   previousPath?: string;
 }
 export const BackToPreviousPageBtn: FC<IProps> = ({
-  content = "BACK TO HOME",
+  content = "COMMON.BackToHome_Label",
   previousPath = PATHS.HOME,
 }) => {
   //Next
   const router = useRouter();
+
+  //Translation
+  const { t } = useClientTranslation(storage.getLanguage());
 
   //Functions
   function backToHomeHandler() {
@@ -29,9 +38,8 @@ export const BackToPreviousPageBtn: FC<IProps> = ({
       <Button
         variant="light"
         onPress={backToHomeHandler}
-        className="tracking-[5px]"
       >
-        {content}
+        {t(content)}
       </Button>
     </div>
   );

@@ -4,11 +4,20 @@ import { FC } from "react";
 import Image from "next/image";
 import { Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
 
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
+
 interface IProps {
   image: string;
   content: string;
 }
 export const Item: FC<IProps> = ({ content, image }) => {
+  //Translation
+  const { t } = useClientTranslation(storage.getLanguage());
+
   return (
     <div className="col-span-12 md:col-span-6">
       <div className="flex flex-col items-center justify-center">
@@ -19,11 +28,11 @@ export const Item: FC<IProps> = ({ content, image }) => {
         <Popover>
           <PopoverTrigger>
             <span className="text-center text-primary/20 text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl border px-3 p-1 w-full lg:p-2 xl:px-3 2xl:px-4 border-primary/20 rounded-full truncate">
-              {content}
+              {t(content)}
             </span>
           </PopoverTrigger>
           <PopoverContent>
-            <p>{content}</p>
+            <p>{t(content)}</p>
           </PopoverContent>
         </Popover>
       </div>

@@ -11,42 +11,45 @@ import { Item } from ".";
 
 export const ItemsContainer = () => {
   //Function
-  function getContentAndImage(index: number): { image: string; content: string } {
-  switch (index) {
+  function getContentAndImage(index: number): {
+    image: string;
+    content: string;
+  } {
+    switch (index) {
       case 0:
         return {
           image: serviceOneSVG,
-          content: "Construction Management",
+          content: "HOME.SERVICES.ServiceItem1_Label",
         };
       case 1:
         return {
           image: serviceTwoSVG,
-          content: "Joint Venture Development (Construction Partnership)",
+          content: "HOME.SERVICES.ServiceItem2_Label",
         };
       case 2:
         return {
           image: serviceThreeSVG,
-          content: "Renovation and Urban Regeneration",
+          content: "HOME.SERVICES.ServiceItem3_Label",
         };
       case 3:
         return {
           image: serviceFourSVG,
-          content: "Comprehensive Building Design (BIM, Interior Architecture)",
+          content: "HOME.SERVICES.ServiceItem4_Label",
         };
       case 4:
         return {
           image: serviceFiveSVG,
-          content: "Modern Services (Smart Building Systems, Industrialized Construction)",
+          content: "HOME.SERVICES.ServiceItem5_Label",
         };
       case 5:
         return {
           image: serviceSixSVG,
-          content: "Pre-Sales (Off-Plan Sales)",
+          content: "HOME.SERVICES.ServiceItem6_Label",
         };
       default:
         return {
           image: serviceOneSVG,
-          content: "Participation in construction",
+          content: "HOME.SERVICES.ServiceItem1_Label",
         };
     }
   }

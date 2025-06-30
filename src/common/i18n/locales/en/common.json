@@ -17,15 +17,67 @@
       "ExperiencedDescription_Label": "At Amiran, we are proud to rely on a team of engineers and professionals who not only possess strong technical expertise but also carry with them a wealth of invaluable experience gained through years of dedication in the field. These individuals have faced and overcome countless challenges—each one a unique opportunity to grow, innovate, and think beyond limitations. In the face of complexity and constant change, our experts do not simply follow a path—they create one. A path shaped by innovation, creativity, and a deep understanding of both structural science and human needs. They bring buildings to life with intention, care, and excellence. This ability to transform obstacles into opportunities through forward-thinking design and smart execution is not just a skill—it is a mindset. A difference in perspective that is, and always has been, our greatest advantage. We firmly believe that we are not merely constructing buildings made of concrete and steel—we are building the backdrop of human life. Every wall, every window, every open space is designed to hold more than just furniture or function—it is designed to hold people’s hopes, their daily routines, their laughter, their moments of silence, and everything in between. Every project we take on is a new opportunity to design environments that inspire, comfort, protect, and endure. We see architecture as a living art—one that must harmonize utility with beauty, strength with sensitivity, and vision with responsibility. Our work is a tribute to life itself. To the belief that behind every structure lies a deeper story—a story of families growing, businesses thriving, communities evolving, and cities transforming. That’s why, at Amiran, we approach every project with a sense of purpose, integrity, and emotional investment. Because we know that we are not just shaping skylines—we are shaping the future of how people live, work, and connect. We do not just build structures. We create lasting experiences. We build frames for life to be lived and remembered."
     },
     "SERVICES": {
+      "ServiceTitle1_Label": "SERVICE",
+      "ServiceTitle2_Label": "S",
       "ServiceItem1_Label": "Construction Management",
       "ServiceItem2_Label": "Joint Venture Development (Construction Partnership)",
       "ServiceItem3_Label": "Renovation and Urban Regeneration",
       "ServiceItem4_Label": "Comprehensive Building Design (BIM, Interior Architecture)",
       "ServiceItem5_Label": "Modern Services (Smart Building Systems, Industrialized Construction)",
       "ServiceItem6_Label": "Pre-Sales (Off-Plan Sales)",
+      "ServicesDescriptionTitle_Label": "Amiran Services",
       "ServicesDescription_Label": "Amiran Construction Company is proud to offer a comprehensive suite of construction services to the esteemed citizens and investors of the holy city of Qom, built on a foundation of expertise, commitment, and innovation. With a deep understanding of today&#39;s needs and a clear vision for the future, we strive to be more than just a builder; we aim to be your trusted partner in every project. Our services are designed to cover every phase of a construction project, from the initial spark of an idea to the final handover and beyond, ensuring a transparent, optimized, and valuable experience for you. Our approach at Amiran combines engineering principles, modern management, and cutting-edge technologies. We view each project as a unique opportunity to create sustainable, beautiful, and functional spaces that enhance the quality of life for residents and contribute to the urban fabric. Our integrated services include: Through professional Project Management (مدیریت پیمان), we act as your faithful representative, taking full responsibility for planning, cost control, quality assurance, and timely execution to protect your investment and time with complete transparency. In our Joint Venture in Construction (مشارکت در ساخت) model, we merge our expertise and capital with your property, creating a win-win partnership to generate added value and turn the dream of a modern building into reality. In the field of Renovation and Regeneration (نوسازی و باز آفرینی), we breathe new life into aged and worn-out spaces. While preserving the building&#39;s original identity and character, we upgrade its functionality and aesthetics to meet contemporary standards. The core of our services is Comprehensive Building Design (طراحی جامع ساختمان), where we leverage creative architecture, inviting interior design, and the advanced technology of BIM (Building Information Modeling). This allows us to create an integrated, precise, and error-free plan that prevents resource waste and gives you a clear vision of the project&#39;s future. With an eye on the future, Amiran offers Modern Services (خدمات نوین), including Smart Building systems (هوشمندسازی) to enhance comfort, security, and energy efficiency, and Industrialized Construction (صنعتی‌سازی) to increase the speed, quality, and durability of structures. Finally, through our Pre-selling (Off-plan) opportunities (پیش فروش), we provide a secure and profitable path for your investment and homeownership goals, committing to uphold our promises and earn your trust. We invite you to entrust your projects to Amiran Construction Company and experience a new standard of construction in Qom."
     },
     "ThankYou_Label": "Thanks for your beautiful look"
+  },
+  "DUTY": {
+    "DutyTitle1_Label": "DUT",
+    "DutyTitle2_Label": "Y",
+    "DutyDescriptionTitle1_Label": "Lorem Ipsum",
+    "DutyDescription1_Label": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit consectetur reprehenderit id necessitatibus totam ex repudiandae expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis",
+    "DutyDescriptionTitle2_Label": "Lorem Ipsum",
+    "DutyDescription2_Label": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit consectetur reprehenderit id necessitatibus totam ex repudiandae expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis",
+    "DutyDescriptionTitle3_Label": "Lorem Ipsum",
+    "DutyDescription3_Label": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit consectetur reprehenderit id necessitatibus totam ex repudiandae expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis",
+    "TEAM": {
+      "TeamItem1Name1_Label": "SAEI",
+      "TeamItem1Name2_Label": "D",
+      "TeamItem1Family1_Label": "DANAY",
+      "TeamItem1Family2_Label": "I",
+      "TeamItem1Position_Label": "CEO,",
+      "TeamItem1Description_Label": "With a degree in Civil Engineering and Executive Management, and holding a Grade 1 license from the Engineering Organization, he is a certified qualified contractor with expertise in managing large-scale construction projects.",
+      "TeamItem2Name1_Label": "HOSEI",
+      "TeamItem2Name2_Label": "N",
+      "TeamItem2Family1_Label": "NEQAB",
+      "TeamItem2Family2_Label": "I",
+      "TeamItem2Position_Label": "Managing Director,",
+      "TeamItem2Description_Label": "With a degree in Civil Engineering and Executive Management, and holding a Grade 1 license from the Engineering Organization, he is a certified qualified contractor with expertise in managing large-scale construction projects."
+    }
+  },
+  "BLOG": {
+    "BlogTitle1_Label": "BLO",
+    "BlogTitle2_Label": "G"
+  },
+  "WHY_AMIRAN": {
+    "WhyAmiranTitle1_Label": "WHY AMIRA",
+    "WhyAmiranTitle2_Label": "N",
+    "WhyAmiranDescriptionTitle_Label": "The difference lies in our perspective",
+    "WhyAmiranDescription_Label": "  Our energy and commitment to executing projects with precision and creativity, transparency as clear as glass in financial processes, and ultimately, sustainable development and respect for our surrounding environment, the beauty of our cities, and the elevated status of our beloved Iran—this is our perspective. Details have always mattered to us, so we can capture smiles within the lifeless structure of steel and concrete. Amiran goes beyond construction—it is a commitment to creating a unique experience for our clients, with a focus on quality, timing, and professional ethics.",
+    "WhyAmiranFeatures1_Label": "Supplying goods and materials at the right time and price",
+    "WhyAmiranFeatures2_Label": "Transparent financial infrastructure",
+    "WhyAmiranFeatures3_Label": "Technical and operational infrastructure",
+    "WhyAmiranFeatures4_Label": "Documenting project implementation operations",
+    "WhyAmiranFeatures5_Label": "Establishing and complying with HSE requirements",
+    "WhyAmiranHSEDescription_Label": "At Amiran, we firmly believe that Health, Safety, and Environmental protection are not just legal obligations—they are a fundamental part of our culture, our ethics, and our responsibility toward our people, our clients, and the environment we operate in. Our HSE policy is built around a proactive and preventive approach. From the very first stages of planning a project to the final phases of execution and delivery, safety is integrated into every process and decision. We continuously assess risks, implement global best practices, and update safety measures to ensure the well-being of every worker, visitor, and stakeholder on-site. We ensure that all personnel are properly trained, certified, and fully aware of the safety protocols specific to their role and working environment. Use of personal protective equipment (PPE), compliance with hazard warnings, and strict adherence to safety guidelines are mandatory and non-negotiable. In addition to occupational safety, we are deeply committed to environmental sustainability. We take deliberate steps to minimize environmental impact by reducing waste, managing energy consumption, recycling materials, and protecting local ecosystems throughout our operations. By embedding safety, health, and environmental values into the heart of our work, we strive not only to complete projects successfully—but to do so in a way that respects people, protects nature, and builds a better future for the next generations. We believe that every incident is preventable, every life is valuable, and every decision matters. Safety is not a slogan for us—it is our way of building.",
+    "WhyAmiranUpToDateFeatureSection_Label": "Up-to-date and efficient workshop equipment",
+    "WhyAmiranReportsFeatureSection_Label": "Weekly and monthly reports to the employer",
+    "WhyAmiranFeatureDescription_Label": "Providing the project's technical documentation booklet to the employer at the time of operation permit, approvedand executive drawings (end of work noncontradiction, construction drawings)"
+  },
+  "CONTACT_US": {
+    "ContactUsTitle1_Label": "CONTACT U",
+    "ContactUsTitle2_Label": "S",
+    "ContactUsDescriptionTitle_Label": "Lorem Ipsum",
+    "ContactUsDescription_Label": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit consectetur reprehenderit id necessitatibus totam ex repudiandae expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis"
   },
   "MENU": {
     "ProjectsItem_Label": "Projects",
@@ -36,6 +88,8 @@
     "ContactUsItem_Label": "Contact Us"
   },
   "COMMON": {
-    "More_Label": "More"
+    "More_Label": "More",
+    "BackToHome_Label": "Back to Home",
+    "BackToProjects_Label": "Back to Projects"
   }
 }
