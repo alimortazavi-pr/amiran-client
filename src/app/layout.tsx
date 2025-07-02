@@ -33,7 +33,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   //i18n
-  const language = (await cookies()).get("language")?.value || "fa";
+  const language = (await cookies()).get("language")?.value || "en";
   // eslint-disable-next-line react-hooks/rules-of-hooks
   await useServerTranslation(language);
 

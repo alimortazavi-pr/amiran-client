@@ -9,7 +9,7 @@ import {
 import { FC } from "react";
 
 //Components
-import { ChangeSlugBtn, DeleteProjectBtn } from ".";
+import { ChangeSlugBtn, DeleteProjectBtn, ImagesCountSwitch } from ".";
 
 interface IProps {
   onOpenChange: () => void;
@@ -30,6 +30,8 @@ export const SettingDrawer: FC<UseDisclosureProps & IProps> = ({
           <>
             <DrawerHeader className="flex flex-col gap-1">Setting</DrawerHeader>
             <DrawerBody className="">
+              <ImagesCountSwitch />
+              <Divider />
               <ChangeSlugBtn />
               <Divider />
               <DeleteProjectBtn />

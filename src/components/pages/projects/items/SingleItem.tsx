@@ -3,7 +3,7 @@
 import { ChangeEvent, FC, useRef, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "@bprogress/next/app";
-import { Button } from "@heroui/react";
+import { Button, PressEvent } from "@heroui/react";
 import { Edit } from "iconsax-react";
 import { toast } from "react-toastify";
 
@@ -40,7 +40,8 @@ export const SingleItem: FC<IProps> = ({ project }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   //Functions
-  function selectImage() {
+  function selectImage(e: PressEvent) {
+    e.continuePropagation();
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
@@ -69,14 +70,14 @@ export const SingleItem: FC<IProps> = ({ project }) => {
 
   return (
     <div className="col-span-6 md:col-span-4 relative">
+      <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        className="hidden"
+        accept="image/*"
+      />
       <Link href={PATHS.PROJECT(project.slug)} className="w-full h-full">
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          className="hidden"
-          accept="image/*"
-        />
         <div className="w-full h-48 md:h-72 lg:h-96 xl:h-[460px] relative cursor-pointer">
           {project.thumbnail ? (
             <Image
@@ -88,19 +89,19 @@ export const SingleItem: FC<IProps> = ({ project }) => {
             <Image src={projectItemTestImage} alt={project.slug} fill />
           )}
         </div>
-        {isAuth && (
-          <Button
-            isIconOnly
-            size="sm"
-            variant="light"
-            className="absolute bottom-2 right-2"
-            onPress={selectImage}
-            isLoading={isLoading}
-          >
-            <Edit className="w-5 h-5" color="#1E353C" />
-          </Button>
-        )}
       </Link>
+      {isAuth && (
+        <Button
+          isIconOnly
+          size="sm"
+          variant="light"
+          className="absolute bottom-5 right-5"
+          onPress={selectImage}
+          isLoading={isLoading}
+        >
+          <Edit className="w-5 h-5" color="#1E353C" />
+        </Button>
+      )}
     </div>
   );
 };
