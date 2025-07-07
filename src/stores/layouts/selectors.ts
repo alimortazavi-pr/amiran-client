@@ -1,4 +1,5 @@
 //Types
+import { ILayoutsState } from "@/common/interfaces";
 import { languagesType } from "@/common/types";
 import { RootState } from "@/stores/index";
 
@@ -12,4 +13,8 @@ export function isOpenMenuSelector(state: RootState): boolean {
 
 export function isOpenSearchSelector(state: RootState): boolean {
   return state.layouts.isOpenSearch;
+}
+
+export function videosSelector(state: RootState): ILayoutsState["videos"] {
+  return state.layouts.videos;
 }

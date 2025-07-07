@@ -5,3 +5,4 @@ export * from "./AmiranLogoSection";
 export * from "./ChartSection";
 export * from "./Description2Section";
 export * from "./Description3Section";
+export * from "./VideoSectionContainer";

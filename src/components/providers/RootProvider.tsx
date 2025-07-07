@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, PropsWithChildren, useEffect } from "react";
+import { FC, PropsWithChildren, use, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 //Toast
@@ -18,6 +18,7 @@ import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { languageSelector } from "@/stores/layouts/selectors";
 import { didTryAutoLoginSelector } from "@/stores/auth/selectors";
 import { autoLogin, logOut } from "@/stores/auth/actions";
+import { fetchVideosAction } from "@/stores/layouts/actions";
 
 //Components
 import { MenuDrawerContainer, MenuModalContainer } from "../common/MenuModal";
@@ -34,7 +35,11 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
   //Next
   const pathname = usePathname();
 
-    //Lifecycle
+  //Lifecycle
+  useEffect(() => {
+    dispatch(fetchVideosAction());
+  }, []);
+
   useEffect(() => {
     autoLoginFunc();
   }, [dispatch, didTryAutoLogin]);

@@ -8,15 +8,20 @@ import {
 } from "@heroui/react";
 import { FC } from "react";
 
+//Interfaces
+import { IProject } from "@/common/interfaces";
+
 //Components
 import { ChangeSlugBtn, DeleteProjectBtn, ImagesCountSwitch } from ".";
 
 interface IProps {
   onOpenChange: () => void;
+  project: IProject;
 }
 export const SettingDrawer: FC<UseDisclosureProps & IProps> = ({
   isOpen,
   onOpenChange,
+  project,
 }) => {
   return (
     <Drawer
@@ -30,7 +35,7 @@ export const SettingDrawer: FC<UseDisclosureProps & IProps> = ({
           <>
             <DrawerHeader className="flex flex-col gap-1">Setting</DrawerHeader>
             <DrawerBody className="">
-              <ImagesCountSwitch />
+              <ImagesCountSwitch project={project} />
               <Divider />
               <ChangeSlugBtn />
               <Divider />

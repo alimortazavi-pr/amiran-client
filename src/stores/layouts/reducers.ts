@@ -33,6 +33,15 @@ const reducers = {
       isOpenSearch: action.payload,
     };
   },
+  setVideos(
+    state: ILayoutsState,
+    action: PayloadAction<ILayoutsState["videos"]>
+  ): ILayoutsState {
+    return {
+      ...state,
+      videos: action.payload,
+    };
+  },
 };
 
 export default reducers;

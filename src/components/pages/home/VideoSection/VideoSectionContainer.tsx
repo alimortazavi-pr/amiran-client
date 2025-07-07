@@ -1,19 +1,43 @@
 "use client";
 
-import { Pause, Play, VideoSquare } from "iconsax-react";
-import { useEffect, useRef, useState } from "react";
+import { Edit, Pause, Play, VideoSquare } from "iconsax-react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { Button } from "@heroui/react";
+import { toast } from "react-toastify";
+import { useRouter } from "@bprogress/next/app";
+
+//Enums
+import { videoSectionEnum } from "@/common/enums";
+
+//Redux
+import { useAppDispatch, useAppSelector } from "@/stores/hooks";
+import { isAuthSelector } from "@/stores/auth/selectors";
+import { videosSelector } from "@/stores/layouts/selectors";
+import { upsertVideo } from "@/stores/layouts/actions";
 
 //Components
 import { RailSpacerHorizontal } from "@/components/common/RailSpacer";
-import { Button } from "@heroui/react";
+
+//Constants
+import { BASE_API_URL } from "@/common/constants";
 
 export const VideoSectionContainer = () => {
+  //Redux
+  const dispatch = useAppDispatch();
+  const isAuth = useAppSelector(isAuthSelector);
+  const homeVideo = useAppSelector(videosSelector).home;
+
+  //Next
+  const router = useRouter();
+
   //States
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   //Refs
   const videoRef = useRef<HTMLVideoElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   //Lifecycle
   useEffect(() => {
@@ -28,6 +52,12 @@ export const VideoSectionContainer = () => {
   }, []);
 
   //Functions
+  function selectVideo() {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  }
+
   function handlePlayPause() {
     if (!videoRef.current) return;
     if (videoRef.current.paused) {
@@ -49,17 +79,61 @@ export const VideoSectionContainer = () => {
     }
   }
 
+  async function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
+    if (e?.target?.files) {
+      setIsLoading(true);
+      try {
+        const formData = new FormData();
+        formData.append("video", e?.target?.files[0]);
+        await dispatch(upsertVideo(formData, videoSectionEnum.HOME));
+        setIsLoading(false);
+        toast.success("Video has been updated", {
+          position: "top-center",
+        });
+        router.refresh();
+      } catch (error: any) {
+        toast.error(error.message, {
+          position: "top-center",
+        });
+        setIsLoading(false);
+      }
+    }
+  }
+
   return (
     <div className="w-full h-full flex items-center justify-center px-4 my-14 lg:my-36 xl:my-48 2xl:my-60 gap-8">
+      <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        className="hidden"
+        accept="video/*"
+      />
       <div className="flex-auto h-10 items-center hidden lg:flex">
         <RailSpacerHorizontal />
         <RailSpacerHorizontal />
         <RailSpacerHorizontal />
       </div>
       <div className="w-full max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] h-36 md:h-52 lg:h-60 xl:h-72 2xl:h-80 bg-primary/30 flex items-center justify-center rounded-full relative group">
+        {isAuth && (
+          <Button
+            isIconOnly
+            size="sm"
+            variant="light"
+            className="absolute -right-8 bottom-1 z-10"
+            onPress={selectVideo}
+            isLoading={isLoading}
+          >
+            <Edit className="w-5 h-5" color="#1E353C" />
+          </Button>
+        )}
         <video
           ref={videoRef}
-          src="https://berimcafe-icons.s3.ir-thr-at1.arvanstorage.ir/Final%20-%20es2.mp4"
+          src={
+            homeVideo
+              ? `${BASE_API_URL}${homeVideo}`
+              : "https://berimcafe-icons.s3.ir-thr-at1.arvanstorage.ir/Final%20-%20es2.mp4"
+          }
           className={`w-full h-full ${
             !isFullscreen && "rounded-full"
           } object-cover`}

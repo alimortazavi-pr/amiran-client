@@ -10,6 +10,11 @@ const initialState: ILayoutsState = {
   language: "en",
   isOpenMenu: false,
   isOpenSearch: false,
+  videos: {
+    home: "",
+    duty: "",
+    services: "",
+  },
 };
 
 export const layoutsReducer = createSlice({

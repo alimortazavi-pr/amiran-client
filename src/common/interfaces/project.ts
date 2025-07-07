@@ -10,6 +10,7 @@ export interface IProject {
   _id: string;
   thumbnail: string;
   logo: string;
+  video: string;
   slug: string;
   description: string;
   isPublished: boolean;
@@ -24,6 +25,7 @@ export interface IProject {
   directions: string;
   images: IProjectImage[];
   plans: IPlanImage[];
+  has4Images: boolean;
   deleted: boolean;
 }
 

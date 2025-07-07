@@ -11,12 +11,16 @@ import { setForm } from "@/stores/projects/actions";
 
 //Components
 import { NavbarContainer } from "./Navbar";
-import { DescriptionSection, DirectionsBtn, ImagesSection } from ".";
+import {
+  DescriptionSection,
+  DirectionsBtn,
+  ImagesSection,
+  VideoSectionContainer,
+} from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 import { PlanImagesContainer } from "./PlanImages";
 import { FeaturesContainer } from "./Features";
-import { VideoSectionContainer } from "../home/VideoSection";
 import { EditProjectModal } from "./EditProject";
 import { SettingBtn } from "./Setting";
 
@@ -61,7 +65,7 @@ export const ProjectPage: FC<IProps> = ({ project }) => {
           <ImagesSection project={project} />
           <DescriptionSection project={project} />
         </div>
-        <VideoSectionContainer />
+        <VideoSectionContainer project={project} />
         <PlanImagesContainer project={project} />
         <FeaturesContainer project={project} />
         <DirectionsBtn project={project} />
@@ -76,7 +80,7 @@ export const ProjectPage: FC<IProps> = ({ project }) => {
         </div>
       </div>
       <EditProjectModal />
-      <SettingBtn />
+      <SettingBtn project={project} />
     </div>
   );
 };

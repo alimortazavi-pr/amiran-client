@@ -1,31 +1,33 @@
 "use client";
 
 import { Edit, Pause, Play, VideoSquare } from "iconsax-react";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, FC, useEffect, useRef, useState } from "react";
 import { Button } from "@heroui/react";
 import { toast } from "react-toastify";
 import { useRouter } from "@bprogress/next/app";
 
-//Enums
-import { videoSectionEnum } from "@/common/enums";
+//Interfaces
+import { IProject } from "@/common/interfaces";
 
 //Redux
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { isAuthSelector } from "@/stores/auth/selectors";
 import { videosSelector } from "@/stores/layouts/selectors";
-import { upsertVideo } from "@/stores/layouts/actions";
+import { upsertVideoProject } from "@/stores/projects/actions";
 
 //Components
-import { RailSpacerContainer } from "@/components/common/RailSpacer";
+import { RailSpacerHorizontal } from "@/components/common/RailSpacer";
 
 //Constants
 import { BASE_API_URL } from "@/common/constants";
 
-export const VideoSection = () => {
+interface IProps {
+  project: IProject;
+}
+export const VideoSectionContainer: FC<IProps> = ({ project }) => {
   //Redux
   const dispatch = useAppDispatch();
   const isAuth = useAppSelector(isAuthSelector);
-  const servicesVideo = useAppSelector(videosSelector).services;
 
   //Next
   const router = useRouter();
@@ -85,7 +87,7 @@ export const VideoSection = () => {
       try {
         const formData = new FormData();
         formData.append("video", e?.target?.files[0]);
-        await dispatch(upsertVideo(formData, videoSectionEnum.SERVICES));
+        await dispatch(upsertVideoProject(formData, project.slug));
         setIsLoading(false);
         toast.success("Video has been updated", {
           position: "top-center",
@@ -101,7 +103,7 @@ export const VideoSection = () => {
   }
 
   return (
-    <div className="w-full h-full lg:w-auto flex flex-col items-center justify-center px-4 my-14 lg:my-0 gap-8 lg:mt-16">
+    <div className="w-full h-full flex items-center justify-center px-4 my-14 lg:my-36 xl:my-48 2xl:my-60 gap-8">
       <input
         type="file"
         ref={fileInputRef}
@@ -109,10 +111,12 @@ export const VideoSection = () => {
         className="hidden"
         accept="video/*"
       />
-      <div className="hidden lg:block">
-        <RailSpacerContainer hasMy={false} />
+      <div className="flex-auto h-10 items-center hidden lg:flex">
+        <RailSpacerHorizontal />
+        <RailSpacerHorizontal />
+        <RailSpacerHorizontal />
       </div>
-      <div className="w-full max-w-[500px] h-36 md:h-52 lg:w-52 lg:h-[500px] xl:w-60 xl:h-[550px] bg-primary/30 flex items-center justify-center rounded-full relative group">
+      <div className="w-full max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] h-36 md:h-52 lg:h-60 xl:h-72 2xl:h-80 bg-primary/30 flex items-center justify-center rounded-full relative group">
         {isAuth && (
           <Button
             isIconOnly
@@ -128,8 +132,8 @@ export const VideoSection = () => {
         <video
           ref={videoRef}
           src={
-            servicesVideo
-              ? `${BASE_API_URL}${servicesVideo}`
+            project.video
+              ? `${BASE_API_URL}${project.video}`
               : "https://berimcafe-icons.s3.ir-thr-at1.arvanstorage.ir/Final%20-%20es2.mp4"
           }
           className={`w-full h-full ${
@@ -168,8 +172,10 @@ export const VideoSection = () => {
           />
         </Button>
       </div>
-      <div className="hidden lg:block">
-        <RailSpacerContainer hasMy={false} />
+      <div className="flex-auto h-10 items-center hidden lg:flex">
+        <RailSpacerHorizontal />
+        <RailSpacerHorizontal />
+        <RailSpacerHorizontal />
       </div>
     </div>
   );

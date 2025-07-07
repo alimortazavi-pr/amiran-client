@@ -106,7 +106,11 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           className="hidden"
           accept="image/*"
         />
-        <div className="col-span-1 row-span-4 rounded-full relative">
+        <div
+          className={`col-span-1 ${
+            !project.has4Images ? "row-span-4" : "row-span-10"
+          } rounded-full relative`}
+        >
           {image1 ? (
             <Image
               fill
@@ -225,66 +229,70 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
             </Button>
           )}
         </div>
-        <div className="col-span-1 row-span-2 rounded-full relative">
-          {image5 ? (
-            <Image
-              fill
-              src={`${SERVER_BASE_API_URL}${image5.url}`}
-              alt="Image 5"
-              className="w-full h-full object-cover rounded-full"
-            />
-          ) : (
-            <Image
-              fill
-              src={fakeImg}
-              alt="Image 5"
-              className="w-full h-full object-cover rounded-full"
-            />
-          )}
+        {!project.has4Images && (
+          <>
+            <div className="col-span-1 row-span-2 rounded-full relative">
+              {image5 ? (
+                <Image
+                  fill
+                  src={`${SERVER_BASE_API_URL}${image5.url}`}
+                  alt="Image 5"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              ) : (
+                <Image
+                  fill
+                  src={fakeImg}
+                  alt="Image 5"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              )}
 
-          {isAuth && (
-            <Button
-              isIconOnly
-              size="sm"
-              variant="light"
-              className="absolute top-2 right-2"
-              onPress={() => selectImage("5")}
-              isLoading={isLoading}
-            >
-              <Edit className="w-5 h-5" color="#1E353C" />
-            </Button>
-          )}
-        </div>
-        <div className="col-span-1 row-span-3 rounded-full relative">
-          {image6 ? (
-            <Image
-              fill
-              src={`${SERVER_BASE_API_URL}${image6.url}`}
-              alt="Image 6"
-              className="w-full h-full object-cover rounded-full"
-            />
-          ) : (
-            <Image
-              fill
-              src={fakeImg}
-              alt="Image 6"
-              className="w-full h-full object-cover rounded-full"
-            />
-          )}
+              {isAuth && (
+                <Button
+                  isIconOnly
+                  size="sm"
+                  variant="light"
+                  className="absolute top-2 right-2"
+                  onPress={() => selectImage("5")}
+                  isLoading={isLoading}
+                >
+                  <Edit className="w-5 h-5" color="#1E353C" />
+                </Button>
+              )}
+            </div>
+            <div className="col-span-1 row-span-3 rounded-full relative">
+              {image6 ? (
+                <Image
+                  fill
+                  src={`${SERVER_BASE_API_URL}${image6.url}`}
+                  alt="Image 6"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              ) : (
+                <Image
+                  fill
+                  src={fakeImg}
+                  alt="Image 6"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              )}
 
-          {isAuth && (
-            <Button
-              isIconOnly
-              size="sm"
-              variant="light"
-              className="absolute top-2 right-2"
-              onPress={() => selectImage("6")}
-              isLoading={isLoading}
-            >
-              <Edit className="w-5 h-5" color="#1E353C" />
-            </Button>
-          )}
-        </div>
+              {isAuth && (
+                <Button
+                  isIconOnly
+                  size="sm"
+                  variant="light"
+                  className="absolute top-2 right-2"
+                  onPress={() => selectImage("6")}
+                  isLoading={isLoading}
+                >
+                  <Edit className="w-5 h-5" color="#1E353C" />
+                </Button>
+              )}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

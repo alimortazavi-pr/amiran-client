@@ -9,7 +9,6 @@ import { TitleSection } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 import { ItemsContainer } from "./items";
-import { VideoSectionContainer } from "../home/VideoSection";
 import { CreateProjectFAB } from "./create-project";
 
 interface IProps {
@@ -22,10 +21,7 @@ export const ProjectsPage: FC<IProps> = ({ projects }) => {
       <div className="px-4 overflow-hidden">
         <TitleSection />
         <ItemsContainer projects={projects} />
-        <VideoSectionContainer />
-        <div className="lg:hidden">
-          <RailSpacerContainer />
-        </div>
+        <RailSpacerContainer />
         <BackToPreviousPageBtn />
       </div>
       <CreateProjectFAB />

@@ -48,6 +48,38 @@ export function upsertThumbnailProject(form: FormData, slug: string): AppThunk {
   };
 }
 
+export function has4ImagesToggle(slug: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(
+        `/admin/projects/${slug}/has-4-images`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      );
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function upsertVideoProject(form: FormData, slug: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(`/admin/projects/video/${slug}`, form, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
 export function upsertLogoProject(form: FormData, slug: string): AppThunk {
   return async (dispatch, getState) => {
     try {
