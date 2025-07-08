@@ -31,7 +31,6 @@ export const ImagesCountSwitch: FC<IProps> = ({ project }) => {
   function onValueChangeHandler() {
     dispatch(has4ImagesToggle(project.slug));
     router.refresh();
-    setIsSelected((prev) => !prev);
   }
 
   return (
