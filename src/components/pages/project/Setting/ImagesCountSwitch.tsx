@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC} from "react";
 import { Switch } from "@heroui/react";
 import { useRouter } from "@bprogress/next/app";
 
@@ -19,24 +19,19 @@ export const ImagesCountSwitch: FC<IProps> = ({ project }) => {
   //Next
   const router = useRouter();
 
-  //States
-  const [isSelected, setIsSelected] = useState(true);
-
-  //Lifecycle
-  useEffect(() => {
-    setIsSelected(project.has4Images ? true : false);
-  }, [project]);
-
   //Functions
-  function onValueChangeHandler() {
+  async function onValueChangeHandler() {
     dispatch(has4ImagesToggle(project.slug));
     router.refresh();
   }
 
   return (
     <div className="flex justify-center">
-      <Switch isSelected={isSelected} onValueChange={onValueChangeHandler}>
-        {isSelected ? "4 Images" : "6 Images"}
+      <Switch
+        isSelected={project.has4Images}
+        onValueChange={onValueChangeHandler}
+      >
+        {project.has4Images ? "4 Images" : "6 Images"}
       </Switch>
     </div>
   );
