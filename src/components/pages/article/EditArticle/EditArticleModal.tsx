@@ -20,7 +20,15 @@ import {
   setForm,
   updateArticleAction,
 } from "@/stores/articles/actions";
+
+//Constants
 import { PATHS } from "@/common/constants";
+
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
 
 export const EditArticleModal = () => {
   //Redux
@@ -34,6 +42,9 @@ export const EditArticleModal = () => {
   //Next
   const router = useRouter();
   const params = useParams();
+
+  //Translation
+  const { i18n } = useClientTranslation(storage.getLanguage());
 
   //States
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -59,12 +70,27 @@ export const EditArticleModal = () => {
 
   function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
-    dispatch(
-      setForm({
-        ...form,
-        [name]: value,
-      })
-    );
+    if (editSection.value === "slug") {
+      dispatch(
+        setForm({
+          ...form,
+          slug: value,
+        })
+      );
+    } else {
+      dispatch(
+        setForm({
+          ...form,
+          [name]: {
+            ...(form[name as keyof typeof form] as {
+              fa: string;
+              en: string;
+            }),
+            [i18n.language]: value,
+          },
+        })
+      );
+    }
   }
 
   async function onSubmitHandler(e: FormEvent) {
@@ -105,7 +131,18 @@ export const EditArticleModal = () => {
               label={editSection.label}
               placeholder="Enter ..."
               value={
-                (form[editSection.value as keyof typeof form] as string) || ""
+                editSection.value
+                  ? editSection.value === "slug"
+                    ? (form[
+                        editSection.value as keyof typeof form
+                      ] as string) || ""
+                    : (
+                        form[editSection.value as keyof typeof form] as {
+                          fa: string;
+                          en: string;
+                        }
+                      )[i18n.language as "fa" | "en"]
+                  : ""
               }
               onChange={onChangeHandler}
               name={editSection.value}

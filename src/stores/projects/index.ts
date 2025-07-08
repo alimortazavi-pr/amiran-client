@@ -9,7 +9,7 @@ import reducers from "@/stores/projects/reducers";
 const initialState: IProjectsState = {
   form: {
     slug: "",
-    description: "",
+    description: { fa: "", en: "" },
     isPublished: true,
     usage: "",
     location: "",

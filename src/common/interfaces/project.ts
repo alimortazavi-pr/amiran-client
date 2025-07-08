@@ -12,7 +12,7 @@ export interface IProject {
   logo: string;
   video: string;
   slug: string;
-  description: string;
+  description: { fa: string; en: string };
   isPublished: boolean;
   usage: string;
   location: string;
@@ -44,7 +44,7 @@ export interface IPlanImage {
 
 export interface IProjectForm {
   slug: string;
-  description: string;
+  description: { fa: string; en: string };
   isPublished: boolean;
   usage: string;
   location: string;

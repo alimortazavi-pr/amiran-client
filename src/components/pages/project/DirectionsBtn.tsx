@@ -13,6 +13,12 @@ import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { isAuthSelector } from "@/stores/auth/selectors";
 import { setEditSection } from "@/stores/projects/actions";
 
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
+
 interface IProps {
   project: IProject;
 }
@@ -20,6 +26,9 @@ export const DirectionsBtn: FC<IProps> = ({ project }) => {
   //Redux
   const dispatch = useAppDispatch();
   const isAuth = useAppSelector(isAuthSelector);
+
+  //Translation
+  const { t } = useClientTranslation(storage.getLanguage());
 
   //Functions
   function selectSection() {
@@ -46,7 +55,7 @@ export const DirectionsBtn: FC<IProps> = ({ project }) => {
           }
           target="_blank"
         >
-          Get directions
+          {t("PROJECT.GetDirections_Label")}
         </Button>
         {isAuth && (
           <Button

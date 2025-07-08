@@ -10,6 +10,15 @@ import { isAuthSelector } from "@/stores/auth/selectors";
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { setEditSection } from "@/stores/projects/actions";
 
+//Translation
+import {
+  useClientTranslation,
+  useConvertNumbersFormat,
+} from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
+
 interface IProps {
   title: string;
   content: string;
@@ -20,11 +29,15 @@ export const FeatureItem: FC<IProps> = ({ title, content, value }) => {
   const dispatch = useAppDispatch();
   const isAuth = useAppSelector(isAuthSelector);
 
+  //Translation
+  const { t } = useClientTranslation(storage.getLanguage());
+  const convertNumbersFormat = useConvertNumbersFormat();
+
   //Functions
   function selectSection() {
     dispatch(
       setEditSection({
-        label: title,
+        label: t(title),
         value: value,
       })
     );
@@ -33,11 +46,13 @@ export const FeatureItem: FC<IProps> = ({ title, content, value }) => {
   return (
     <div className="col-span-12 md:col-span-6 relative">
       <div className="flex flex-col items-center justify-center lg:gap-y-1">
-        <h6 className="text-primary/30 font-semibold uppercase md:text-lg lg:text-xl xl:text-2xl">
-          {title}
+        <h6 className="text-primary/30 font-semibold md:text-lg lg:text-xl xl:text-2xl">
+          {t(title)}
         </h6>
         <div className="rounded-full px-2 py-1 bg-primary/30 text-default-50 w-60 flex items-center justify-center tracking-wide truncate md:w-full md:text-lg lg:text-xl xl:text-2xl lg:py-1.5 xl:py-2">
-          <span className="truncate uppercase">{content}</span>
+          <span className="truncate uppercase">
+            {convertNumbersFormat(content)}
+          </span>
         </div>
       </div>
       {isAuth && (

@@ -9,17 +9,17 @@ export interface IArticlesState {
 export interface IArticle {
   _id: string;
   thumbnail: string;
-  title: string;
+  title: { fa: string; en: string };
   slug: string;
-  description: string;
-  content: string;
+  description: { fa: string; en: string };
+  content: { fa: string; en: string };
   isPublished: boolean;
   deleted: boolean;
 }
 
 export interface IArticleForm {
-  title: string;
+  title: { fa: string; en: string };
   slug: string;
-  description: string;
-  content: string;
+  description: { fa: string; en: string };
+  content: { fa: string; en: string };
 }

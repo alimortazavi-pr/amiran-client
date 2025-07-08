@@ -12,6 +12,12 @@ import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { isAuthSelector } from "@/stores/auth/selectors";
 import { setEditSection } from "@/stores/projects/actions";
 
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
+
 interface IProps {
   project: IProject;
 }
@@ -19,6 +25,9 @@ export const DescriptionSection: FC<IProps> = ({ project }) => {
   //Redux
   const dispatch = useAppDispatch();
   const isAuth = useAppSelector(isAuthSelector);
+
+  //Translation
+  const { t, i18n } = useClientTranslation(storage.getLanguage());
 
   //Functions
   function selectSection() {
@@ -33,29 +42,8 @@ export const DescriptionSection: FC<IProps> = ({ project }) => {
   return (
     <div className="flex flex-col gap-5 px-5 md:min-w-[50%] md:max-w-[50%] relative overflow-visible">
       <p className="text-justify font-light text-primary/30 md:text-lg xl:text-xl md:line-clamp-[14] xl:line-clamp-[18]">
-        {project.description ||
-          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit
-        consectetur reprehenderit id necessitatibus totam ex repudiandae
-        expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit
-        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
-        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
-        expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit
-        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
-        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
-        expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit
-        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
-        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
-        expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit
-        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis
-        quidem similique facere! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis`}
+        {project.description[(i18n.language as "fa" | "en") || "en"] ||
+          t("COMMON.Lorem_Label")}
       </p>
       {isAuth && (
         <Button

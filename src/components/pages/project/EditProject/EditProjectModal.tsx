@@ -20,7 +20,15 @@ import {
   setForm,
   updateProjectAction,
 } from "@/stores/projects/actions";
+
+//Constants
 import { PATHS } from "@/common/constants";
+
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
 
 export const EditProjectModal = () => {
   //Redux
@@ -34,6 +42,9 @@ export const EditProjectModal = () => {
   //Next
   const router = useRouter();
   const params = useParams();
+
+  //Translation
+  const { i18n } = useClientTranslation(storage.getLanguage());
 
   //States
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -59,12 +70,21 @@ export const EditProjectModal = () => {
 
   function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
-    dispatch(
-      setForm({
-        ...form,
-        [name]: value,
-      })
-    );
+    if (editSection.value === "description") {
+      dispatch(
+        setForm({
+          ...form,
+          description: { ...form.description, [i18n.language]: value },
+        })
+      );
+    } else {
+      dispatch(
+        setForm({
+          ...form,
+          [name]: value,
+        })
+      );
+    }
   }
 
   async function onSubmitHandler(e: FormEvent) {
@@ -105,7 +125,15 @@ export const EditProjectModal = () => {
               label={editSection.label}
               placeholder="Enter ..."
               value={
-                (form[editSection.value as keyof typeof form] as string) || ""
+                editSection.value === "description"
+                  ? (
+                      form[editSection.value as keyof typeof form] as {
+                        fa: string;
+                        en: string;
+                      }
+                    )[i18n.language as "fa" | "en"]
+                  : (form[editSection.value as keyof typeof form] as string) ||
+                    ""
               }
               onChange={onChangeHandler}
               name={editSection.value}

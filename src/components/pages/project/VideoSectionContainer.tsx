@@ -12,7 +12,6 @@ import { IProject } from "@/common/interfaces";
 //Redux
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { isAuthSelector } from "@/stores/auth/selectors";
-import { videosSelector } from "@/stores/layouts/selectors";
 import { upsertVideoProject } from "@/stores/projects/actions";
 
 //Components

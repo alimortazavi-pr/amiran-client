@@ -79,6 +79,19 @@
     "ContactUsDescriptionTitle_Label": "Lorem Ipsum",
     "ContactUsDescription_Label": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit consectetur reprehenderit id necessitatibus totam ex repudiandae expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis"
   },
+  "PROJECT": {
+    "FEATURES": {
+      "Usage_Label": "USAGE",
+      "NumberOfUnitsPerFloor_Label": "NUMBER OF UNITS PER FLOOR",
+      "UnitArea_Label": "UNIT AREA",
+      "NumberOfUnits_Label": "NUMBER OF UNITS",
+      "NumberOfFloors_Label": "NUMBER OF FLOORS",
+      "TotalBuiltArea_Label": "TOTAL BUILT AREA",
+      "LandArea_Label": "LAND AREA",
+      "Location_Label": "LOCATION"
+    },
+    "GetDirections_Label": "Get Directions"
+  },
   "MENU": {
     "ProjectsItem_Label": "Projects",
     "ServicesItem_Label": "Services",
@@ -90,6 +103,7 @@
   "COMMON": {
     "More_Label": "More",
     "BackToHome_Label": "Back to Home",
-    "BackToProjects_Label": "Back to Projects"
+    "BackToProjects_Label": "Back to Projects",
+    "Lorem_Label": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 }

@@ -8,10 +8,10 @@ import reducers from "@/stores/articles/reducers";
 
 const initialState: IArticlesState = {
   form: {
-    title: "",
+    title: { fa: "", en: "" },
     slug: "",
-    description: "",
-    content: "",
+    description: { fa: "", en: "" },
+    content: { fa: "", en: "" },
   },
   editSection: {
     label: "",

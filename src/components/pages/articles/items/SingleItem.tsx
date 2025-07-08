@@ -2,6 +2,7 @@
 
 import { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 //Interfaces
 import { IArticle } from "@/common/interfaces";
@@ -11,12 +12,20 @@ import fakeImg from "@/assets/svgs/fake-img.svg";
 
 //Constants
 import { SERVER_BASE_API_URL, PATHS } from "@/common/constants";
-import Link from "next/link";
+
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
 
 interface IProps {
   article: IArticle;
 }
 export const SingleItem: FC<IProps> = ({ article }) => {
+  //Translation
+  const { i18n } = useClientTranslation(storage.getLanguage());
+
   return (
     <div className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
       <Link href={PATHS.ARTICLE(article.slug)}>
@@ -38,9 +47,11 @@ export const SingleItem: FC<IProps> = ({ article }) => {
               />
             )}
           </div>
-          <h6 className="font-semibold text-lg truncate">{article.title}</h6>
+          <h6 className="font-semibold text-lg truncate">
+            {article.title[i18n.language as "fa" | "en"]}
+          </h6>
           <p className="text-primary/30 text-sm line-clamp-4">
-            {article.content}
+            {article.content[i18n.language as "fa" | "en"]}
           </p>
         </div>
       </Link>

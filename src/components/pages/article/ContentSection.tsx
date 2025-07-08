@@ -12,6 +12,12 @@ import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { isAuthSelector } from "@/stores/auth/selectors";
 import { setEditSection } from "@/stores/articles/actions";
 
+//Translation
+import { useClientTranslation } from "@/hooks/translation";
+
+//Utils
+import { storage } from "@/common/utils";
+
 interface IProps {
   article: IArticle;
 }
@@ -19,6 +25,9 @@ export const ContentSection: FC<IProps> = ({ article }) => {
   //Redux
   const dispatch = useAppDispatch();
   const isAuth = useAppSelector(isAuthSelector);
+
+  //Translation
+  const { i18n } = useClientTranslation(storage.getLanguage());
 
   //Functions
   function selectSection() {
@@ -33,7 +42,7 @@ export const ContentSection: FC<IProps> = ({ article }) => {
   return (
     <div className="relative">
       <p className="text-justify font-light text-primary/70 md:text-lg xl:text-xl">
-        {article.content}
+        {article.content[(i18n.language as "fa" | "en") || "en"]}
       </p>
       {isAuth && (
         <Button
