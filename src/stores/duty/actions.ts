@@ -6,7 +6,8 @@ import { AppThunk } from "@/stores";
 import { dutyReducer } from ".";
 
 //Actions from reducer
-export const { setEmployersImages } = dutyReducer.actions;
+export const { setEmployersImages, setIsEditingTeam, setTeamForm } =
+  dutyReducer.actions;
 
 //Interfaces
 
@@ -60,6 +61,43 @@ export function upsertEmployerImageAction(
           ])
         );
       }
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function createTeamAction(): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.post(
+        `/admin/duty/team`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      );
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
+    }
+  };
+}
+
+export function updateTeamAction(teamId: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(
+        `/admin/duty/team/${teamId}`,
+        getState().duty.teamForm,
+        {
+          headers: {
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      );
     } catch (error: any) {
       throw new Error(error.response.data.message);
     }

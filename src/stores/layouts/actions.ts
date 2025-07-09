@@ -6,8 +6,14 @@ import { AppThunk } from "@/stores";
 import { layoutsReducer } from ".";
 
 //Actions from reducer
-export const { setLanguage, setIsOpenMenu, setIsOpenSearch, setVideos } =
-  layoutsReducer.actions;
+export const {
+  setLanguage,
+  setIsOpenMenu,
+  setIsOpenSearch,
+  setVideos,
+  setContactUsEditSection,
+  setContactUsForm,
+} = layoutsReducer.actions;
 
 //Interfaces
 
@@ -72,6 +78,24 @@ export function upsertVideo(
           ...getState().layouts.videos,
           [section]: res.data.video.video,
         })
+      );
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function upsertContactUsAction(): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(
+        `/admin/layouts/contact-us`,
+        getState().layouts.contactUsForm,
+        {
+          headers: {
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
       );
     } catch (error: any) {
       throw new Error(error.response.data.message);

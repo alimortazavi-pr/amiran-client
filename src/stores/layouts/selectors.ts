@@ -18,3 +18,15 @@ export function isOpenSearchSelector(state: RootState): boolean {
 export function videosSelector(state: RootState): ILayoutsState["videos"] {
   return state.layouts.videos;
 }
+
+export function contactUsFormSelector(
+  state: RootState
+): ILayoutsState["contactUsForm"] {
+  return state.layouts.contactUsForm;
+}
+
+export function contactUsEditSectionSelector(
+  state: RootState
+): ILayoutsState["contactUsEditSection"] {
+  return state.layouts.contactUsEditSection;
+}

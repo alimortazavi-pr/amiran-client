@@ -29,8 +29,6 @@ export const DescriptionSection: FC<IProps> = ({ home }) => {
 
   //Life cycle
   useEffect(() => {
-    console.log('salam');
-    
     if (home.heroTitle || home.heroDescription) {
       dispatch(
         setHeroForm({

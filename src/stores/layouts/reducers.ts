@@ -42,6 +42,27 @@ const reducers = {
       videos: action.payload,
     };
   },
+  setContactUsForm(
+    state: ILayoutsState,
+    action: PayloadAction<ILayoutsState["contactUsForm"]>
+  ): ILayoutsState {
+    return {
+      ...state,
+      contactUsForm: {
+        ...state.contactUsForm,
+        ...action.payload,
+      },
+    };
+  },
+  setContactUsEditSection(
+    state: ILayoutsState,
+    action: PayloadAction<ILayoutsState["contactUsEditSection"]>
+  ): ILayoutsState {
+    return {
+      ...state,
+      contactUsEditSection: action.payload,
+    };
+  },
 };
 
 export default reducers;

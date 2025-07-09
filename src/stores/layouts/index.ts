@@ -15,6 +15,14 @@ const initialState: ILayoutsState = {
     duty: "",
     services: "",
   },
+  contactUsForm: {
+    title: { en: "", fa: "" },
+    description: { en: "", fa: "" },
+  },
+  contactUsEditSection: {
+    label: "",
+    value: undefined,
+  },
 };
 
 export const layoutsReducer = createSlice({
