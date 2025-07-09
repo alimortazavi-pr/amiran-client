@@ -37,8 +37,8 @@ export const DescriptionSection: FC<IProps> = ({ contactUs }) => {
     if (contactUs.title || contactUs.description) {
       dispatch(
         setContactUsForm({
-          title: contactUs.title || { fa: "", en: "" },
-          description: contactUs.description || { fa: "", en: "" },
+          title: contactUs.title,
+          description: contactUs.description,
         })
       );
     }
@@ -67,7 +67,7 @@ export const DescriptionSection: FC<IProps> = ({ contactUs }) => {
     <div className="flex flex-col gap-5 mb-16 lg:mb-24">
       <div className="relative">
         <h4 className="font-medium text-xl text-center md:text-2xl lg:text-3xl xl:text-4xl">
-          {contactUs?.title[(i18n.language as "fa" | "en") || "en"] ||
+          {contactUs.title[(i18n.language as "fa" | "en") || "en"] ||
             t("CONTACT_US.ContactUsDescriptionTitle_Label")}
         </h4>
         {isAuth && (
