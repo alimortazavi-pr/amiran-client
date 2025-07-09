@@ -8,6 +8,14 @@ import reducers from "@/stores/home/reducers";
 
 const initialState: IHomeState = {
   heroImages: undefined,
+  heroForm: {
+    heroTitle: { en: "", fa: "" },
+    heroDescription: { en: "", fa: "" },
+  },
+  heroEditSection: {
+    label: "",
+    value: undefined,
+  },
 };
 
 export const homeReducer = createSlice({

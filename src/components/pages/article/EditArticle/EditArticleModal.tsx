@@ -158,7 +158,16 @@ export const EditArticleModal = () => {
               className="w-full"
               isLoading={isLoading}
               isDisabled={
-                !(form[editSection.value as keyof typeof form] as string)
+                editSection.value
+                  ? editSection.value === "slug"
+                    ? !(form[editSection.value as keyof typeof form] as string)
+                    : !(
+                        form[editSection.value as keyof typeof form] as {
+                          fa: string;
+                          en: string;
+                        }
+                      )[i18n.language as "fa" | "en"]
+                  : true
               }
             >
               Submit

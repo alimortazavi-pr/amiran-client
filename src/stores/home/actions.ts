@@ -6,7 +6,8 @@ import { AppThunk } from "@/stores";
 import { homeReducer } from ".";
 
 //Actions from reducer
-export const { setHeroImages } = homeReducer.actions;
+export const { setHeroImages, setHeroEditSection, setHeroForm } =
+  homeReducer.actions;
 
 //Interfaces
 
@@ -57,6 +58,20 @@ export function upsertHeroImageAction(
           setHeroImages([...(getState().home.heroImages || []), res.data.image])
         );
       }
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function upsertHeroAction(): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(`/admin/home/hero`, getState().home.heroForm, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
     } catch (error: any) {
       throw new Error(error.response.data.message);
     }

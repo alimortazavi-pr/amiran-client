@@ -14,6 +14,27 @@ const reducers = {
       heroImages: action.payload,
     };
   },
+  setHeroForm(
+    state: IHomeState,
+    action: PayloadAction<IHomeState["heroForm"]>
+  ): IHomeState {
+    return {
+      ...state,
+      heroForm: {
+        ...state.heroForm,
+        ...action.payload,
+      },
+    };
+  },
+  setHeroEditSection(
+    state: IHomeState,
+    action: PayloadAction<IHomeState["heroEditSection"]>
+  ): IHomeState {
+    return {
+      ...state,
+      heroEditSection: action.payload,
+    };
+  },
 };
 
 export default reducers;

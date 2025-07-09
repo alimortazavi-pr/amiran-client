@@ -3,7 +3,7 @@
 import { FC } from "react";
 
 //interfaces
-import { IProject } from "@/common/interfaces";
+import { IHome, IProject } from "@/common/interfaces";
 
 //Components
 import { NavbarContainer } from "@/components/common/Navbar";
@@ -22,16 +22,17 @@ import { useClientTranslation } from "@/hooks/translation";
 import { storage } from "@/common/utils";
 
 interface IProps {
+  home: IHome;
   projects: IProject[];
 }
-export const HomePage: FC<IProps> = ({ projects }) => {
+export const HomePage: FC<IProps> = ({ home, projects }) => {
   //Translation
   const { t } = useClientTranslation(storage.getLanguage());
 
   return (
     <div className="">
       <NavbarContainer />
-      <HeroSectionContainer />
+      <HeroSectionContainer home={home} />
       <RailSpacerContainer />
       <ProjectsSectionContainer projects={projects} />
       <RailSpacerContainer />

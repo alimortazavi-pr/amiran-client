@@ -1,7 +1,13 @@
-'use client';
+"use client";
+
+import { FC } from "react";
+
+//Interfaces
+import { IHome } from "@/common/interfaces";
 
 //Components
 import { ImagesSection, DescriptionSection, SloganSection } from ".";
+import { EditHeroModal } from "./EditHero";
 
 //Translation
 import { useClientTranslation } from "@/hooks/translation";
@@ -9,7 +15,10 @@ import { useClientTranslation } from "@/hooks/translation";
 //Utils
 import { storage } from "@/common/utils";
 
-export const HeroSectionContainer = () => {
+interface IProps {
+  home: IHome;
+}
+export const HeroSectionContainer: FC<IProps> = ({ home }) => {
   //Translation
   const { t } = useClientTranslation(storage.getLanguage());
 
@@ -20,7 +29,8 @@ export const HeroSectionContainer = () => {
       </h6>
       <SloganSection />
       <ImagesSection />
-      <DescriptionSection />
+      <DescriptionSection home={home} />
+      <EditHeroModal />
     </div>
   );
 };

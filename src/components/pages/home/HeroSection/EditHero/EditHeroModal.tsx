@@ -10,19 +10,18 @@ import {
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "@bprogress/next/app";
-import { useParams } from "next/navigation";
 
 //Redux
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
-import { editSectionSelector, formSelector } from "@/stores/projects/selectors";
 import {
-  setEditSection,
-  setForm,
-  updateProjectAction,
-} from "@/stores/projects/actions";
-
-//Constants
-import { PATHS } from "@/common/constants";
+  heroEditSectionSelector,
+  heroFormSelector,
+} from "@/stores/home/selectors";
+import {
+  setHeroEditSection,
+  setHeroForm,
+  upsertHeroAction,
+} from "@/stores/home/actions";
 
 //Translation
 import { useClientTranslation } from "@/hooks/translation";
@@ -30,18 +29,17 @@ import { useClientTranslation } from "@/hooks/translation";
 //Utils
 import { storage } from "@/common/utils";
 
-export const EditProjectModal = () => {
+export const EditHeroModal = () => {
   //Redux
   const dispatch = useAppDispatch();
-  const editSection = useAppSelector(editSectionSelector);
-  const form = useAppSelector(formSelector);
+  const editSection = useAppSelector(heroEditSectionSelector);
+  const form = useAppSelector(heroFormSelector);
 
   //NextUI
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
   //Next
   const router = useRouter();
-  const params = useParams();
 
   //Translation
   const { i18n } = useClientTranslation(storage.getLanguage());
@@ -61,7 +59,7 @@ export const EditProjectModal = () => {
   //Functions
   function onCloseHandler() {
     dispatch(
-      setEditSection({
+      setHeroEditSection({
         label: "",
         value: undefined,
       })
@@ -70,37 +68,31 @@ export const EditProjectModal = () => {
 
   function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
-    if (editSection.value === "description") {
-      dispatch(
-        setForm({
-          ...form,
-          description: { ...form.description, [i18n.language]: value },
-        })
-      );
-    } else {
-      dispatch(
-        setForm({
-          ...form,
-          [name]: value,
-        })
-      );
-    }
+
+    dispatch(
+      setHeroForm({
+        ...form,
+        [name]: {
+          ...(form[name as keyof typeof form] as {
+            fa: string;
+            en: string;
+          }),
+          [i18n.language]: value,
+        },
+      })
+    );
   }
 
   async function onSubmitHandler(e: FormEvent) {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await dispatch(updateProjectAction(params.slug as string));
+      await dispatch(upsertHeroAction());
       setIsLoading(false);
-      toast.success(`${editSection.label} has been uploaded`, {
+      toast.success(`Hero has been updated`, {
         position: "top-center",
       });
-      if (editSection.value === "slug") {
-        router.replace(PATHS.PROJECT(form.slug));
-      } else {
-        router.refresh();
-      }
+      router.refresh();
       onCloseHandler();
     } catch (error: any) {
       toast.error(error.message, {
@@ -125,15 +117,13 @@ export const EditProjectModal = () => {
               label={editSection.label}
               placeholder="Enter ..."
               value={
-                editSection.value === "description"
-                  ? (
-                      form[editSection.value as keyof typeof form] as {
-                        fa: string;
-                        en: string;
-                      }
-                    )[i18n.language as "fa" | "en"]
-                  : (form[editSection.value as keyof typeof form] as string) ||
-                    ""
+                editSection.value &&
+                (
+                  form[editSection.value as keyof typeof form] as {
+                    fa: string;
+                    en: string;
+                  }
+                )[i18n.language as "fa" | "en"]
               }
               onChange={onChangeHandler}
               name={editSection.value}
@@ -149,14 +139,13 @@ export const EditProjectModal = () => {
               className="w-full"
               isLoading={isLoading}
               isDisabled={
-                editSection.value === "description"
-                  ? !(
-                      form[editSection.value as keyof typeof form] as {
-                        fa: string;
-                        en: string;
-                      }
-                    )[i18n.language as "fa" | "en"]
-                  : !(form[editSection.value as keyof typeof form] as string)
+                editSection.value &&
+                !(
+                  form[editSection.value as keyof typeof form] as {
+                    fa: string;
+                    en: string;
+                  }
+                )[i18n.language as "fa" | "en"]
               }
             >
               Submit
