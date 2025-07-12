@@ -5,7 +5,6 @@ import { Add } from "iconsax-react";
 import { useState } from "react";
 import { useRouter } from "@bprogress/next/app";
 import { toast } from "react-toastify";
-import { useParams } from "next/navigation";
 
 //Redux
 import { isAuthSelector } from "@/stores/auth/selectors";

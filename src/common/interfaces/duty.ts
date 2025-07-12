@@ -1,7 +1,6 @@
 export interface IDutyState {
   employersImages: undefined | IEmployerImage[];
-  teamForm: ITeamForm;
-  isEditingTeam: boolean;
+  selectedTeam: ITeam | undefined;
 }
 
 export interface IEmployerImage {

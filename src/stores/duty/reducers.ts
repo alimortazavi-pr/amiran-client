@@ -14,25 +14,13 @@ const reducers = {
       employersImages: action.payload,
     };
   },
-  setTeamForm(
+  setSelectedTeam(
     state: IDutyState,
-    action: PayloadAction<IDutyState["teamForm"]>
+    action: PayloadAction<IDutyState["selectedTeam"]>
   ): IDutyState {
     return {
       ...state,
-      teamForm: {
-        ...state.teamForm,
-        ...action.payload,
-      },
-    };
-  },
-  setIsEditingTeam(
-    state: IDutyState,
-    action: PayloadAction<IDutyState["isEditingTeam"]>
-  ): IDutyState {
-    return {
-      ...state,
-      isEditingTeam: action.payload,
+      selectedTeam: action.payload,
     };
   },
 };

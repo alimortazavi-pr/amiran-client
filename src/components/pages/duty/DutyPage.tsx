@@ -1,3 +1,8 @@
+import { FC } from "react";
+
+//Interfaces
+import { ITeam } from "@/common/interfaces";
+
 //Components
 import { NavbarContainer } from "@/components/common/Navbar";
 import {
@@ -14,7 +19,10 @@ import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 import { ExperiencedSectionContainer } from "./ExperiencedSection";
 
-export const DutyPage = () => {
+interface IProps {
+  teams: ITeam[];
+}
+export const DutyPage: FC<IProps> = ({ teams }) => {
   return (
     <div>
       <NavbarContainer />
@@ -33,7 +41,7 @@ export const DutyPage = () => {
         <RailSpacerContainer />
         <ExperiencedSectionContainer />
         <Description3Section />
-        <TeamContainer />
+        <TeamContainer teams={teams} />
         <VideoSectionContainer />
         <RailSpacerContainer />
         <BackToPreviousPageBtn />

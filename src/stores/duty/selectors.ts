@@ -8,12 +8,8 @@ export function employersImagesSelector(
   return state.duty.employersImages;
 }
 
-export function teamFormSelector(state: RootState): IDutyState["teamForm"] {
-  return state.duty.teamForm;
-}
-
-export function isEditingTeamSelector(
+export function selectedTeamSelector(
   state: RootState
-): IDutyState["isEditingTeam"] {
-  return state.duty.isEditingTeam;
+): IDutyState["selectedTeam"] {
+  return state.duty.selectedTeam;
 }

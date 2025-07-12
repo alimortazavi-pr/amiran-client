@@ -40,18 +40,9 @@
     "DutyDescriptionTitle3_Label": "Lorem Ipsum",
     "DutyDescription3_Label": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit consectetur reprehenderit id necessitatibus totam ex repudiandae expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis",
     "TEAM": {
-      "TeamItem1Name1_Label": "SAEI",
-      "TeamItem1Name2_Label": "D",
-      "TeamItem1Family1_Label": "DANAY",
-      "TeamItem1Family2_Label": "I",
-      "TeamItem1Position_Label": "CEO,",
-      "TeamItem1Description_Label": "With a degree in Civil Engineering and Executive Management, and holding a Grade 1 license from the Engineering Organization, he is a certified qualified contractor with expertise in managing large-scale construction projects.",
-      "TeamItem2Name1_Label": "HOSEI",
-      "TeamItem2Name2_Label": "N",
-      "TeamItem2Family1_Label": "NEQAB",
-      "TeamItem2Family2_Label": "I",
-      "TeamItem2Position_Label": "Managing Director,",
-      "TeamItem2Description_Label": "With a degree in Civil Engineering and Executive Management, and holding a Grade 1 license from the Engineering Organization, he is a certified qualified contractor with expertise in managing large-scale construction projects."
+      "TeamItem1Name_Label": "SAEID",
+      "TeamItem1Family_Label": "DANAYI",
+      "TeamItem1Description_Label": "With a degree in Civil Engineering and Executive Management, and holding a Grade 1 license from the Engineering Organization, he is a certified qualified contractor with expertise in managing large-scale construction projects."
     }
   },
   "BLOG": {

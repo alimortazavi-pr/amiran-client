@@ -6,8 +6,7 @@ import { AppThunk } from "@/stores";
 import { dutyReducer } from ".";
 
 //Actions from reducer
-export const { setEmployersImages, setIsEditingTeam, setTeamForm } =
-  dutyReducer.actions;
+export const { setEmployersImages, setSelectedTeam } = dutyReducer.actions;
 
 //Interfaces
 
@@ -86,18 +85,14 @@ export function createTeamAction(): AppThunk {
   };
 }
 
-export function updateTeamAction(teamId: string): AppThunk {
+export function updateTeamAction(teamId: string, form: FormData): AppThunk {
   return async (dispatch, getState) => {
     try {
-      await axiosInstance.put(
-        `/admin/duty/team/${teamId}`,
-        getState().duty.teamForm,
-        {
-          headers: {
-            Authorization: `Bearer ${getState().auth.token}`,
-          },
-        }
-      );
+      await axiosInstance.put(`/admin/duty/team/${teamId}`, form, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
     } catch (error: any) {
       throw new Error(error.response.data.message);
     }
