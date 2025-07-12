@@ -43,12 +43,11 @@ export const TeamItem: FC<IProps> = ({ team }) => {
     <div className="col-span-12 md:col-span-6 relative">
       <div className="flex gap-3 md:gap-6">
         <div className="flex-1 flex flex-col gap-1 mt-8 truncate">
-          <div className="md:flex items-center justify-between">
+          <div className="md:flex items-center justify-start gap-x-1">
             <h6 className={`text-lg font-bold`}>
               {team.firstName[(i18n.language as "fa" | "en") || "en"] ||
                 t("DUTY.TEAM.TeamItem1Name_Label")}
             </h6>
-            <h6 className="hidden md:block">-</h6>
             <h6
               className={`text-lg font-bold ${
                 i18n.language === "en" &&

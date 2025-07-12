@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  font-family: "Noto Sans Arabic Variable", sans-serif;
+  font-family: morabba !important;
 }
