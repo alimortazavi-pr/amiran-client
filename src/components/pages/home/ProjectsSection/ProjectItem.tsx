@@ -10,7 +10,7 @@ import { IProject } from "@/common/interfaces";
 import projectItemTestImage from "@/assets/svgs/projects/project-item-test.svg";
 
 //Constants
-import { SERVER_BASE_API_URL, PATHS } from "@/common/constants";
+import { BASE_API_URL, PATHS } from "@/common/constants";
 
 interface IProps {
   project: IProject;
@@ -32,7 +32,7 @@ export const ProjectItem: FC<IProps> = ({ project }) => {
       >
         {project.thumbnail ? (
           <Image
-            src={`${SERVER_BASE_API_URL}${project.thumbnail}`}
+            src={`${BASE_API_URL}${project.thumbnail}`}
             alt={project.slug}
             fill
           />
