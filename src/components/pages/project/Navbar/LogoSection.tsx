@@ -19,7 +19,7 @@ import { isAuthSelector } from "@/stores/auth/selectors";
 import logo from "@/assets/svgs/projects/project/project-nav-test.svg";
 
 //Constants
-import { SERVER_BASE_API_URL } from "@/common/constants";
+import { BASE_API_URL } from "@/common/constants";
 
 interface IProps {
   project: IProject;
@@ -76,7 +76,7 @@ export const LogoSection: FC<IProps> = ({ project }) => {
         accept="image/*"
       />
       {project?.logo ? (
-        <Image src={`${SERVER_BASE_API_URL}${project.logo}`} alt={project.slug} fill />
+        <Image src={`${BASE_API_URL}${project.logo}`} alt={project.slug} fill />
       ) : (
         <Image src={logo} className="" alt="logo" fill />
       )}
