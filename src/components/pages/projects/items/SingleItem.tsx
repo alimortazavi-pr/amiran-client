@@ -84,6 +84,7 @@ export const SingleItem: FC<IProps> = ({ project }) => {
               src={`${BASE_API_URL}${project.thumbnail}`}
               alt={project.slug}
               fill
+              className="object-contain"
             />
           ) : (
             <Image src={projectItemTestImage} alt={project.slug} fill />
