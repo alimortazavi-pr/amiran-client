@@ -13,7 +13,9 @@ async function getContactUs() {
     description: { en: "", fa: "" },
   };
   try {
-    const contactUsRes = await axiosInstance.get(`/layouts/contact-us`);
+    const contactUsRes = await axiosInstance.get(
+      `/layouts/description-contact-us`
+    );
     contactUs = await contactUsRes.data;
   } catch (error: any) {
     console.log(error, "error");

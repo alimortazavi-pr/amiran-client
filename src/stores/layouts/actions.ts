@@ -89,7 +89,7 @@ export function upsertContactUsAction(): AppThunk {
   return async (dispatch, getState) => {
     try {
       await axiosInstance.put(
-        `/admin/layouts/contact-us`,
+        `/admin/layouts/description-contact-us`,
         getState().layouts.contactUsForm,
         {
           headers: {
