@@ -18,7 +18,7 @@ import { isAuthSelector } from "@/stores/auth/selectors";
 import projectItemTestImage from "@/assets/svgs/projects/project-item-test.svg";
 
 //Constants
-import { SERVER_BASE_API_URL, PATHS } from "@/common/constants";
+import { BASE_API_URL, PATHS } from "@/common/constants";
 import { upsertThumbnailProject } from "@/stores/projects/actions";
 import Link from "next/link";
 
@@ -81,7 +81,7 @@ export const SingleItem: FC<IProps> = ({ project }) => {
         <div className="w-full h-48 md:h-72 lg:h-96 xl:h-[460px] relative cursor-pointer">
           {project.thumbnail ? (
             <Image
-              src={`${SERVER_BASE_API_URL}${project.thumbnail}`}
+              src={`${BASE_API_URL}${project.thumbnail}`}
               alt={project.slug}
               fill
             />
