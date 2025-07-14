@@ -68,7 +68,10 @@
     "ContactUsTitle1_Label": "CONTACT U",
     "ContactUsTitle2_Label": "S",
     "ContactUsDescriptionTitle_Label": "Lorem Ipsum",
-    "ContactUsDescription_Label": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit consectetur reprehenderit id necessitatibus totam ex repudiandae expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis"
+    "ContactUsDescription_Label": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aut velit consectetur reprehenderit id necessitatibus totam ex repudiandae expedita recusandae corrupti laboriosam rem atque, maiores et. Suscipit quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis quidem similique facere! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores deleniti magnam expedita illum sed corporis",
+    "ContactUsInstagram_Label": "AMIRANGROUP.CO",
+    "ContactUsAddress_Label": "No. 100, Alley 11,\nShahid Sadooghi\nBlvd., Qom, Iran",
+    "ContactUsPhones_Label": "+98-09101362160\n+98-02532943426"
   },
   "PROJECT": {
     "FEATURES": {

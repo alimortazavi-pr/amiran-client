@@ -16,6 +16,7 @@ export const {
 } = layoutsReducer.actions;
 
 //Interfaces
+import { IContactUsForm } from "@/common/interfaces";
 
 //Types
 import { languagesType } from "@/common/types";
@@ -85,7 +86,21 @@ export function upsertVideo(
   };
 }
 
-export function upsertContactUsAction(): AppThunk {
+export function upsertContactUsAction(form: IContactUsForm): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(`/admin/layouts/contact-us`, form, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function upsertDescriptionContactUsAction(): AppThunk {
   return async (dispatch, getState) => {
     try {
       await axiosInstance.put(

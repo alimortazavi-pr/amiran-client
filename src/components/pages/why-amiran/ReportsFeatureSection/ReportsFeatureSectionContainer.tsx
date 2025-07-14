@@ -1,5 +1,12 @@
 "use client";
 
+import { useEffect } from "react";
+
+//Redux
+import { useAppDispatch, useAppSelector } from "@/stores/hooks";
+import { reportsImagesSelector } from "@/stores/why-amiran/selectors";
+import { fetchReportsImagesAction } from "@/stores/why-amiran/actions";
+
 //Components
 import { ImagesSection } from ".";
 
@@ -10,8 +17,28 @@ import { useClientTranslation } from "@/hooks/translation";
 import { storage } from "@/common/utils";
 
 export const ReportsFeatureSectionContainer = () => {
+  //Redux
+  const dispatch = useAppDispatch();
+  const reportsImages = useAppSelector(reportsImagesSelector);
+
   //Translation
   const { t } = useClientTranslation(storage.getLanguage());
+
+  //Lifecycle
+  useEffect(() => {
+    if (!reportsImages) {
+      fetchReportsImages();
+    }
+  }, [reportsImages]);
+
+  //Functions
+  function fetchReportsImages() {
+    try {
+      dispatch(fetchReportsImagesAction());
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className="flex flex-col gap-4 mb-14 md:mb-20 lg:mb-24 xl:mb-28 2xl:mb-32 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">

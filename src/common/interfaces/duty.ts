@@ -24,3 +24,17 @@ export interface ITeamForm {
   description: { fa: string; en: string };
   image: File | string;
 }
+
+export interface IDuty {
+  _id: string;
+  workProcessTitle: { fa: string; en: string };
+  workProcessDescription: { fa: string; en: string };
+  workProcessImage: string;
+  deleted: boolean;
+}
+
+export interface IWorkProcessForm {
+  workProcessTitle: { fa: string; en: string };
+  workProcessDescription: { fa: string; en: string };
+  workProcessImage: File | string;
+}

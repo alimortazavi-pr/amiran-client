@@ -3,13 +3,15 @@
 import { FC } from "react";
 import { Button } from "@heroui/react";
 import { Edit } from "iconsax-react";
+import Image from "next/image";
 
 //Interfaces
 import { ITeam } from "@/common/interfaces";
 
 //Redux
-import { setSelectedTeam } from "@/stores/duty/actions";
+import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { isAuthSelector } from "@/stores/auth/selectors";
+import { setSelectedTeam } from "@/stores/duty/actions";
 
 //Assets
 import fakeImg from "@/assets/svgs/fake-img.svg";
@@ -19,8 +21,8 @@ import { useClientTranslation } from "@/hooks/translation";
 
 //Utils
 import { storage } from "@/common/utils";
-import { useAppDispatch, useAppSelector } from "@/stores/hooks";
-import Image from "next/image";
+
+//Constants
 import { SERVER_BASE_API_URL } from "@/common/constants";
 
 interface IProps {

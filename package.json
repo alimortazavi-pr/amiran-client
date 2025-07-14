@@ -30,6 +30,7 @@
     "react-curved-text": "^3.0.1",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.1",
+    "react-medium-image-zoom": "^5.2.14",
     "react-redux": "^9.2.0",
     "react-responsive": "^10.0.0",
     "react-toastify": "^11.0.3",

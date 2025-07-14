@@ -22,7 +22,7 @@ import {
 import {
   setContactUsEditSection,
   setContactUsForm,
-  upsertContactUsAction,
+  upsertDescriptionContactUsAction,
 } from "@/stores/layouts/actions";
 
 //Translation
@@ -31,7 +31,7 @@ import { useClientTranslation } from "@/hooks/translation";
 //Utils
 import { storage } from "@/common/utils";
 
-export const EditContactUsModal = () => {
+export const EditDescriptionContactUsModal = () => {
   //Redux
   const dispatch = useAppDispatch();
   const editSection = useAppSelector(contactUsEditSectionSelector);
@@ -89,7 +89,7 @@ export const EditContactUsModal = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await dispatch(upsertContactUsAction());
+      await dispatch(upsertDescriptionContactUsAction());
       setIsLoading(false);
       toast.success(`Contact Us has been updated`, {
         position: "top-center",

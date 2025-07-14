@@ -6,6 +6,7 @@ import { Edit } from "iconsax-react";
 import { ChangeEvent, FC, useMemo, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "@bprogress/next/app";
+import Zoom from "react-medium-image-zoom";
 
 //Interfaces
 import { IProject } from "@/common/interfaces";
@@ -112,12 +113,14 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           } rounded-full relative`}
         >
           {image1 ? (
-            <Image
-              fill
-              src={`${SERVER_BASE_API_URL}${image1.url}`}
-              alt="Image 1"
-              className="w-full h-full object-cover rounded-full"
-            />
+            <Zoom>
+              <Image
+                fill
+                src={`${SERVER_BASE_API_URL}${image1.url}`}
+                alt="Image 1"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </Zoom>
           ) : (
             <Image
               fill
@@ -141,12 +144,14 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
         </div>
         <div className="col-span-1 row-span-5 rounded-full relative">
           {image2 ? (
-            <Image
-              fill
-              src={`${SERVER_BASE_API_URL}${image2.url}`}
-              alt="Image 2"
-              className="w-full h-full object-cover rounded-full"
-            />
+            <Zoom>
+              <Image
+                fill
+                src={`${SERVER_BASE_API_URL}${image2.url}`}
+                alt="Image 2"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </Zoom>
           ) : (
             <Image
               fill
@@ -171,12 +176,14 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
         </div>
         <div className="col-span-1 row-span-10 rounded-full relative">
           {image3 ? (
-            <Image
-              fill
-              src={`${SERVER_BASE_API_URL}${image3.url}`}
-              alt="Image 3"
-              className="w-full h-full object-cover rounded-full"
-            />
+            <Zoom>
+              <Image
+                fill
+                src={`${SERVER_BASE_API_URL}${image3.url}`}
+                alt="Image 3"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </Zoom>
           ) : (
             <Image
               fill
@@ -201,12 +208,14 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
         </div>
         <div className="col-span-1 row-span-6 rounded-full relative">
           {image4 ? (
-            <Image
-              fill
-              src={`${SERVER_BASE_API_URL}${image4.url}`}
-              alt="Image 4"
-              className="w-full h-full object-cover rounded-full"
-            />
+            <Zoom>
+              <Image
+                fill
+                src={`${SERVER_BASE_API_URL}${image4.url}`}
+                alt="Image 4"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </Zoom>
           ) : (
             <Image
               fill
@@ -233,12 +242,14 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
           <>
             <div className="col-span-1 row-span-2 rounded-full relative">
               {image5 ? (
-                <Image
-                  fill
-                  src={`${SERVER_BASE_API_URL}${image5.url}`}
-                  alt="Image 5"
-                  className="w-full h-full object-cover rounded-full"
-                />
+                <Zoom>
+                  <Image
+                    fill
+                    src={`${SERVER_BASE_API_URL}${image5.url}`}
+                    alt="Image 5"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </Zoom>
               ) : (
                 <Image
                   fill
@@ -263,12 +274,14 @@ export const ImagesSection: FC<IProps> = ({ project }) => {
             </div>
             <div className="col-span-1 row-span-3 rounded-full relative">
               {image6 ? (
-                <Image
-                  fill
-                  src={`${SERVER_BASE_API_URL}${image6.url}`}
-                  alt="Image 6"
-                  className="w-full h-full object-cover rounded-full"
-                />
+                <Zoom>
+                  <Image
+                    fill
+                    src={`${SERVER_BASE_API_URL}${image6.url}`}
+                    alt="Image 6"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </Zoom>
               ) : (
                 <Image
                   fill

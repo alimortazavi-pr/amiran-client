@@ -39,6 +39,9 @@ export const DescriptionSection: FC<IProps> = ({ contactUs }) => {
         setContactUsForm({
           title: contactUs.title,
           description: contactUs.description,
+          instagram: contactUs.instagram,
+          address: contactUs.address,
+          phones: contactUs.phones,
         })
       );
     }

@@ -133,6 +133,21 @@ export function uploadProjectPlansAction(
   };
 }
 
+export function hardDeleteProjectPlanAction(id: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.delete(`/admin/projects/plans/${id}/hard`, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
+    }
+  };
+}
+
 export function updateProjectAction(projectSlug: string): AppThunk {
   return async (dispatch, getState) => {
     try {

@@ -98,3 +98,17 @@ export function updateTeamAction(teamId: string, form: FormData): AppThunk {
     }
   };
 }
+
+export function upsertWorkProcessAction(form: FormData): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(`/admin/duty/work-process`, form, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}

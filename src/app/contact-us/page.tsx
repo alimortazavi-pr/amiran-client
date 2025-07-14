@@ -11,12 +11,19 @@ async function getContactUs() {
   let contactUs: IContactUs = {
     title: { en: "", fa: "" },
     description: { en: "", fa: "" },
+    instagram: { en: "", fa: "" },
+    address: { en: "", fa: "" },
+    phones: { en: "", fa: "" },
   };
   try {
-    const contactUsRes = await axiosInstance.get(
+    const descriptionContactUsRes = await axiosInstance.get(
       `/layouts/description-contact-us`
     );
-    contactUs = await contactUsRes.data;
+    const contactUsRes = await axiosInstance.get(`/layouts/contact-us`);
+    contactUs = {
+      ...(await descriptionContactUsRes.data),
+      ...(await contactUsRes.data),
+    };
   } catch (error: any) {
     console.log(error, "error");
   }

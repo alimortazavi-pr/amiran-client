@@ -1,4 +1,9 @@
+import { UseDisclosureProps } from "@heroui/react";
 import { languagesType } from "../types";
+
+export interface INextUIModalProps extends UseDisclosureProps {
+  onOpenChange: () => void;
+}
 
 export interface ILayoutsState {
   language: languagesType;
@@ -19,9 +24,15 @@ export interface ILayoutsState {
 export interface IContactUs {
   title: { fa: string; en: string };
   description: { fa: string; en: string };
+  instagram: { fa: string; en: string };
+  address: { fa: string; en: string };
+  phones: { fa: string; en: string };
 }
 
 export interface IContactUsForm {
   title: { fa: string; en: string };
   description: { fa: string; en: string };
+  instagram: { fa: string; en: string };
+  address: { fa: string; en: string };
+  phones: { fa: string; en: string };
 }

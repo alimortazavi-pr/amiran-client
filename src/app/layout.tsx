@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 
 //Assets
 import "@/assets/css/globals.css";
+import "react-medium-image-zoom/dist/styles.css";
 
 //Components
 import { ClientProvider } from "@/components/providers/ClientProvider";

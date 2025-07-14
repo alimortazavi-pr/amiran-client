@@ -8,6 +8,7 @@ import home from "./home";
 import duty from "./duty";
 import projects from "./projects";
 import articles from "./articles";
+import whyAmiran from "./why-amiran";
 
 export function makeStore() {
   return configureStore({
@@ -19,6 +20,7 @@ export function makeStore() {
       projects: projects,
       articles: articles,
       duty: duty,
+      whyAmiran: whyAmiran,
     },
   });
 }

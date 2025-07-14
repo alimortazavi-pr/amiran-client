@@ -5,6 +5,7 @@ import Image from "next/image";
 
 //Assets
 import footerLogo from "@/assets/svgs/footer_logo.svg";
+
 //Components
 import { RailSpacer } from "../RailSpacer";
 

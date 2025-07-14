@@ -1,15 +1,13 @@
 import { FC } from "react";
 
 //Interfaces
-import { ITeam } from "@/common/interfaces";
+import { ITeam, IDuty } from "@/common/interfaces";
 
 //Components
 import { NavbarContainer } from "@/components/common/Navbar";
 import {
   AmiranLogoSection,
-  ChartSection,
   Description3Section,
-  Description2Section,
   DescriptionSection,
   TitleSection,
   VideoSectionContainer,
@@ -18,11 +16,13 @@ import { TeamContainer } from "./TeamSection";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
 import { ExperiencedSectionContainer } from "./ExperiencedSection";
+import { WorkProcessDescription, WorkProcessImage } from "./WorkProcess";
 
 interface IProps {
   teams: ITeam[];
+  duty: IDuty;
 }
-export const DutyPage: FC<IProps> = ({ teams }) => {
+export const DutyPage: FC<IProps> = ({ teams, duty }) => {
   return (
     <div>
       <NavbarContainer />
@@ -36,8 +36,8 @@ export const DutyPage: FC<IProps> = ({ teams }) => {
         <div className="md:hidden">
           <AmiranLogoSection />
         </div>
-        <ChartSection />
-        <Description2Section />
+        <WorkProcessImage duty={duty} />
+        <WorkProcessDescription duty={duty} />
         <RailSpacerContainer />
         <ExperiencedSectionContainer />
         <Description3Section />

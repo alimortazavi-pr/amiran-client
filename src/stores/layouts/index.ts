@@ -18,6 +18,9 @@ const initialState: ILayoutsState = {
   contactUsForm: {
     title: { en: "", fa: "" },
     description: { en: "", fa: "" },
+    instagram: { fa: "", en: "" },
+    address: { fa: "", en: "" },
+    phones: { fa: "", en: "" },
   },
   contactUsEditSection: {
     label: "",
