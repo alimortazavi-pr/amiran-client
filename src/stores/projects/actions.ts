@@ -166,6 +166,27 @@ export function updateProjectAction(projectSlug: string): AppThunk {
   };
 }
 
+export function changeOrderProjectAction(
+  projectId: string,
+  direction: "up" | "down"
+): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.put(
+        `/admin/projects/change-order/${projectId}/${direction}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${getState().auth.token}`,
+          },
+        }
+      );
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
 export function softDeleteProjectAction(slug: string): AppThunk {
   return async (dispatch, getState) => {
     try {

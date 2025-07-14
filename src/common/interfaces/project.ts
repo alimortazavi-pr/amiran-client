@@ -23,6 +23,7 @@ export interface IProject {
   unitArea: string;
   numberOfUnitsPerFloor: string;
   directions: string;
+  order: number;
   images: IProjectImage[];
   plans: IPlanImage[];
   has4Images: boolean;

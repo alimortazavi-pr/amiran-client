@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { FC } from "react";
+import Link from "next/link";
 
 //Interfaces
 import { IProject } from "@/common/interfaces";
@@ -16,31 +16,22 @@ interface IProps {
   project: IProject;
 }
 export const ProjectItem: FC<IProps> = ({ project }) => {
-  //Next
-  const router = useRouter();
-
-  //Functions
-  const handleProjectClick = () => {
-    router.push(PATHS.PROJECT(project.slug));
-  };
-
   return (
     <div className="col-span-2 md:col-span-1 cursor-pointer">
-      <div
-        className="w-full h-48 lg:h-56 xl:h-80 2xl:h-96 relative cursor-pointer"
-        onClick={handleProjectClick}
-      >
-        {project.thumbnail ? (
-          <Image
-            src={`${BASE_API_URL}${project.thumbnail}`}
-            alt={project.slug}
-            fill
-            className="object-contain"
-          />
-        ) : (
-          <Image src={projectItemTestImage} alt={project.slug} fill />
-        )}
-      </div>
+      <Link href={PATHS.PROJECT(project.slug)} className="w-full h-full">
+        <div className="w-full h-48 lg:h-56 xl:h-80 2xl:h-96 relative cursor-pointer">
+          {project.thumbnail ? (
+            <Image
+              src={`${BASE_API_URL}${project.thumbnail}`}
+              alt={project.slug}
+              fill
+              className="object-contain"
+            />
+          ) : (
+            <Image src={projectItemTestImage} alt={project.slug} fill />
+          )}
+        </div>
+      </Link>
     </div>
   );
 };

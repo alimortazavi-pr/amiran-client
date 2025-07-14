@@ -4,7 +4,7 @@ import { ChangeEvent, FC, useRef, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "@bprogress/next/app";
 import { Button, PressEvent } from "@heroui/react";
-import { Edit } from "iconsax-react";
+import { ArrowDown, ArrowUp, Edit } from "iconsax-react";
 import { toast } from "react-toastify";
 
 //Interfaces
@@ -19,7 +19,10 @@ import projectItemTestImage from "@/assets/svgs/projects/project-item-test.svg";
 
 //Constants
 import { BASE_API_URL, PATHS } from "@/common/constants";
-import { upsertThumbnailProject } from "@/stores/projects/actions";
+import {
+  changeOrderProjectAction,
+  upsertThumbnailProject,
+} from "@/stores/projects/actions";
 import Link from "next/link";
 
 interface IProps {
@@ -68,6 +71,23 @@ export const SingleItem: FC<IProps> = ({ project }) => {
     }
   }
 
+  async function changeOrderProject(direction: "up" | "down") {
+    setIsLoading(true);
+    try {
+      await dispatch(changeOrderProjectAction(project._id, direction));
+      setIsLoading(false);
+      toast.success("Project order has been updated", {
+        position: "top-center",
+      });
+      router.refresh();
+    } catch (error: any) {
+      toast.error(error.message, {
+        position: "top-center",
+      });
+      setIsLoading(false);
+    }
+  }
+
   return (
     <div className="col-span-6 md:col-span-4 relative">
       <input
@@ -92,16 +112,38 @@ export const SingleItem: FC<IProps> = ({ project }) => {
         </div>
       </Link>
       {isAuth && (
-        <Button
-          isIconOnly
-          size="sm"
-          variant="light"
-          className="absolute bottom-5 right-5"
-          onPress={selectImage}
-          isLoading={isLoading}
-        >
-          <Edit className="w-5 h-5" color="#1E353C" />
-        </Button>
+        <div className="flex items-center justify-center gap-2 absolute -bottom-10 start-0 w-full">
+          <Button
+            isIconOnly
+            size="sm"
+            variant="light"
+            className=""
+            onPress={selectImage}
+            isLoading={isLoading}
+          >
+            <Edit className="w-5 h-5" color="#1E353C" />
+          </Button>
+          <Button
+            isIconOnly
+            size="sm"
+            variant="light"
+            className=""
+            onPress={() => changeOrderProject("up")}
+            isLoading={isLoading}
+          >
+            <ArrowUp className="w-5 h-5" color="#1E353C" />
+          </Button>
+          <Button
+            isIconOnly
+            size="sm"
+            variant="light"
+            className=""
+            onPress={() => changeOrderProject("down")}
+            isLoading={isLoading}
+          >
+            <ArrowDown className="w-5 h-5" color="#1E353C" />
+          </Button>
+        </div>
       )}
     </div>
   );
