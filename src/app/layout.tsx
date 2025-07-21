@@ -13,8 +13,30 @@ import { ClientProvider } from "@/components/providers/ClientProvider";
 
 //Next
 export const metadata: Metadata = {
-  title: "Amiran Group",
+  title: "Amiran Group | گروه ساختمانی امیران",
   description: "Developed by alimor.ir",
+  keywords: [
+    "امیران",
+    "شرکت امیران",
+    "گروه امیران",
+    "شرکت ساختمانی",
+    "شرکت ساختمانی امیران",
+    "شرکت امیران ایران",
+    "شرکت امیران گروه",
+    "ساخت و ساز",
+    "Amiran Group",
+    "alimor.ir",
+    "Amiran",
+    "Amiran Group Iran",
+    "Amiran Group Company",
+    "Amiran Group Official",
+    "Amiran Group Iran Official",
+  ],
+  openGraph: {
+    title: "شرکت ساختمانی امیران | گروه ساختمانی امیران",
+    description:
+      "شرکت ساختمانی امیران با بیش از 20 سال تجربه در صنعت ساخت و ساز، ارائه دهنده خدمات ساختمانی با کیفیت بالا در ایران است.",
+  },
 };
 
 export const viewport: Viewport = {
