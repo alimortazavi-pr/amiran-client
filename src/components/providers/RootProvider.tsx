@@ -2,6 +2,7 @@
 
 import { FC, PropsWithChildren, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 //Toast
 import { Slide, ToastContainer } from "react-toastify";
@@ -22,6 +23,7 @@ import { fetchVideosAction, setLanguage } from "@/stores/layouts/actions";
 
 //Components
 import { MenuDrawerContainer, MenuModalContainer } from "../common/MenuModal";
+import { ClarityInit } from "./ClarityInit";
 
 //Utils
 import { storage } from "@/common/utils";
@@ -93,6 +95,8 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
           " flex items-center p-3 rounded-lg shadow-lg mb-2"
         }
       />
+      <ClarityInit />
+      <GoogleAnalytics gaId="G-J5824BHDBC" />
     </>
   );
 };
