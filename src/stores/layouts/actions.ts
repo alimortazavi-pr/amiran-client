@@ -117,3 +117,32 @@ export function upsertDescriptionContactUsAction(): AppThunk {
     }
   };
 }
+
+export function uploadBrand(form: FormData): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.post(`/admin/layouts/brands`, form, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function hardDeleteBrandAction(id: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.delete(`/admin/layouts/brands/${id}/hard`, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
+    }
+  };
+}

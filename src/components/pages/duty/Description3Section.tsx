@@ -11,7 +11,7 @@ export const Description3Section = () => {
   const { t } = useClientTranslation(storage.getLanguage());
 
   return (
-    <div className="flex flex-col gap-5 mb-32">
+    <div className="flex flex-col gap-5 mb-32 md:hidden">
       <h4 className="font-medium text-xl text-center md:text-2xl lg:text-3xl xl:text-4xl">
         {t("DUTY.DutyDescriptionTitle3_Label")}
       </h4>

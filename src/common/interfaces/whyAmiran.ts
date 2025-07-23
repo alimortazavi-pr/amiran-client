@@ -1,6 +1,7 @@
 export interface IWhyAmiranState {
   updatesImages: undefined | IUpdateImage[];
   reportsImages: undefined | IReportImage[];
+  brands: undefined | IBrandImage[];
 }
 
 export interface IUpdateImage {
@@ -12,5 +13,11 @@ export interface IUpdateImage {
 export interface IReportImage {
   _id: string;
   url: string;
+  weight: string;
+}
+
+export interface IBrandImage {
+  _id: string;
+  image: string;
   weight: string;
 }

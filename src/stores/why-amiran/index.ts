@@ -7,6 +7,7 @@ import { IWhyAmiranState } from "@/common/interfaces";
 import reducers from "@/stores/why-amiran/reducers";
 
 const initialState: IWhyAmiranState = {
+  brands: undefined,
   updatesImages: undefined,
   reportsImages: undefined,
 };

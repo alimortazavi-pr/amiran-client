@@ -7,6 +7,7 @@ import { cookies } from "next/headers";
 //Assets
 import "@/assets/css/globals.css";
 import "react-medium-image-zoom/dist/styles.css";
+import 'swiper/css';
 
 //Components
 import { ClientProvider } from "@/components/providers/ClientProvider";
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
     "گروه امیران",
     "شرکت ساختمانی",
     "شرکت ساختمانی امیران",
+    "گروه ساختمانی امیران",
     "شرکت امیران ایران",
     "شرکت امیران گروه",
     "ساخت و ساز",

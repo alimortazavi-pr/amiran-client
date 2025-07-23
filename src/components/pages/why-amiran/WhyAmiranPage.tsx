@@ -13,6 +13,7 @@ import { SafetySectionContainer } from "./SafetySection";
 import { UpToDateFeatureSectionContainer } from "./UpToDateFeatureSection";
 import { ReportsFeatureSectionContainer } from "./ReportsFeatureSection";
 import { CompletedProjectsContainer } from "./CompletedProjects";
+import { BrandsContainer } from "./Brands";
 
 export const WhyAmiranPage = () => {
   return (
@@ -22,7 +23,9 @@ export const WhyAmiranPage = () => {
         <TitleSection />
         <DescriptionSection />
         <RailSpacerContainer />
-        <ImageSection />
+        <BrandsContainer />
+        <RailSpacerContainer />
+        {/* <ImageSection /> */}
         <FeatureContainer />
         <SafetySectionContainer />
         <UpToDateFeatureSectionContainer />
