@@ -110,14 +110,14 @@ export const ExperiencedItem: FC<IProps> = ({ index }) => {
           <Image
             fill
             src={`${BASE_API_URL}${image.url}`}
-            alt="Image 1"
+            alt={`Image ${index}`}
             className={`w-full ${isMdCheck} object-cover`}
           />
         ) : (
           <Image
             fill
             src={fakeImg}
-            alt="Image 1"
+            alt={`Image ${index}`}
             className={`w-full ${isMdCheck} object-cover`}
           />
         )}
