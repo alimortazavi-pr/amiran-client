@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, PropsWithChildren, useEffect } from "react";
+import { FC, PropsWithChildren, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -27,6 +27,7 @@ import { ClarityInit } from "./ClarityInit";
 
 //Utils
 import { storage } from "@/common/utils";
+import { SplashScreen } from "../common/SplashScreen";
 
 const RootProvider: FC<PropsWithChildren> = ({ children }) => {
   //Redux
@@ -36,6 +37,9 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
 
   //Next
   const pathname = usePathname();
+
+  //States
+  const [isVisibleSplashScreen, setIsVisibleSplashScreen] = useState(true);
 
   //Lifecycle
   useEffect(() => {
@@ -67,7 +71,12 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      {pathname.includes("/admin") ? (
+      {isVisibleSplashScreen ? (
+        <SplashScreen
+          isVisible={isVisibleSplashScreen}
+          setIsVisibleSplashScreen={setIsVisibleSplashScreen}
+        />
+      ) : pathname.includes("/admin") ? (
         <>{children}</>
       ) : (
         <>
