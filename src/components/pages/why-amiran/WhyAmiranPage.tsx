@@ -4,7 +4,7 @@ import {
   DescriptionSection,
   FeatureDescription,
   TitleSection,
-  ImageSection,
+  // ImageSection,
 } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";

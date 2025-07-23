@@ -31,9 +31,9 @@ export const SingleItem: FC<IProps> = ({ article }) => {
       <Link href={PATHS.ARTICLE(article.slug)}>
         <div className="w-full h-full relative rounded-xl shadow-md p-4 cursor-pointer max-h-[400px]">
           <div className="w-full h-48 xl:h-56 relative mb-3">
-            {article.thumbnail ? (
+            {article.images?.length > 0 ? (
               <Image
-                src={`${SERVER_BASE_API_URL}${article.thumbnail}`}
+                src={`${SERVER_BASE_API_URL}${article.images[0]}`}
                 alt={article.slug}
                 fill
                 className="object-cover rounded-xl"

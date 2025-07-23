@@ -52,6 +52,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-button-prev {
+  @apply !text-default-900;
+}
+
+.swiper-button-next {
+  @apply !text-default-900;
+}
+
 * {
   font-family: morabba !important;
 }

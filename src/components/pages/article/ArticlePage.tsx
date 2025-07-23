@@ -10,7 +10,7 @@ import { useAppDispatch } from "@/stores/hooks";
 import { setForm } from "@/stores/articles/actions";
 
 //Components
-import { ContentSection, ImageSection, TitleSection } from ".";
+import { ContentSection, ImagesSection, TitleSection } from ".";
 import { EditArticleModal } from "./EditArticle";
 import { SettingBtn } from "./Setting";
 
@@ -42,7 +42,7 @@ export const ArticlePage: FC<IProps> = ({ article }) => {
     <div className="px-3">
       <NavbarContainer />
       <div className="w-full lg:mt-5">
-        <ImageSection article={article} />
+        <ImagesSection article={article} />
         <TitleSection article={article} />
         <ContentSection article={article} />
       </div>

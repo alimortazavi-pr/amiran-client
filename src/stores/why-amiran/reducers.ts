@@ -23,6 +23,15 @@ const reducers = {
       reportsImages: action.payload,
     };
   },
+  setBrands(
+    state: IWhyAmiranState,
+    action: PayloadAction<IWhyAmiranState["brands"]>
+  ): IWhyAmiranState {
+    return {
+      ...state,
+      brands: action.payload,
+    };
+  },
 };
 
 export default reducers;

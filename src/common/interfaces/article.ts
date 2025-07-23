@@ -8,7 +8,7 @@ export interface IArticlesState {
 
 export interface IArticle {
   _id: string;
-  thumbnail: string;
+  images: IArticleImage[];
   title: { fa: string; en: string };
   slug: string;
   description: { fa: string; en: string };
@@ -22,4 +22,10 @@ export interface IArticleForm {
   slug: string;
   description: { fa: string; en: string };
   content: { fa: string; en: string };
+}
+
+export interface IArticleImage {
+  _id: string;
+  article: string;
+  url: string;
 }

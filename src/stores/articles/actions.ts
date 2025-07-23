@@ -9,6 +9,7 @@ import { articlesReducer } from ".";
 export const { setForm, setEditSection } = articlesReducer.actions;
 
 //Interfaces
+import { IArticle } from "@/common/interfaces";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -33,16 +34,34 @@ export function createArticleAction(): AppThunk {
   };
 }
 
-export function upsertThumbnailArticle(form: FormData, slug: string): AppThunk {
+export function upsertArticleImagesAction(
+  article: IArticle,
+  form: FormData
+): AppThunk {
   return async (dispatch, getState) => {
     try {
-      await axiosInstance.put(`/admin/articles/thumbnail/${slug}`, form, {
+      await axiosInstance.post(`/admin/articles/images/${article.slug}`, form, {
         headers: {
           Authorization: `Bearer ${getState().auth.token}`,
         },
       });
     } catch (error: any) {
       throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function hardDeleteArticleImageAction(id: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.delete(`/admin/articles/images/${id}/hard`, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
     }
   };
 }

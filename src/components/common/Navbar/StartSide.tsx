@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useRouter } from "@bprogress/next/app";
 import { motion } from "motion/react";
+import { ArrowLeft2 } from "iconsax-react";
+import Image from "next/image";
 
 //Redux
 import { useAppSelector } from "@/stores/hooks";
@@ -14,7 +16,7 @@ import { isOpenSearchSelector } from "@/stores/layouts/selectors";
 import { LanguagesMenu } from ".";
 
 //Assets
-import { ArrowLeft2, Call } from "iconsax-react";
+import callIcon from "@/assets/svgs/icons/call-icon.svg";
 
 //Constants
 import { PATHS } from "@/common/constants";
@@ -55,7 +57,7 @@ export const StartSide = () => {
         href={PATHS.CONTACT_US}
       >
         <div className="relative w-3 h-3 lg:w-4 lg:h-4">
-          <Call className="w-3 h-3 lg:w-4 lg:h-4" color="#1E353C" />
+          <Image src={callIcon} fill alt="hamburger icon" />
         </div>
       </Button>
       <LanguagesMenu />

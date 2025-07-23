@@ -13,3 +13,7 @@ export function reportsImagesSelector(
 ): IWhyAmiranState["reportsImages"] {
   return state.whyAmiran.reportsImages;
 }
+
+export function brandsSelector(state: RootState): IWhyAmiranState["brands"] {
+  return state.whyAmiran.brands;
+}

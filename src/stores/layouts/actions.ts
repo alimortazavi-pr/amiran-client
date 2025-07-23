@@ -118,7 +118,7 @@ export function upsertDescriptionContactUsAction(): AppThunk {
   };
 }
 
-export function uploadBrand(form: FormData): AppThunk {
+export function uploadBrandAction(form: FormData): AppThunk {
   return async (dispatch, getState) => {
     try {
       await axiosInstance.post(`/admin/layouts/brands`, form, {

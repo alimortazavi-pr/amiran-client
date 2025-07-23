@@ -8,6 +8,7 @@ import { cookies } from "next/headers";
 import "@/assets/css/globals.css";
 import "react-medium-image-zoom/dist/styles.css";
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 //Components
 import { ClientProvider } from "@/components/providers/ClientProvider";

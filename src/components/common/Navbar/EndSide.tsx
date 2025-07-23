@@ -49,7 +49,7 @@ export const EndSide = () => {
         onPress={openMenuHandler}
       >
         <div className="relative w-3 h-3 lg:w-4 lg:h-4">
-          <Image src={hamburgerIcon} fill alt="call icon" />
+          <Image src={hamburgerIcon} fill alt="hamburger icon" />
         </div>
       </Button>
     </motion.div>

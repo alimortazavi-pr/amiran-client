@@ -6,7 +6,8 @@ import { AppThunk } from "@/stores";
 import { whyAmiranReducer } from ".";
 
 //Actions from reducer
-export const { setUpdatesImages, setReportsImages } = whyAmiranReducer.actions;
+export const { setUpdatesImages, setReportsImages, setBrands } =
+  whyAmiranReducer.actions;
 
 //Interfaces
 
@@ -114,6 +115,20 @@ export function upsertReportImageAction(
       }
     } catch (error: any) {
       throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function fetchBrandsAction(): AppThunk {
+  return async (dispatch) => {
+    try {
+      const res = await axiosInstance.get(`/layouts/brands?limit=9999`);
+      if (res.data.brands?.length) {
+        await dispatch(setBrands(res.data.brands));
+      }
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
     }
   };
 }
