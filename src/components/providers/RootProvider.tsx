@@ -71,12 +71,11 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      {isVisibleSplashScreen ? (
-        <SplashScreen
-          isVisible={isVisibleSplashScreen}
-          setIsVisibleSplashScreen={setIsVisibleSplashScreen}
-        />
-      ) : pathname.includes("/admin") ? (
+      <SplashScreen
+        isVisible={isVisibleSplashScreen}
+        setIsVisibleSplashScreen={setIsVisibleSplashScreen}
+      />
+      {pathname.includes("/admin") ? (
         <>{children}</>
       ) : (
         <>
