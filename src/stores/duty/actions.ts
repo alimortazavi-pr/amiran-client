@@ -14,12 +14,26 @@ export const { setEmployersImages, setSelectedTeam } = dutyReducer.actions;
 import { axiosInstance } from "@/common/axiosInstance";
 
 //Actions
-export function fetchEmployersImagesAction(): AppThunk {
+export function fetchEmployersImagesAction(isMd: boolean = false): AppThunk {
   return async (dispatch) => {
     try {
       const res = await axiosInstance.get(`/duty/employers-images`);
       if (res.data.images?.length) {
-        await dispatch(setEmployersImages(res.data.images));
+        if (res.data.images?.length > 3 && !isMd) {
+          const newImages = [];
+          for (const image of res.data.images) {
+            if (image.weight == 1) {
+              newImages.push({ ...image, weight: "4" });
+            } else if (image.weight <= 4) {
+              newImages.push({ ...image, weight: image.weight - 1 });
+            } else {
+              newImages.push(image);
+            }
+          }
+          await dispatch(setEmployersImages(newImages));
+        } else {
+          await dispatch(setEmployersImages(res.data.images));
+        }
       }
     } catch (err: any) {
       console.log(err);

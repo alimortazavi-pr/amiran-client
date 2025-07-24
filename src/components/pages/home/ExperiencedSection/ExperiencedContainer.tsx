@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 //Redux
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
@@ -15,6 +16,11 @@ export const ExperiencedContainer = () => {
   const dispatch = useAppDispatch();
   const employersImages = useAppSelector(employersImagesSelector);
 
+  //Responsive
+  const isMd = useMediaQuery({
+    query: "(min-width: 768px)",
+  });
+
   //Lifecycle
   useEffect(() => {
     if (!employersImages) {
@@ -25,7 +31,7 @@ export const ExperiencedContainer = () => {
   //Functions
   function fetchEmployersImages() {
     try {
-      dispatch(fetchEmployersImagesAction());
+      dispatch(fetchEmployersImagesAction(isMd));
     } catch (error) {
       console.log(error);
     }
