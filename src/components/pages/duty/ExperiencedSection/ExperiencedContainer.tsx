@@ -31,7 +31,7 @@ export const ExperiencedContainer = () => {
   //Functions
   function fetchEmployersImages() {
     try {
-      dispatch(fetchEmployersImagesAction());
+      dispatch(fetchEmployersImagesAction(isMd));
     } catch (error) {
       console.log(error);
     }
