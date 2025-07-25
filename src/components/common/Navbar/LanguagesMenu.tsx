@@ -1,16 +1,6 @@
 "use client";
 
-import {
-  Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@heroui/react";
-import { LanguageCircle } from "iconsax-react";
-
-//Interfaces
-import { languagesType } from "@/common/types";
+import { Button } from "@heroui/react";
 
 //Redux
 import { useAppDispatch } from "@/stores/hooks";
@@ -21,6 +11,7 @@ import { useClientTranslation } from "@/hooks/translation";
 
 //Utils
 import { storage } from "@/common/utils";
+import { LanguageCircle } from "iconsax-react";
 
 export const LanguagesMenu = () => {
   //Redux
@@ -30,46 +21,30 @@ export const LanguagesMenu = () => {
   const { i18n } = useClientTranslation(storage.getLanguage());
 
   //Functions
-  function changeLanguageFunc(language: languagesType) {
-    i18n.changeLanguage(language);
-    dispatch(setLanguageAction(language));
+  function toggleLanguageFunc() {
+    if (i18n.language === "en") {
+      i18n.changeLanguage("fa");
+      dispatch(setLanguageAction("fa"));
+    } else {
+      i18n.changeLanguage("en");
+      dispatch(setLanguageAction("en"));
+    }
   }
 
   return (
-    <Dropdown placement="bottom-start" showArrow>
-      <DropdownTrigger>
-        <Button
-          isIconOnly
-          color="default"
-          variant="flat"
-          aria-label="Language"
-          size="sm"
-          className="rounded-full text-primary max-h-full"
-        >
-          <LanguageCircle className="w-3 h-3 lg:w-4 lg:h-4" color="#1E353C" />
-        </Button>
-      </DropdownTrigger>
-      <DropdownMenu aria-label="Profile Actions" variant="flat">
-        <DropdownItem
-          key="English"
-          startContent={
-            <LanguageCircle className="w-3 h-3 lg:w-4 lg:h-4" color="#1E353C" />
-          }
-          className=""
-          onPress={() => changeLanguageFunc("en")}
-        >
-          English
-        </DropdownItem>
-        <DropdownItem
-          key="Persian"
-          startContent={
-            <LanguageCircle className="w-3 h-3 lg:w-4 lg:h-4" color="#1E353C" />
-          }
-          onPress={() => changeLanguageFunc("fa")}
-        >
-          فارسی
-        </DropdownItem>
-      </DropdownMenu>
-    </Dropdown>
+    <Button
+      color="default"
+      variant="light"
+      aria-label="Language"
+      size="sm"
+      // isIconOnly
+      className="font-thin text-xs leading-none"
+      onPress={toggleLanguageFunc}
+      startContent={
+        <LanguageCircle className="w-3 h-3 lg:w-4 lg:h-4" color="#1E353C" />
+      }
+    >
+      {i18n.language === "en" ? "EN" : "فارسی"}
+    </Button>
   );
 };

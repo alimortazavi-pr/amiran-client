@@ -30,7 +30,7 @@ export const EndSide = () => {
   return (
     <motion.div
       animate={{ opacity: isOpenSearch ? 0 : 1 }}
-      className={`flex-1 h-7 lg:h-12 bg-primary/20 flex items-center justify-end gap-1 px-2 rounded-s-full`}
+      className={`flex-1 h-7 md:h-12 bg-primary/20 flex items-center justify-end gap-1 px-2 rounded-s-full`}
     >
       {/* <Button
         isIconOnly

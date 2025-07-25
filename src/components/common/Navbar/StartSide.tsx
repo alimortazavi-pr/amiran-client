@@ -46,21 +46,8 @@ export const StartSide = () => {
   return (
     <motion.div
       animate={{ opacity: isOpenSearch ? 0 : 1 }}
-      className={`flex-1 h-7 lg:h-12 bg-primary/20 rounded-e-full flex items-center justify-start gap-1 px-2`}
+      className={`flex-1 h-7 md:h-12 bg-primary/20 rounded-e-full flex items-center justify-start gap-1 md:gap-1 px-2`}
     >
-      <Button
-        isIconOnly
-        variant="light"
-        size="sm"
-        className="rounded-full text-primary max-h-full"
-        as={Link}
-        href={PATHS.CONTACT_US}
-      >
-        <div className="relative w-3 h-3 lg:w-4 lg:h-4">
-          <Image src={callIcon} fill alt="hamburger icon" />
-        </div>
-      </Button>
-      <LanguagesMenu />
       {pathname !== "/" && (
         <Button
           isIconOnly
@@ -77,6 +64,19 @@ export const StartSide = () => {
           />
         </Button>
       )}
+      <Button
+        isIconOnly
+        variant="light"
+        size="sm"
+        className="rounded-full text-primary max-h-full"
+        as={Link}
+        href={PATHS.CONTACT_US}
+      >
+        <div className="relative w-3 h-3 lg:w-4 lg:h-4">
+          <Image src={callIcon} fill alt="hamburger icon" />
+        </div>
+      </Button>
+      <LanguagesMenu />
     </motion.div>
   );
 };
