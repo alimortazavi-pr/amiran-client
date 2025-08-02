@@ -10,6 +10,8 @@ const initialState: IProjectsState = {
   form: {
     slug: "",
     description: { fa: "", en: "" },
+    architect: { fa: "", en: "" },
+    architectWebsite: "",
     isPublished: true,
     usage: "",
     location: "",

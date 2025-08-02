@@ -118,10 +118,24 @@ export function upsertDescriptionContactUsAction(): AppThunk {
   };
 }
 
-export function uploadBrandAction(form: FormData): AppThunk {
+export function createBrandAction(form: FormData): AppThunk {
   return async (dispatch, getState) => {
     try {
       await axiosInstance.post(`/admin/layouts/brands`, form, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (error: any) {
+      throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function updateBrandAction(id: string, form: FormData): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.post(`/admin/layouts/brands/${id}`, form, {
         headers: {
           Authorization: `Bearer ${getState().auth.token}`,
         },

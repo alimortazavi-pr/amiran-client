@@ -13,6 +13,8 @@ export interface IProject {
   video: string;
   slug: string;
   description: { fa: string; en: string };
+  architect: { fa: string; en: string };
+  architectWebsite: string;
   isPublished: boolean;
   usage: string;
   location: string;
@@ -46,6 +48,8 @@ export interface IPlanImage {
 export interface IProjectForm {
   slug: string;
   description: { fa: string; en: string };
+  architect: { fa: string; en: string };
+  architectWebsite: string;
   isPublished: boolean;
   usage: string;
   location: string;

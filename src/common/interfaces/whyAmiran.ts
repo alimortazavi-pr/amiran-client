@@ -16,8 +16,13 @@ export interface IReportImage {
   weight: string;
 }
 
+export interface IBrandForm {
+  image: File | string;
+  website: string;
+}
+
 export interface IBrandImage {
   _id: string;
   image: string;
-  weight: string;
+  website: string;
 }

@@ -50,8 +50,8 @@
     "BlogTitle2_Label": "G"
   },
   "WHY_AMIRAN": {
-    "WhyAmiranTitle1_Label": "WHY AMIRA",
-    "WhyAmiranTitle2_Label": "N",
+    "WhyAmiranTitle1_Label": "ABOUT U",
+    "WhyAmiranTitle2_Label": "S",
     "WhyAmiranDescriptionTitle_Label": "The difference lies in our perspective",
     "WhyAmiranDescription_Label": "  Our energy and commitment to executing projects with precision and creativity, transparency as clear as glass in financial processes, and ultimately, sustainable development and respect for our surrounding environment, the beauty of our cities, and the elevated status of our beloved Iran—this is our perspective. Details have always mattered to us, so we can capture smiles within the lifeless structure of steel and concrete. Amiran goes beyond construction—it is a commitment to creating a unique experience for our clients, with a focus on quality, timing, and professional ethics.",
     "WhyAmiranFeatures1_Label": "Supplying goods and materials at the right time and price",
@@ -61,8 +61,8 @@
     "WhyAmiranFeatures5_Label": "Establishing and complying with HSE requirements",
     "WhyAmiranHSEDescription_Label": "At Amiran, we firmly believe that Health, Safety, and Environmental protection are not just legal obligations—they are a fundamental part of our culture, our ethics, and our responsibility toward our people, our clients, and the environment we operate in. Our HSE policy is built around a proactive and preventive approach. From the very first stages of planning a project to the final phases of execution and delivery, safety is integrated into every process and decision. We continuously assess risks, implement global best practices, and update safety measures to ensure the well-being of every worker, visitor, and stakeholder on-site. We ensure that all personnel are properly trained, certified, and fully aware of the safety protocols specific to their role and working environment. Use of personal protective equipment (PPE), compliance with hazard warnings, and strict adherence to safety guidelines are mandatory and non-negotiable. In addition to occupational safety, we are deeply committed to environmental sustainability. We take deliberate steps to minimize environmental impact by reducing waste, managing energy consumption, recycling materials, and protecting local ecosystems throughout our operations. By embedding safety, health, and environmental values into the heart of our work, we strive not only to complete projects successfully—but to do so in a way that respects people, protects nature, and builds a better future for the next generations. We believe that every incident is preventable, every life is valuable, and every decision matters. Safety is not a slogan for us—it is our way of building.",
     "WhyAmiranUpToDateFeatureSection_Label": "Up-to-date and efficient workshop equipment",
-    "WhyAmiranReportsFeatureSection_Label": "Weekly and monthly reports to the employer",
-    "WhyAmiranFeatureDescription_Label": "Providing the project's technical documentation booklet to the employer at the time of operation permit, approvedand executive drawings (end of work noncontradiction, construction drawings)",
+    "WhyAmiranReportsFeatureSection_Label": "Weekly and monthly reports",
+    "WhyAmiranFeatureDescription_Label": "Providing the project's technical documentation booklet at the time of operation permit, approvedand executive drawings (end of work noncontradiction, construction drawings)",
     "BrandsSectionTitle_Label": "Our Business Partners"
   },
   "CONTACT_US": {
@@ -75,6 +75,7 @@
     "ContactUsPhones_Label": "+98-09101362160\n+98-02532943426"
   },
   "PROJECT": {
+    "ARCHITECT": "Architect:",
     "FEATURES": {
       "Usage_Label": "USAGE",
       "NumberOfUnitsPerFloor_Label": "NUMBER OF UNITS PER FLOOR",
@@ -92,7 +93,7 @@
     "ServicesItem_Label": "Services",
     "DutyItem_Label": "Duty",
     "BlogItem_Label": "Blog",
-    "WhyAmiranItem_Label": "Why Amiran",
+    "WhyAmiranItem_Label": "About Us",
     "ContactUsItem_Label": "Contact Us"
   },
   "COMMON": {

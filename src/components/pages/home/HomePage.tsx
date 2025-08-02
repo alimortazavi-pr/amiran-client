@@ -3,13 +3,14 @@
 import { FC } from "react";
 
 //interfaces
-import { IHome, IProject } from "@/common/interfaces";
+import { IArticle, IHome, IProject } from "@/common/interfaces";
 
 //Components
 import { NavbarContainer } from "@/components/common/Navbar";
 import { HeroSectionContainer } from "./HeroSection";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { ProjectsSectionContainer } from "./ProjectsSection";
+import { ArticlesSectionContainer } from "./ArticlesSection";
 import { ExperiencedSectionContainer } from "./ExperiencedSection";
 import { ServicesSectionContainer } from "./ServicesSection";
 import { VideoSectionContainer } from "./VideoSection";
@@ -24,8 +25,9 @@ import { storage } from "@/common/utils";
 interface IProps {
   home: IHome;
   projects: IProject[];
+  articles: IArticle[];
 }
-export const HomePage: FC<IProps> = ({ home, projects }) => {
+export const HomePage: FC<IProps> = ({ home, projects, articles }) => {
   //Translation
   const { t } = useClientTranslation(storage.getLanguage());
 
@@ -35,6 +37,8 @@ export const HomePage: FC<IProps> = ({ home, projects }) => {
       <HeroSectionContainer home={home} />
       <RailSpacerContainer />
       <ProjectsSectionContainer projects={projects} />
+      <RailSpacerContainer />
+      <ArticlesSectionContainer articles={articles} />
       <RailSpacerContainer />
       <ExperiencedSectionContainer />
       <RailSpacerContainer />

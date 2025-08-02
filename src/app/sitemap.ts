@@ -51,7 +51,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   routes.push({
-    url: `${DOMAIN}/why-amiran`,
+    url: `${DOMAIN}/about-us`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.9,

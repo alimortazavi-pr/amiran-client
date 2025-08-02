@@ -13,6 +13,7 @@ import { IProject } from "@/common/interfaces";
 
 //Components
 import { ChangeSlugBtn, DeleteProjectBtn, ImagesCountSwitch } from ".";
+import { ChangeArchitectContainer } from "./change-architect";
 
 interface IProps {
   onOpenChange: () => void;
@@ -38,6 +39,8 @@ export const SettingDrawer: FC<UseDisclosureProps & IProps> = ({
               <ImagesCountSwitch project={project} />
               <Divider />
               <ChangeSlugBtn />
+              <Divider />
+              <ChangeArchitectContainer />
               <Divider />
               <DeleteProjectBtn />
             </DrawerBody>

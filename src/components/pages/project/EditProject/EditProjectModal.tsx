@@ -77,6 +77,13 @@ export const EditProjectModal = () => {
           description: { ...form.description, [i18n.language]: value },
         })
       );
+    } else if (editSection.value === "architect") {
+      dispatch(
+        setForm({
+          ...form,
+          architect: { ...form.architect, [i18n.language]: value },
+        })
+      );
     } else {
       dispatch(
         setForm({
@@ -125,7 +132,8 @@ export const EditProjectModal = () => {
               label={editSection.label}
               placeholder="Enter ..."
               value={
-                editSection.value === "description"
+                editSection.value === "description" ||
+                editSection.value === "architect"
                   ? (
                       form[editSection.value as keyof typeof form] as {
                         fa: string;
@@ -149,7 +157,8 @@ export const EditProjectModal = () => {
               className="w-full"
               isLoading={isLoading}
               isDisabled={
-                editSection.value === "description"
+                editSection.value === "description" ||
+                editSection.value === "architect"
                   ? !(
                       form[editSection.value as keyof typeof form] as {
                         fa: string;

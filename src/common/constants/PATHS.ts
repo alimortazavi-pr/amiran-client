@@ -7,6 +7,6 @@ export const PATHS = {
   SERVICES: "/services",
   DUTY: "/duty",
   WORK_PROCESS: "#",
-  WHY_AMIRAN: "/why-amiran",
+  WHY_AMIRAN: "/about-us",
   CONTACT_US: "/contact-us",
 };

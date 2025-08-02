@@ -16,6 +16,7 @@ import {
   DirectionsBtn,
   ImagesSection,
   VideoSectionContainer,
+  ArchitectSection,
 } from ".";
 import { RailSpacerContainer } from "@/components/common/RailSpacer";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
@@ -41,6 +42,8 @@ export const ProjectPage: FC<IProps> = ({ project }) => {
         setForm({
           slug: project.slug,
           description: project.description,
+          architect: project.architect,
+          architectWebsite: project.architectWebsite,
           isPublished: project.isPublished,
           usage: project.usage,
           location: project.location,
@@ -65,6 +68,7 @@ export const ProjectPage: FC<IProps> = ({ project }) => {
           <ImagesSection project={project} />
           <DescriptionSection project={project} />
         </div>
+        <ArchitectSection project={project} />
         <VideoSectionContainer project={project} />
         <PlanImagesContainer project={project} />
         <FeaturesContainer project={project} />

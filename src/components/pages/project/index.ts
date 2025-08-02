@@ -3,3 +3,4 @@ export * from "./DescriptionSection";
 export * from "./ImagesSection";
 export * from "./DirectionsBtn";
 export * from "./VideoSectionContainer";
+export * from "./ArchitectSection";
