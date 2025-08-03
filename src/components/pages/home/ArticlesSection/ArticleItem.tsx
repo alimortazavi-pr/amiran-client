@@ -29,7 +29,7 @@ export const ArticleItem: FC<IProps> = ({ article }) => {
     <div className="col-span-2 md:col-span-1 cursor-pointer">
       <Link href={PATHS.ARTICLE(article.slug)}>
         <div className="w-full h-full relative rounded-full shadow-md cursor-pointer max-h-[400px]">
-          <div className="w-full h-[400px] relative">
+          <div className="w-full h-80 lg:h-[400px] relative">
             {article.images?.length > 0 ? (
               <Image
                 src={`${SERVER_BASE_API_URL}${article.images[0].url}`}

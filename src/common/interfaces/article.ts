@@ -14,6 +14,8 @@ export interface IArticle {
   description: { fa: string; en: string };
   content: { fa: string; en: string };
   isPublished: boolean;
+  pin1: boolean;
+  pin2: boolean;
   deleted: boolean;
 }
 

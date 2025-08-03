@@ -15,6 +15,36 @@ import { IArticle } from "@/common/interfaces";
 import { axiosInstance } from "@/common/axiosInstance";
 
 //Actions
+export function pin1ArticleAction(slug: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.get(`/admin/articles/pin-1/${slug}`, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
+    }
+  };
+}
+
+export function pin2ArticleAction(slug: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.get(`/admin/articles/pin-2/${slug}`, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
+    }
+  };
+}
+
 export function createArticleAction(): AppThunk {
   return async (dispatch, getState) => {
     try {
