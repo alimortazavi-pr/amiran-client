@@ -96,6 +96,11 @@
     "WhyAmiranItem_Label": "درباره ما",
     "ContactUsItem_Label": "تماس با ما"
   },
+  "FOOTER": {
+    "Footer1": "ساخته شده توسط استودیو برندینگ کایسا",
+    "Footer2": "مدیریت پروژه: شهاب‌الدین دانش‌پور",
+    "Footer3": "توسعه دهنده: علی مرتضوی"
+  },
   "COMMON": {
     "More_Label": "بیشتر",
     "BackToHome_Label": "بازگشت به خانه",

@@ -96,6 +96,11 @@
     "WhyAmiranItem_Label": "About Us",
     "ContactUsItem_Label": "Contact Us"
   },
+  "FOOTER": {
+    "Footer1": "Created By CAISSA Branding Studio",
+    "Footer2": "Project Management: Shahaboddin Daneshpour",
+    "Footer3": "Developer: Ali Mortazavi"
+  },
   "COMMON": {
     "More_Label": "More",
     "BackToHome_Label": "Back to Home",
