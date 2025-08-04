@@ -11,8 +11,8 @@ export enum menuPagesEnum {
 export enum menuSocialMediasEnum {
   TWITTER = "TWITTER",
   INSTAGRAM = "INSTAGRAM",
-  LINKEDIN = "LINKEDIN",
-  WHATSAPP = "WHATSAPP",
-  DRIBBBLE = "DRIBBBLE",
+  TELEGRAM = "TELEGRAM",
+  EITAA = "EITAA",
+  BALE = "BALE",
   YOUTUBE = "YOUTUBE",
 }
