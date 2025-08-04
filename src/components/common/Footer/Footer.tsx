@@ -12,7 +12,7 @@ export const Footer = () => {
   const { t } = useClientTranslation(storage.getLanguage());
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-3">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-3 mt-20">
       <h6 className="font-semibold text-sm lg:text-base xl:text-xl">{t("FOOTER.Footer1")}</h6>
       <Divider orientation="vertical" className="h-6 hidden md:block" />
       <h6 className="font-light text-sm lg:text-base xl:text-xl">{t("FOOTER.Footer2")}</h6>
