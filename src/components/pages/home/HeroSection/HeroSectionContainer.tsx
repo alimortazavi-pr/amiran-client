@@ -24,7 +24,7 @@ export const HeroSectionContainer: FC<IProps> = ({ home }) => {
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-12 items-center md:mt-14 lg:mt-36">
-      <h6 className="text-lg font-light text-center my-10 flex-1 md:hidden">
+      <h6 className="text-lg rtl:text-3xl font-light text-center my-10 flex-1 md:hidden">
         {t("HOME.HeroSlogan_Label")}
       </h6>
       <SloganSection />

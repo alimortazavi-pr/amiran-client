@@ -10,7 +10,7 @@ export const Description = () => {
 
   return (
     <div className="col-span-3 overflow-hidden hidden md:block">
-      <div className="font-light text-justify text-primary/30 md:line-clamp-[5] lg:line-clamp-[7] xl:line-clamp-[9] 2xl:line-clamp-[11]">
+      <div className="font-light text-justify text-primary/80 md:line-clamp-[5] lg:line-clamp-[7] xl:line-clamp-[9] 2xl:line-clamp-[11]">
         {t("HOME.EXPERIENCED.ExperiencedDescription_Label")}
       </div>
     </div>

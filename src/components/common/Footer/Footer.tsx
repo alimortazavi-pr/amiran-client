@@ -13,9 +13,20 @@ export const Footer = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center gap-3 mt-20">
-      <h6 className="font-semibold text-sm lg:text-base xl:text-xl">{t("FOOTER.Footer1")}</h6>
+      <h6 className="font-semibold text-sm lg:text-base xl:text-xl">
+        {t("FOOTER.Footer1")}
+      </h6>
       <Divider orientation="vertical" className="h-6 hidden md:block" />
-      <h6 className="font-light text-sm lg:text-base xl:text-xl">{t("FOOTER.Footer2")}</h6>
+      <h6 className="font-light text-sm lg:text-base xl:text-xl underline underline-offset-8">
+        <Link
+          href={
+            "https://www.instagram.com/shahabdaneshpoor/?utm_source=ig_web_button_share_sheet"
+          }
+          target="_blank"
+        >
+          {t("FOOTER.Footer2")}
+        </Link>
+      </h6>
       <Divider orientation="vertical" className="h-6 hidden md:block" />
       <h6 className="font-light text-sm lg:text-base xl:text-xl underline underline-offset-8">
         <Link href={"https://alimor.ir"} target="_blank">

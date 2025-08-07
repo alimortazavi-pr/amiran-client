@@ -11,7 +11,6 @@ import { useClientTranslation } from "@/hooks/translation";
 
 //Utils
 import { storage } from "@/common/utils";
-import { LanguageCircle } from "iconsax-react";
 
 export const LanguagesMenu = () => {
   //Redux
@@ -40,9 +39,6 @@ export const LanguagesMenu = () => {
       // isIconOnly
       className="font-thin text-xs leading-none"
       onPress={toggleLanguageFunc}
-      startContent={
-        <LanguageCircle className="w-3 h-3 lg:w-4 lg:h-4" color="#1E353C" />
-      }
     >
       {i18n.language === "en" ? "EN" : "فارسی"}
     </Button>
