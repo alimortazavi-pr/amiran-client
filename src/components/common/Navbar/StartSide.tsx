@@ -21,12 +21,6 @@ import callIcon from "@/assets/svgs/icons/call-icon.svg";
 //Constants
 import { PATHS } from "@/common/constants";
 
-//Translation
-import { useClientTranslation } from "@/hooks/translation";
-
-//Utils
-import { storage } from "@/common/utils";
-
 export const StartSide = () => {
   //Redux
   const isOpenSearch = useAppSelector(isOpenSearchSelector);
@@ -34,9 +28,6 @@ export const StartSide = () => {
   //Next
   const pathname = usePathname();
   const router = useRouter();
-
-  //Translation
-  const { i18n } = useClientTranslation(storage.getLanguage());
 
   //Functions
   function previousPageHandler() {
@@ -69,12 +60,7 @@ export const StartSide = () => {
           className="rounded-full text-primary max-h-full"
           onPress={previousPageHandler}
         >
-          <ArrowLeft2
-            className={`w-3 h-3 lg:w-4 lg:h-4 ${
-              i18n.language !== "en" && "rotate-180"
-            }`}
-            color="#1E353C"
-          />
+          <ArrowLeft2 className={`w-3 h-3 lg:w-4 lg:h-4`} color="#1E353C" />
         </Button>
       )}
     </motion.div>

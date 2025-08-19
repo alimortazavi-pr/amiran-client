@@ -36,8 +36,7 @@ export const LanguagesMenu = () => {
       variant="light"
       aria-label="Language"
       size="sm"
-      // isIconOnly
-      className="font-thin text-xs leading-none"
+      className="font-thin text-xs leading-none min-w-0"
       onPress={toggleLanguageFunc}
     >
       {i18n.language === "en" ? "EN" : "فارسی"}
