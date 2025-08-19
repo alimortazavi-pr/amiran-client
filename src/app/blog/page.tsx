@@ -5,6 +5,7 @@ import { IArticle } from "@/common/interfaces";
 
 //Components
 import { ArticlesPage } from "@/components/pages/articles";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -29,7 +30,11 @@ export const dynamic = "force-dynamic";
 const page = async () => {
   const { articles } = await getArticles();
 
-  return <ArticlesPage articles={articles} />;
+  return (
+    <MotionProvider>
+      <ArticlesPage articles={articles} />
+    </MotionProvider>
+  );
 };
 
 export default page;

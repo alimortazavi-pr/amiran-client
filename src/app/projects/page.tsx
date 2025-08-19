@@ -5,6 +5,7 @@ import { IProject } from "@/common/interfaces";
 
 //Components
 import { ProjectsPage } from "@/components/pages/projects";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -29,7 +30,11 @@ export const dynamic = "force-dynamic";
 const page = async () => {
   const { projects } = await getProjects();
 
-  return <ProjectsPage projects={projects} />;
+  return (
+    <MotionProvider>
+      <ProjectsPage projects={projects} />
+    </MotionProvider>
+  );
 };
 
 export default page;

@@ -108,7 +108,7 @@ export const ImagesSection = () => {
 
   return (
     <div className="md:md:col-span-5 mb-12 md:mb-0 w-full max-w-[326px] md:max-w-full">
-      <div className="flex-1 grid grid-cols-3 grid-rows-10 gap-2 xl:gap-3 w-full h-60 px-3 md:px-0 lg:h-96 xl:h-[500px]">
+      <div className="flex-1 grid grid-cols-3 grid-rows-10 gap-2 xl:gap-3 w-full h-72 px-3 md:px-0 lg:h-96 xl:h-[500px]">
         <input
           type="file"
           ref={fileInputRef}

@@ -40,7 +40,7 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
   const pathname = usePathname();
 
   //States
-  const [isVisibleSplashScreen, setIsVisibleSplashScreen] = useState(false);
+  const [isVisibleSplashScreen, setIsVisibleSplashScreen] = useState(true);
 
   //Lifecycle
   useEffect(() => {

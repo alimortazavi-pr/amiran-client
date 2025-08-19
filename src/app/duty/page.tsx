@@ -5,6 +5,7 @@ import { IDuty, ITeam } from "@/common/interfaces";
 
 //Components
 import { DutyPage } from "@/components/pages/duty";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -53,7 +54,11 @@ const page = async () => {
   const { teams } = await getTeam();
   const { duty } = await getDuty();
 
-  return <DutyPage teams={teams} duty={duty} />;
+  return (
+    <MotionProvider>
+      <DutyPage teams={teams} duty={duty} />
+    </MotionProvider>
+  );
 };
 
 export default page;

@@ -5,6 +5,7 @@ import { IProject } from "@/common/interfaces";
 
 //Components
 import { ProjectPage } from "@/components/pages/project";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -33,7 +34,11 @@ interface IProps {
 const page = async ({ params }: IProps) => {
   const { project } = await getProject({ params });
 
-  return <ProjectPage project={project as IProject} />;
+  return (
+    <MotionProvider>
+      <ProjectPage project={project as IProject} />
+    </MotionProvider>
+  );
 };
 
 export default page;

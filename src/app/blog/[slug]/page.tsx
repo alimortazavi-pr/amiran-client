@@ -5,6 +5,7 @@ import { IArticle } from "@/common/interfaces";
 
 //Components
 import { ArticlePage } from "@/components/pages/article";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -33,7 +34,11 @@ interface IProps {
 const page = async ({ params }: IProps) => {
   const { article } = await getArticle({ params });
 
-  return <ArticlePage article={article as IArticle} />;
+  return (
+    <MotionProvider>
+      <ArticlePage article={article as IArticle} />
+    </MotionProvider>
+  );
 };
 
 export default page;

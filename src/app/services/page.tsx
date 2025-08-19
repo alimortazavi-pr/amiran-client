@@ -1,8 +1,13 @@
 //Components
 import { ServicesPage } from "@/components/pages/services";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 const page = () => {
-  return <ServicesPage />;
+  return (
+    <MotionProvider>
+      <ServicesPage />
+    </MotionProvider>
+  );
 };
 
 export default page;

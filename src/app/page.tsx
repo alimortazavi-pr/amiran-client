@@ -3,6 +3,7 @@ import { IArticle, IHome, IProject } from "@/common/interfaces";
 
 //Components
 import { HomePage } from "@/components/pages/home";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -32,7 +33,11 @@ export const dynamic = "force-dynamic";
 const page = async () => {
   const { projects, home, articles } = await getHeroAndProjects();
 
-  return <HomePage home={home} projects={projects} articles={articles} />;
+  return (
+    <MotionProvider>
+      <HomePage home={home} projects={projects} articles={articles} />
+    </MotionProvider>
+  );
 };
 
 export default page;

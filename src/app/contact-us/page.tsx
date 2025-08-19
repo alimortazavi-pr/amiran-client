@@ -3,6 +3,7 @@ import { IContactUs } from "@/common/interfaces";
 
 //Components
 import { ContactUsPage } from "@/components/pages/contact-us";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 
 //Utils
 import { axiosInstance } from "@/common/axiosInstance";
@@ -35,7 +36,11 @@ export const dynamic = "force-dynamic";
 const page = async () => {
   const { contactUs } = await getContactUs();
 
-  return <ContactUsPage contactUs={contactUs} />;
+  return (
+    <MotionProvider>
+      <ContactUsPage contactUs={contactUs} />
+    </MotionProvider>
+  );
 };
 
 export default page;
