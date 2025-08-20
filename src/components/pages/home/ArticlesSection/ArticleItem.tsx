@@ -45,11 +45,11 @@ export const ArticleItem: FC<IProps> = ({ article }) => {
                 className="object-cover rounded-full"
               />
             )}
-            <div className="p-4 pb-8 absolute bottom-0 max-w-full bg-primary-50/40 backdrop-blur rounded-b-full">
-              <h6 className="font-semibold text-lg truncate text-center">
+            <div className="p-4 pb-8 absolute bottom-0 max-w-full bg-primary rounded-b-full">
+              <h6 className="font-bold text-lg truncate text-center text-primary-50">
                 {article.title[i18n.language as "fa" | "en"]}
               </h6>
-              <p className="text-primary/60 text-sm line-clamp-4 text-center">
+              <p className="text-primary-200 font-light text-sm line-clamp-4 text-center">
                 {article.content[i18n.language as "fa" | "en"]}
               </p>
             </div>
