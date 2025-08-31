@@ -98,7 +98,7 @@ export const SplashScreen: FC<IProps> = ({
     }
   }
 
-  // if (!isVisible) return null;
+  if (!isVisible) return null;
 
   return (
     <div className="w-screen h-dvh fixed left-0 top-0 bg-white z-[9999]">
