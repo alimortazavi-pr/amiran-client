@@ -1,3 +1,4 @@
+import { Spinner } from "@heroui/react";
 import {
   Dispatch,
   FC,
@@ -97,7 +98,7 @@ export const SplashScreen: FC<IProps> = ({
     }
   }
 
-  if (!isVisible) return null;
+  // if (!isVisible) return null;
 
   return (
     <div className="w-screen h-dvh fixed left-0 top-0 bg-white z-[9999]">
@@ -111,8 +112,7 @@ export const SplashScreen: FC<IProps> = ({
         {hasError && (
           <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading...</p>
+              <Spinner />
             </div>
           </div>
         )}
