@@ -45,7 +45,7 @@ export const ArticleItem: FC<IProps> = ({ article }) => {
                 className="object-cover rounded-full"
               />
             )}
-            <div className="p-4 pb-8 absolute bottom-0 max-w-full bg-primary rounded-b-full">
+            <div className="p-4 pb-8 h-[156px] absolute bottom-0 max-w-full bg-primary rounded-b-full">
               <h6 className="font-bold text-lg truncate text-center text-primary-50">
                 {article.title[i18n.language as "fa" | "en"]}
               </h6>

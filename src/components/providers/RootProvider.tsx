@@ -25,7 +25,6 @@ import { fetchVideosAction, setLanguage } from "@/stores/layouts/actions";
 import { MenuDrawerContainer, MenuModalContainer } from "../common/MenuModal";
 import { ClarityInit } from "./ClarityInit";
 import { SplashScreen } from "../common/SplashScreen";
-import { Footer } from "../common/Footer";
 
 //Utils
 import { storage } from "@/common/utils";
@@ -82,7 +81,6 @@ const RootProvider: FC<PropsWithChildren> = ({ children }) => {
         <>
           <div className="overflow-x-hidden container max-w-screen-xl p-8 lg:p-12 mx-auto">
             {children}
-            <Footer />
           </div>
           <MenuModalContainer />
           <MenuDrawerContainer />

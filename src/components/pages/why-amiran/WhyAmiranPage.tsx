@@ -1,3 +1,5 @@
+'use client'
+
 //Components
 import { NavbarContainer } from "@/components/common/Navbar";
 import {
@@ -14,6 +16,7 @@ import { UpToDateFeatureSectionContainer } from "./UpToDateFeatureSection";
 import { ReportsFeatureSectionContainer } from "./ReportsFeatureSection";
 import { CompletedProjectsContainer } from "./CompletedProjects";
 import { BrandsContainer } from "./Brands";
+import { Footer } from "@/components/common/Footer";
 
 export const WhyAmiranPage = () => {
   return (
@@ -35,6 +38,7 @@ export const WhyAmiranPage = () => {
         <CompletedProjectsContainer />
         <RailSpacerContainer />
         <BackToPreviousPageBtn />
+        <Footer />
       </div>
     </div>
   );

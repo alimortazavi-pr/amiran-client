@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from "react";
 
 //Interfaces
@@ -12,6 +14,7 @@ import {
   EditDescriptionContactUsModal,
 } from ".";
 import { BackToPreviousPageBtn } from "@/components/common/BackToPreviousPage";
+import { Footer } from "@/components/common/Footer";
 
 interface IProps {
   contactUs: IContactUs;
@@ -27,6 +30,7 @@ export const ContactUsPage: FC<IProps> = ({ contactUs }) => {
         <BackToPreviousPageBtn />
       </div>
       <EditDescriptionContactUsModal />
+      <Footer />
     </div>
   );
 };

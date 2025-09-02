@@ -15,6 +15,7 @@ import { ExperiencedSectionContainer } from "./ExperiencedSection";
 import { ServicesSectionContainer } from "./ServicesSection";
 import { VideoSectionContainer } from "./VideoSection";
 import { FooterLogoContainer } from "@/components/common/FooterLogo";
+import { Footer } from "@/components/common/Footer";
 
 //Translation
 import { useClientTranslation } from "@/hooks/translation";
@@ -48,6 +49,7 @@ export const HomePage: FC<IProps> = ({ home, projects, articles }) => {
       <h6 className="my-10 lg:my-20 xl:my-32 text-primary text-center font-extralight md:text-xl lg:text-2xl xl:text-3xl">
         {t("HOME.ThankYou_Label")}
       </h6>
+      <Footer />
     </div>
   );
 };
