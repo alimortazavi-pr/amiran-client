@@ -14,22 +14,28 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "@bprogress/next/app";
 
+//Interfaces
+import { ITeamForm } from "@/common/interfaces";
+
 //Redux
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { setSelectedTeam, updateTeamAction } from "@/stores/duty/actions";
-import { selectedTeamSelector } from "@/stores/duty/selectors";
+import {
+  isDeletingTeamSelector,
+  selectedTeamSelector,
+} from "@/stores/duty/selectors";
 
 //Translation
 import { useClientTranslation } from "@/hooks/translation";
 
 //Utils
 import { storage } from "@/common/utils";
-import { ITeamForm } from "@/common/interfaces";
 
 export const EditTeamModal = () => {
   //Redux
   const dispatch = useAppDispatch();
   const selectedTeam = useAppSelector(selectedTeamSelector);
+  const isDeletingTeam = useAppSelector(isDeletingTeamSelector);
 
   //NextUI
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -52,10 +58,10 @@ export const EditTeamModal = () => {
 
   //Lifecycle
   useEffect(() => {
-    if (selectedTeam && !isOpen) {
+    if (selectedTeam && !isOpen && !isDeletingTeam) {
       onOpen();
       setForm(selectedTeam);
-    } else if (!selectedTeam && isOpen) {
+    } else if (!selectedTeam && isOpen && !isDeletingTeam) {
       onClose();
     }
   }, [selectedTeam, isOpen]);

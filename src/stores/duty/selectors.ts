@@ -13,3 +13,9 @@ export function selectedTeamSelector(
 ): IDutyState["selectedTeam"] {
   return state.duty.selectedTeam;
 }
+
+export function isDeletingTeamSelector(
+  state: RootState
+): IDutyState["isDeletingTeam"] {
+  return state.duty.isDeletingTeam;
+}

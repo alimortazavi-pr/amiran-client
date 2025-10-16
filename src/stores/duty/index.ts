@@ -9,6 +9,7 @@ import reducers from "@/stores/duty/reducers";
 const initialState: IDutyState = {
   employersImages: undefined,
   selectedTeam: undefined,
+  isDeletingTeam: false,
 };
 
 export const dutyReducer = createSlice({

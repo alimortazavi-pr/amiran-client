@@ -6,7 +6,8 @@ import { AppThunk } from "@/stores";
 import { dutyReducer } from ".";
 
 //Actions from reducer
-export const { setEmployersImages, setSelectedTeam } = dutyReducer.actions;
+export const { setEmployersImages, setSelectedTeam, setIsDeletingTeam } =
+  dutyReducer.actions;
 
 //Interfaces
 
@@ -123,6 +124,21 @@ export function upsertWorkProcessAction(form: FormData): AppThunk {
       });
     } catch (error: any) {
       throw new Error(error.response.data.message);
+    }
+  };
+}
+
+export function hardDeleteTeam(id: string): AppThunk {
+  return async (dispatch, getState) => {
+    try {
+      await axiosInstance.delete(`/admin/duty/team/${id}/hard`, {
+        headers: {
+          Authorization: `Bearer ${getState().auth.token}`,
+        },
+      });
+    } catch (err: any) {
+      console.log(err);
+      throw new Error(err.response.data.message);
     }
   };
 }

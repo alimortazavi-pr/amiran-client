@@ -1,6 +1,7 @@
 export interface IDutyState {
   employersImages: undefined | IEmployerImage[];
   selectedTeam: ITeam | undefined;
+  isDeletingTeam: boolean;
 }
 
 export interface IEmployerImage {

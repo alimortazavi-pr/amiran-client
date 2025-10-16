@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { Button } from "@heroui/react";
-import { Edit } from "iconsax-react";
+import { Edit, Trash } from "iconsax-react";
 import Image from "next/image";
 
 //Interfaces
@@ -11,7 +11,7 @@ import { ITeam } from "@/common/interfaces";
 //Redux
 import { useAppDispatch, useAppSelector } from "@/stores/hooks";
 import { isAuthSelector } from "@/stores/auth/selectors";
-import { setSelectedTeam } from "@/stores/duty/actions";
+import { setIsDeletingTeam, setSelectedTeam } from "@/stores/duty/actions";
 
 //Assets
 import fakeImg from "@/assets/svgs/fake-img.svg";
@@ -39,6 +39,11 @@ export const TeamItem: FC<IProps> = ({ team }) => {
   //Functions
   function selectSection() {
     dispatch(setSelectedTeam(team));
+  }
+
+  function selectDeleteSection() {
+    dispatch(setSelectedTeam(team));
+    dispatch(setIsDeletingTeam(true));
   }
 
   return (
@@ -84,15 +89,27 @@ export const TeamItem: FC<IProps> = ({ team }) => {
         </div>
       </div>
       {isAuth && (
-        <Button
-          isIconOnly
-          size="sm"
-          variant="light"
-          className="absolute start-8 bottom-0 z-10"
-          onPress={selectSection}
-        >
-          <Edit className="w-5 h-5" color="#1E353C" />
-        </Button>
+        <div className="absolute start-8 bottom-0 flex items-center gap-2 z-10">
+          <Button
+            isIconOnly
+            size="sm"
+            variant="light"
+            className=""
+            onPress={selectSection}
+          >
+            <Edit className="w-5 h-5" color="#1E353C" />
+          </Button>
+          <Button
+            isIconOnly
+            size="sm"
+            variant="light"
+            className=""
+            color="danger"
+            onPress={selectDeleteSection}
+          >
+            <Trash className="w-5 h-5" color="red" />
+          </Button>
+        </div>
       )}
     </div>
   );

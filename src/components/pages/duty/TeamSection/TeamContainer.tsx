@@ -6,6 +6,7 @@ import { CreateItem, TeamItem } from ".";
 //Components
 import { ITeam } from "@/common/interfaces";
 import { EditTeamModal } from "./EditTeam";
+import { DeleteTeamModal } from "./DeleteTeam";
 
 interface IProps {
   teams: ITeam[];
@@ -19,6 +20,7 @@ export const TeamContainer: FC<IProps> = ({ teams }) => {
         ))}
         <CreateItem />
         <EditTeamModal />
+        <DeleteTeamModal />
       </div>
     </div>
   );

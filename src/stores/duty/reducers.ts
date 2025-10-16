@@ -23,6 +23,15 @@ const reducers = {
       selectedTeam: action.payload,
     };
   },
+  setIsDeletingTeam(
+    state: IDutyState,
+    action: PayloadAction<IDutyState["isDeletingTeam"]>
+  ): IDutyState {
+    return {
+      ...state,
+      isDeletingTeam: action.payload,
+    };
+  },
 };
 
 export default reducers;
